@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f6f7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.Login">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #212327; -fx-background-color: #fcfaf5; -fx-border-radius: 10; -fx-background-radius: 10;">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="141.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccd1d1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #bdc3c7;">
+                     <children>
+                        <Label layoutX="29.0" layoutY="12.0" text="MiCash">
+                           <font>
+                              <Font name="SansSerif Bold" size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="602.0" style="-fx-background-color: #f4f6f7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="40.0" layoutY="100.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="100.0">
+                     <children>
+                        <Label layoutX="206.0" layoutY="51.0" text="Login">
+                           <font>
+                              <Font name="SansSerif Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="86.0" layoutY="145.0" prefHeight="37.0" prefWidth="350.0" promptText="Username:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="161.0" layoutY="302.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: #76d7c4; -fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" text="Log In" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <PasswordField layoutX="86.0" layoutY="215.0" prefHeight="39.0" prefWidth="350.0" promptText="Password:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </PasswordField>
+                        <Button layoutX="442.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-radius: 8; -fx-background-radius: 8;" styleClass="btnActive-signup" text="Sing Up">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="34.0" layoutY="-1.0" prefHeight="84.0" prefWidth="200.0" style="-fx-background-color: #d7dbdd;" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
