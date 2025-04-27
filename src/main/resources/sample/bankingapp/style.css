@@ -1,0 +1,46 @@
+.btnActive-panel:hover {
+    -fx-background-color: #b3b6b7!important;
+}
+
+.btnActive-panel:pressed {
+    -fx-background-color: #979a9a!important;
+}
+
+.btnActive-panel:selected {
+    -fx-background-color: #b3b6b7!important;
+}
+
+
+.btnActive-green:hover {
+    -fx-background-color: #1abc9c!important;
+}
+.btnActive-green:pressed {
+    -fx-background-color: #17a589 !important;
+}
+
+.btnActive-logout:hover {
+    -fx-background-color: #ecf0f1!important;
+}
+
+.btnActive-logout:pressed {
+    -fx-background-color: #d0d3d4!important;
+}
+
+.btnActive-signup:hover {
+    -fx-background-color: #f0f3f4 !important;
+}
+.btnActive-signup:pressed {
+    -fx-background-color: #ecf0f1!important;
+}
+.gradient-button{
+    -fx-background-color: linear-gradient(to left,#76d7c4 ,#17a589 )!important;
+
+}
+.gradient-button:hover {
+    -fx-background-color: linear-gradient(to left, #48c9b0,#148f77)!important;
+    -fx-cursor: hand;
+}
+.gradient-button:pressed {
+    -fx-background-color: linear-gradient(to left, #1abc9c,#117864)!important;
+    -fx-cursor: hand;
+}
