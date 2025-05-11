@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-border-radius: 8; -fx-background-radius: 8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.RozpocetController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-border-radius: 8; -fx-background-radius: 8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.TransakceController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="141.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccd1d1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -79,76 +79,103 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="223.0" layoutY="53.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button id="upraveniLimitu" layoutX="465.0" layoutY="28.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Upravit limit" textFill="WHITE" AnchorPane.topAnchor="23.0">
+            <Button layoutX="33.0" layoutY="489.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="163.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat transakci" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="407.0" AnchorPane.topAnchor="490.0">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
             </Button>
-            <AnchorPane layoutX="143.0" layoutY="81.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497; -fx-border-width: 1.5;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="80.0" />
-            <GridPane layoutX="30.0" layoutY="247.0" prefHeight="255.0" prefWidth="540.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8; -fx-border-width: 1.5;">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="161.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="86.0" />
+            <GridPane layoutX="33.0" layoutY="155.0" prefHeight="288.0" prefWidth="536.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8; -fx-border-width: 1.5;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="161.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="86.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="85.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="145.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Label prefHeight="55.0" prefWidth="190.0" text="    Jidlo">
+                  <Label prefHeight="55.0" prefWidth="190.0" GridPane.rowIndex="1">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="12.0" prefHeight="55.0" prefWidth="190.0" text="    Doprava" GridPane.rowIndex="1">
+                  <Label layoutX="12.0" layoutY="12.0" prefHeight="55.0" prefWidth="190.0" GridPane.rowIndex="2">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="63.0" prefHeight="55.0" prefWidth="190.0" text="    Bezne vydaje" GridPane.rowIndex="2">
+                  <Label layoutX="12.0" layoutY="63.0" prefHeight="55.0" prefWidth="190.0" GridPane.rowIndex="3">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="113.0" prefHeight="55.0" prefWidth="190.0" text="    Zabava" GridPane.rowIndex="3">
+                  <Label layoutX="12.0" layoutY="113.0" prefHeight="55.0" prefWidth="190.0" GridPane.rowIndex="4">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="163.0" prefHeight="55.0" prefWidth="190.0" text="   Ostatni" GridPane.rowIndex="4">
+                  <Label layoutX="12.0" layoutY="163.0" prefHeight="55.0" prefWidth="190.0" GridPane.rowIndex="5">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="28.0" layoutY="4.0" prefHeight="43.0" prefWidth="105.0" text="Datum">
+                           <font>
+                              <Font name="SansSerif Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9;" GridPane.columnIndex="2">
+                     <children>
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="10.0" prefHeight="30.0" prefWidth="55.0" text="Typ">
+                           <font>
+                              <Font name="SansSerif Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9;" GridPane.columnIndex="3">
+                     <children>
+                        <Label alignment="CENTER" layoutX="37.0" layoutY="4.0" prefHeight="43.0" prefWidth="90.0" text="Částka">
+                           <font>
+                              <Font name="SansSerif Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER" prefHeight="64.0" prefWidth="120.0" style="-fx-background-color: #f7f9f9;" text="Kategorie" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="SansSerif Regular" size="17.0" />
                      </font>
                   </Label>
                </children>
             </GridPane>
-            <Label layoutX="79.0" layoutY="221.0" prefHeight="24.0" prefWidth="70.0" text="Kategorie">
+            <Label layoutX="33.0" layoutY="88.0" prefHeight="43.0" prefWidth="200.0" text="Transakce">
                <font>
-                  <Font name="SansSerif Regular" size="15.0" />
+                  <Font name="SansSerif Bold" size="37.0" />
                </font>
             </Label>
-            <Label layoutX="228.0" layoutY="224.0" text="Limit">
+            <Button layoutX="220.0" layoutY="490.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="163.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Upravit transakci" AnchorPane.leftAnchor="416.0">
                <font>
-                  <Font name="SansSerif Regular" size="15.0" />
+                  <Font name="SansSerif Regular" size="17.0" />
                </font>
-            </Label>
-            <Label layoutX="342.0" layoutY="224.0" text="Utraceno">
+            </Button>
+            <Button layoutX="467.0" layoutY="490.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="163.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Upravit transakci" AnchorPane.leftAnchor="223.0">
                <font>
-                  <Font name="SansSerif Regular" size="15.0" />
+                  <Font name="SansSerif Regular" size="17.0" />
                </font>
-            </Label>
-            <Label layoutX="480.0" layoutY="223.0" text="Zbyva">
-               <font>
-                  <Font name="SansSerif Regular" size="15.0" />
-               </font>
-            </Label>
+            </Button>
          </children>
       </AnchorPane>
    </children>

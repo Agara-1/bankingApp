@@ -8,21 +8,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-public class HomePageController {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Label balanceLabel;
+public class NastaveniController {
 
     @FXML
     private ToggleGroup group1;
@@ -52,6 +42,14 @@ public class HomePageController {
 
     @FXML
     private ToggleButton transakceButton;
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+
 
     @FXML
     void initialize() {
@@ -104,7 +102,7 @@ public class HomePageController {
             stage.showAndWait();
         });
         transakceButton.setOnAction(event -> {
-           transakceButton.getScene().getWindow().hide();
+            transakceButton.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("transakce.fxml"));
@@ -151,40 +149,10 @@ public class HomePageController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
-        pridatPrijemButton.setOnAction(event -> {
-            pridatPrijemButton.getScene().getWindow().hide();
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("rozpocet.fxml"));
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
 
-        pridatVydajButton.setOnAction(event -> {
-            pridatVydajButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("rozpocet.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
-       logoutButton.setOnAction(event -> {
+        logoutButton.setOnAction(event -> {
             logoutButton.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
@@ -200,9 +168,7 @@ public class HomePageController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
+
     }
+
 }
-
-
-
-

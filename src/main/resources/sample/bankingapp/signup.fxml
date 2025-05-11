@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f6f7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.Login">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f6f7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.SignUpController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #212327; -fx-background-color: #fcfaf5; -fx-border-radius: 10; -fx-background-radius: 10;">
          <children>
@@ -28,29 +28,34 @@
                <children>
                   <AnchorPane layoutX="40.0" layoutY="100.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="125.0">
                      <children>
-                        <Label layoutX="185.0" layoutY="45.0" text="Sign Up">
-                           <font>
-                              <Font name="SansSerif Bold" size="40.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="85.0" layoutY="142.0" prefHeight="37.0" prefWidth="350.0" promptText="Username:">
+                        <TextField layoutX="85.0" layoutY="115.0" prefHeight="37.0" prefWidth="350.0" promptText="Name: ">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <Button layoutX="161.0" layoutY="302.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: #76d7c4; -fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" text="Sign Up" textFill="WHITE">
+                        <Label layoutX="185.0" layoutY="14.0" text="Sign Up">
                            <font>
-                              <Font name="SansSerif Bold" size="20.0" />
+                              <Font name="SansSerif Bold" size="40.0" />
                            </font>
-                        </Button>
-                        <PasswordField layoutX="86.0" layoutY="215.0" prefHeight="39.0" prefWidth="350.0" promptText="Password:">
+                        </Label>
+                        <TextField layoutX="85.0" layoutY="181.0" prefHeight="37.0" prefWidth="350.0" promptText="Username:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField layoutX="85.0" layoutY="244.0" prefHeight="39.0" prefWidth="350.0" promptText="Password:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </PasswordField>
-                        <Button layoutX="442.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-radius: 8; -fx-background-radius: 8;" styleClass="btnActive-signup" text="Log In">
+                        <Button id="LogInButton" fx:id="loginButton" layoutX="442.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-radius: 8; -fx-background-radius: 8;" styleClass="btnActive-signup" text="Log In">
                            <font>
                               <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button id="MainSignUpButton" fx:id="MainSignUpButton" layoutX="157.0" layoutY="312.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="206.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Sing Up" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="24.0" />
                            </font>
                         </Button>
                      </children>

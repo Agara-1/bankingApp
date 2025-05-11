@@ -8,29 +8,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-public class HomePageController {
+public class PrevodnikController {
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
-
-    @FXML
-    private Label balanceLabel;
-
-    @FXML
-    private ToggleGroup group1;
     @FXML
     private Button pridatPrijemButton;
 
     @FXML
-    private Button pridatVydajButton;
+    private Button prevestButton;
 
     @FXML
     private Button logoutButton;
@@ -52,6 +41,15 @@ public class HomePageController {
 
     @FXML
     private ToggleButton transakceButton;
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private ToggleGroup group1;
 
     @FXML
     void initialize() {
@@ -104,7 +102,7 @@ public class HomePageController {
             stage.showAndWait();
         });
         transakceButton.setOnAction(event -> {
-           transakceButton.getScene().getWindow().hide();
+            transakceButton.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("transakce.fxml"));
@@ -168,8 +166,8 @@ public class HomePageController {
             stage.showAndWait();
         });
 
-        pridatVydajButton.setOnAction(event -> {
-            pridatVydajButton.getScene().getWindow().hide();
+        prevestButton.setOnAction(event -> {
+            prevestButton.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("rozpocet.fxml"));
@@ -184,7 +182,7 @@ public class HomePageController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
-       logoutButton.setOnAction(event -> {
+        logoutButton.setOnAction(event -> {
             logoutButton.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
@@ -201,8 +199,5 @@ public class HomePageController {
             stage.showAndWait();
         });
     }
+
 }
-
-
-
-

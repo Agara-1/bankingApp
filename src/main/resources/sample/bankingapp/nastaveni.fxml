@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-border-radius: 8; -fx-background-radius: 8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.NastaveniController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="141.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccd1d1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane layoutY="73.0" prefHeight="380.0" prefWidth="200.0" AnchorPane.bottomAnchor="147.0" AnchorPane.topAnchor="73.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="15.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ToggleButton mnemonicParsing="false" prefHeight="93.0" prefWidth="357.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Home">
+                     <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group1" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" toggleGroup="$group1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Info" toggleGroup="$group1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Převodník měn" toggleGroup="$group1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" prefHeight="78.0" prefWidth="224.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                     </font>
+                  </ToggleButton>
+               </children>
+            </GridPane>
+            <AnchorPane prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #bdc3c7;">
+               <children>
+                  <Label layoutX="29.0" layoutY="14.0" text="MiCash">
+                     <font>
+                        <Font name="SansSerif Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="223.0" layoutY="53.0" prefHeight="60.0" prefWidth="0.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="490.0" layoutY="17.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
+               <font>
+                  <Font name="SansSerif Regular" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button layoutX="371.0" layoutY="417.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="259.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Převest" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="20.0" />
+         </font>
+      </Button>
+      <Accordion layoutX="224.0" layoutY="89.0" />
+      <Label layoutX="244.0" layoutY="89.0" text="Nastavení">
+         <font>
+            <Font name="SansSerif Bold" size="37.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="260.0" layoutY="238.0" prefHeight="169.0" prefWidth="476.0" style="-fx-border-color: #cfcfcfc;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="...">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label text="..." GridPane.rowIndex="6">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="23.0" prefWidth="154.0" text="..." GridPane.rowIndex="2">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="23.0" prefWidth="160.0" text="..." GridPane.rowIndex="8">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="144.0" prefHeight="31.0" prefWidth="211.0" text="..." GridPane.rowIndex="4">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="20.0" text="..." GridPane.rowIndex="10">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="1" />
+            <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="3" />
+            <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="5" />
+            <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="7" />
+            <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="9" />
+            <ComboBox prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Line endX="399.29290771484375" layoutX="10.0" layoutY="10.0" startX="-100.0" stroke="#ababab" />
+      <Line endX="399.29290771484375" layoutX="10.0" layoutY="10.0" startX="-100.0" stroke="#ababab" />
+      <Line endX="399.29290771484375" layoutX="10.0" layoutY="10.0" startX="-100.0" stroke="#ababab" />
+      <Line endX="399.29290771484375" layoutX="10.0" layoutY="10.0" startX="-100.0" stroke="#ababab" />
+      <Line endX="399.29290771484375" layoutX="10.0" layoutY="10.0" startX="-100.0" stroke="#ababab" />
+   </children>
+</AnchorPane>
