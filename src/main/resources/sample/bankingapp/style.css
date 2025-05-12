@@ -44,3 +44,7 @@
     -fx-background-color: linear-gradient(to left, #1abc9c,#117864)!important;
     -fx-cursor: hand;
 }
+.logo-container Text{
+    -fx-font-size: 2em;
+    -fx-fill: #000000;
+}
