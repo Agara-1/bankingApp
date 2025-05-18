@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f6f7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bankingapp.SignUpController">
    <children>
@@ -19,7 +20,7 @@
                         <Font name="SansSerif Bold" size="45.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="104.0" fitWidth="117.0" layoutX="48.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="40.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="180.0">
                      <image>
                         <Image url="@assets/bankLogo.png" />
                      </image>
@@ -30,7 +31,12 @@
                <children>
                   <AnchorPane layoutX="40.0" layoutY="100.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="125.0">
                      <children>
-                        <TextField layoutX="85.0" layoutY="115.0" prefHeight="37.0" prefWidth="350.0" promptText="Name: ">
+                        <TextField fx:id="user_name_textField" layoutX="85.0" layoutY="181.0" prefHeight="37.0" prefWidth="350.0" promptText="Přihlašovácí jmeno:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="name_textField" layoutX="85.0" layoutY="115.0" prefHeight="37.0" prefWidth="350.0" promptText="Jmeno a přijmení:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -40,28 +46,28 @@
                               <Font name="SansSerif Bold" size="40.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="85.0" layoutY="181.0" prefHeight="37.0" prefWidth="350.0" promptText="Username:">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
                         <Button id="LogInButton" fx:id="loginButton" layoutX="442.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-radius: 8; -fx-background-radius: 8;" styleClass="btnActive-signup" text="Log In">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button id="MainSignUpButton" fx:id="MainSignUpButton" layoutX="157.0" layoutY="312.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="206.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Sing Up" textFill="WHITE">
+                        <Button id="MainSignUpButton" fx:id="mainSignUpButton" layoutX="157.0" layoutY="312.0" mnemonicParsing="false" onAction="#signUp" prefHeight="57.0" prefWidth="206.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Sing Up" textFill="WHITE">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>
                         </Button>
-                        <TextField layoutX="86.0" layoutY="249.0" prefHeight="37.0" prefWidth="350.0" promptText="Password:">
+                        <TextField fx:id="password_textField" layoutX="86.0" layoutY="249.0" prefHeight="37.0" prefWidth="350.0" promptText="Heslo:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
                      </children>
                   </AnchorPane>
+                  <Text fx:id="chybaText" fill="#f23f3f" layoutX="278.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Light" size="26.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
          </children>

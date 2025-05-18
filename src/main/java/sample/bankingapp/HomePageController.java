@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
@@ -14,26 +15,14 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 public class HomePageController {
+    private Uzivatel aktualniUzivatel;
+    private SpravceUzivatelu su;
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Label balanceLabel;
+    private PieChart graf;
 
     @FXML
     private ToggleGroup group1;
-    @FXML
-    private Button pridatPrijemButton;
-
-    @FXML
-    private Button pridatVydajButton;
-
-    @FXML
-    private Button logoutButton;
 
     @FXML
     private ToggleButton homeButton;
@@ -42,10 +31,25 @@ public class HomePageController {
     private ToggleButton infoButton;
 
     @FXML
+    private Label kurz_label;
+
+    @FXML
+    private Button logoutButton;
+
+    @FXML
     private ToggleButton nastaveniButton;
 
     @FXML
     private ToggleButton prevodnikButton;
+
+    @FXML
+    private Button pridatPrijemButton;
+
+    @FXML
+    private Button pridatVydajButton;
+
+    @FXML
+    private Label prijem_label;
 
     @FXML
     private ToggleButton rozpocetButton;
@@ -54,119 +58,119 @@ public class HomePageController {
     private ToggleButton transakceButton;
 
     @FXML
+    void homeButton() {
+
+    }
+
+    @FXML
+    void infoButton() {
+
+    }
+
+    @FXML
+    void nastaveniButton() {
+
+    }
+
+    @FXML
+    void prevodnikButton() {
+
+    }
+
+    @FXML
+    void rozpoce() {
+
+    }
+
+    @FXML
+    void transakceButton() {
+
+    }
+
+
+
+
+
+    @FXML
     void initialize() {
-        homeButton.setOnAction(event -> {
-            homeButton.getScene().getWindow().hide();
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("homePage.fxml"));
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
+
+//        homeButton.setOnAction(event -> {
+//            try {
+//                FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+//                Parent root = loader.load();
+//                Stage stage = (Stage) homeButton.getScene().getWindow();
+//                stage.setScene(new Scene(root));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        });
+
+
+
         infoButton.setOnAction(event -> {
-            infoButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("info.fxml"));
-
             try {
-                loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("info.fxml"));
+                Parent root = loader.load();
+                InfoController infoController = loader.getController();
+                infoController.setSu(su, aktualniUzivatel);
+                Stage stage = (Stage) infoButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
         });
         rozpocetButton.setOnAction(event -> {
-            rozpocetButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("rozpocet.fxml"));
-
             try {
-                loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
+                Parent root = loader.load();
+                Stage stage = (Stage) rozpocetButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
         });
         transakceButton.setOnAction(event -> {
-           transakceButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("transakce.fxml"));
-
             try {
-                loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
+                Parent root = loader.load();
+                Stage stage = (Stage) transakceButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
         });
         prevodnikButton.setOnAction(event -> {
-            prevodnikButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("prevodnik.fxml"));
-
             try {
-                loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("prevodnik.fxml"));
+                Parent root = loader.load();
+                Stage stage = (Stage) prevodnikButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
         });
         nastaveniButton.setOnAction(event -> {
-            nastaveniButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("nastaveni.fxml"));
-
             try {
-                loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("nastaveni.fxml"));
+                Parent root = loader.load();
+                Stage stage = (Stage) nastaveniButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
         });
-        pridatPrijemButton.setOnAction(event -> {
-            pridatPrijemButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("rozpocet.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
+      /*  pridatPrijemButton.setOnAction(event -> {
+           try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("prijem.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+});
 
         pridatVydajButton.setOnAction(event -> {
             pridatVydajButton.getScene().getWindow().hide();
@@ -183,23 +187,30 @@ public class HomePageController {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
-        });
+        });*/
        logoutButton.setOnAction(event -> {
-            logoutButton.getScene().getWindow().hide();
+           try {
+               FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+               Parent root = loader.load();
+               Stage stage = (Stage) logoutButton.getScene().getWindow();
+               stage.setScene(new Scene(root));
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       });
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("login.fxml"));
+//        homeButton.setOnAction(e -> SceneManager.switchScene("homePage.fxml", homeButton));
+//        infoButton.setOnAction(e -> SceneManager.switchScene("info.fxml", infoButton));
+//        rozpocetButton.setOnAction(e -> SceneManager.switchScene("rozpocet.fxml", rozpocetButton));
+//        transakceButton.setOnAction(e -> SceneManager.switchScene("transakce.fxml", transakceButton));
+//        prevodnikButton.setOnAction(e -> SceneManager.switchScene("prevodnik.fxml", prevodnikButton));
+//        nastaveniButton.setOnAction(e -> SceneManager.switchScene("nastaveni.fxml", nastaveniButton));
+//        logoutButton.setOnAction(e -> SceneManager.switchScene("login.fxml", null));
+    }
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
+    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
+        this.su = su;
+        this.aktualniUzivatel = uz;
     }
 }
 

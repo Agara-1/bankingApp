@@ -4,17 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="prepinani mezi okny">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/bankLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/homeIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/infoIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/nastaveniIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/prevodnikIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/rozpocetIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/transactionIcon.png" afterDir="false" />
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="upraveni a vylepseni vzhledu">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/signup.fxml" afterDir="false" />
@@ -88,6 +95,26 @@
       <recent name="C:\Users\sakal\IdeaProjects\VelkeProjekty\bankingApp\src\main\resources\sample\bankingapp" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.bankingapp.HelloApplication" />
+      <module name="bankingApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.bankingapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -107,7 +134,9 @@
       <workItem from="1744973403762" duration="17175000" />
       <workItem from="1745226450256" duration="2616000" />
       <workItem from="1745229457421" duration="17415000" />
-      <workItem from="1746564398343" duration="16284000" />
+      <workItem from="1746564398343" duration="17694000" />
+      <workItem from="1747331929304" duration="39753000" />
+      <workItem from="1747586036799" duration="10914000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -165,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746996748553</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="upraveni a vylepseni vzhledu">
+      <option name="closed" value="true" />
+      <created>1747081565015</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747081565015</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +216,7 @@
     <MESSAGE value="pridani stylu pro ruzna tlacitka pomoci css" />
     <MESSAGE value="drobne zmeny(vsechno co se commitovalo 27.4.2025 bylo vytvoreno 19.4 az 21.4)" />
     <MESSAGE value="prepinani mezi okny" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepinani mezi okny" />
+    <MESSAGE value="upraveni a vylepseni vzhledu" />
+    <option name="LAST_COMMIT_MESSAGE" value="upraveni a vylepseni vzhledu" />
   </component>
 </project>

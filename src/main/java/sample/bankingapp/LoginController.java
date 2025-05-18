@@ -5,52 +5,89 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LoginController {
+    private SpravceUzivatelu su;
+    private Uzivatel aktualniUzivatel;
+
+
+    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
+        this.su = su;
+        this.aktualniUzivatel = uz;
+    }
 
     @FXML
-    private Button MainLogInButton;
+    private Text chybaText;
 
     @FXML
     private Button signupButton;
 
     @FXML
-    void initialize() {
-        signupButton.setOnAction(event -> {
-            signupButton.getScene().getWindow().hide();
+    private TextField username_TextField;
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("signup.fxml"));
+    @FXML
+    private Button mainLogInButton;
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+    @FXML
+    private TextField password_TextField;
+
+
+    @FXML
+    void logIn() {
+        String username = username_TextField.getText().trim();
+        String password = password_TextField.getText().trim();
+        if (su == null){
+            su = new SpravceUzivatelu();
+        }
+        boolean prihlaseniUspesne = false;
+        for (Uzivatel uz : su.getSeznamUzivatelu()) {
+
+            if ((username.equals(uz.getUzivatelsakeJmeno())) && (password.equals(uz.getHeslo()))) {
+                this.aktualniUzivatel = uz;
+                prihlaseniUspesne = true;
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+                    Parent root = loader.load();
+                    HomePageController homePageController = loader.getController();
+                    homePageController.setSu(su, aktualniUzivatel);
+                    Stage stage = (Stage) mainLogInButton.getScene().getWindow();
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }break;
             }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
-
-        MainLogInButton.setOnAction(event -> {
-            MainLogInButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("homePage.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });
+        }
+        if (!prihlaseniUspesne) {
+            chybaText.setText("Špatné uživatelské heslo nebo jmeno");
+        }
     }
+
+
+    @FXML
+    void initialize() {
+
+
+    }
+
+
+    @FXML
+    void swichToSignUp() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
+            Parent root = loader.load();
+            SignUpController controller = loader.getController();
+            controller.setSu(su);
+            Stage stage = (Stage) signupButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
