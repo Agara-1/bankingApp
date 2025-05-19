@@ -59,7 +59,7 @@
                         </ImageView>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="rozpocetButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" GridPane.rowIndex="1">
+                  <ToggleButton fx:id="rozpocetButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#rozpocet" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" GridPane.rowIndex="1">
                      <font>
                         <Font name="SansSerif Regular" size="22.0" />
                      </font>
@@ -74,7 +74,7 @@
                         <ToggleGroup fx:id="group1" />
                      </toggleGroup>
                   </ToggleButton>
-                  <ToggleButton fx:id="transakceButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
+                  <ToggleButton fx:id="transakceButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#transakce" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
                      <font>
                         <Font name="SansSerif Regular" size="22.0" />
                      </font>
@@ -86,7 +86,7 @@
                         </ImageView>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="infoButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Info" toggleGroup="$group1" GridPane.rowIndex="4">
+                  <ToggleButton fx:id="infoButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#info" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Info" toggleGroup="$group1" GridPane.rowIndex="4">
                      <font>
                         <Font name="SansSerif Regular" size="22.0" />
                      </font>
@@ -98,7 +98,7 @@
                         </ImageView>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="prevodnikButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Převodník " toggleGroup="$group1" GridPane.rowIndex="3">
+                  <ToggleButton fx:id="prevodnikButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#prevodnik" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Převodník " toggleGroup="$group1" GridPane.rowIndex="3">
                      <font>
                         <Font name="SansSerif Regular" size="22.0" />
                      </font>
@@ -110,7 +110,7 @@
                         </ImageView>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="nastaveniButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="81.0" prefWidth="200.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
+                  <ToggleButton fx:id="nastaveniButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#nastaveni" prefHeight="81.0" prefWidth="200.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
                      <font>
                         <Font name="SansSerif Regular" size="22.0" />
                      </font>
@@ -132,33 +132,33 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="balanceLabel" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="95.0" prefWidth="143.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text=" $ 5000.5" AnchorPane.leftAnchor="206.0">
+      <Label fx:id="balanceLabel" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text=" $ 5000.5" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="445.0">
          <font>
             <Font name="SansSerif Bold" size="28.0" />
          </font>
       </Label>
-      <Label fx:id="prijem_label" layoutX="360.0" layoutY="82.0" prefHeight="95.0" prefWidth="209.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Měsíční příjem">
+      <Label fx:id="prijem_label" layoutX="360.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Měsíční příjem" AnchorPane.rightAnchor="230.0">
          <font>
             <Font name="SansSerif Regular" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="kurz_label" layoutX="583.0" layoutY="82.0" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Kurz koruny">
+      <Label fx:id="kurz_label" layoutX="583.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Kurz koruny" AnchorPane.rightAnchor="15.0">
          <font>
             <Font name="SansSerif Regular" size="22.0" />
          </font>
       </Label>
-      <PieChart id="graf" fx:id="graf" layoutX="217.0" layoutY="231.0" prefHeight="294.0" prefWidth="366.0" style="-fx-border-color: #909497; -fx-background-radius: 8; -fx-border-radius: 8;" />
-      <Button id="pridatPrijem" fx:id="pridatPrijemButton" layoutX="221.0" layoutY="503.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat přijem" textFill="WHITE">
+      <PieChart id="graf" fx:id="graf" layoutX="217.0" layoutY="194.0" prefHeight="360.0" prefWidth="360.0" style="-fx-border-color: #909497; -fx-background-radius: 8; -fx-border-radius: 8;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="210.0" />
+      <Button id="pridatPrijem" fx:id="pridatPrijemButton" layoutX="590.0" layoutY="265.0" mnemonicParsing="false" onAction="#pridatPrijemButton" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat přijem" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
       </Button>
-      <Button id="pridatVydaj" fx:id="pridatVydajButton" layoutX="464.0" layoutY="503.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat výdaj" textFill="WHITE">
+      <Button id="pridatVydaj" fx:id="pridatVydajButton" layoutX="590.0" layoutY="433.0" mnemonicParsing="false" onAction="#pridatVydajButton" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat výdaj" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="690.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
+      <Button fx:id="logoutButton" layoutX="690.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
          <font>
             <Font name="SansSerif Regular" size="17.0" />
          </font>

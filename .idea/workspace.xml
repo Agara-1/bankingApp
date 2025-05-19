@@ -4,29 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="upraveni a vylepseni vzhledu">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" afterDir="false" />
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="uprava vzhledu,prepinani mezi okny, serializace, ulozeni uzivatele, dodelavani okna info, zpracovani registrace a prihlasovani">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TypTransakce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatTransakci.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/signup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/transakce.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/transakce.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="JavaFXApplication" />
+        <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -136,7 +132,8 @@
       <workItem from="1745229457421" duration="17415000" />
       <workItem from="1746564398343" duration="17694000" />
       <workItem from="1747331929304" duration="39753000" />
-      <workItem from="1747586036799" duration="10914000" />
+      <workItem from="1747586036799" duration="11215000" />
+      <workItem from="1747669545515" duration="13024000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -202,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747081565015</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="uprava vzhledu,prepinani mezi okny, serializace, ulozeni uzivatele, dodelavani okna info, zpracovani registrace a prihlasovani">
+      <option name="closed" value="true" />
+      <created>1747601171788</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747601171788</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +222,7 @@
     <MESSAGE value="drobne zmeny(vsechno co se commitovalo 27.4.2025 bylo vytvoreno 19.4 az 21.4)" />
     <MESSAGE value="prepinani mezi okny" />
     <MESSAGE value="upraveni a vylepseni vzhledu" />
-    <option name="LAST_COMMIT_MESSAGE" value="upraveni a vylepseni vzhledu" />
+    <MESSAGE value="uprava vzhledu,prepinani mezi okny, serializace, ulozeni uzivatele, dodelavani okna info, zpracovani registrace a prihlasovani" />
+    <option name="LAST_COMMIT_MESSAGE" value="uprava vzhledu,prepinani mezi okny, serializace, ulozeni uzivatele, dodelavani okna info, zpracovani registrace a prihlasovani" />
   </component>
 </project>

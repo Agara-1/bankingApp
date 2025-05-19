@@ -31,7 +31,7 @@
       </AnchorPane>
       <AnchorPane layoutX="223.0" layoutY="53.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button id="upraveniLimitu" fx:id="upravitLimitButton" layoutX="392.0" layoutY="524.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="176.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Upravit limit" textFill="WHITE" AnchorPane.topAnchor="524.0">
+            <Button id="upraveniLimitu" fx:id="upravitLimitButton" layoutX="392.0" layoutY="524.0" mnemonicParsing="false" onAction="#upravitLimit" prefHeight="51.0" prefWidth="176.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Upravit limit" textFill="WHITE" AnchorPane.topAnchor="524.0">
                <font>
                   <Font name="SansSerif Bold" size="21.0" />
                </font>
@@ -99,7 +99,7 @@
                   <Font name="SansSerif Regular" size="15.0" />
                </font>
             </Label>
-            <Button fx:id="logoutButton" layoutX="490.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
+            <Button fx:id="logoutButton" layoutX="490.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
                <font>
                   <Font name="SansSerif Regular" size="17.0" />
                </font>
@@ -119,7 +119,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <ToggleButton fx:id="homeButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="65.0" prefWidth="217.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Home">
+            <ToggleButton fx:id="homeButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#home" prefHeight="65.0" prefWidth="217.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Home">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -134,7 +134,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="rozpocetButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" toggleGroup="$group1" GridPane.rowIndex="1">
+            <ToggleButton fx:id="rozpocetButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#rozpocet" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" toggleGroup="$group1" GridPane.rowIndex="1">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -146,7 +146,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="transakceButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
+            <ToggleButton fx:id="transakceButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#transakce" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -158,7 +158,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="infoButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Info" toggleGroup="$group1" GridPane.rowIndex="4">
+            <ToggleButton fx:id="infoButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#info" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Info" toggleGroup="$group1" GridPane.rowIndex="4">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -170,7 +170,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="prevodnikButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Převodník " toggleGroup="$group1" GridPane.rowIndex="3">
+            <ToggleButton fx:id="prevodnikButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#prevodnik" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Převodník " toggleGroup="$group1" GridPane.rowIndex="3">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -182,7 +182,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="nastaveniButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="210.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
+            <ToggleButton fx:id="nastaveniButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#nastaveni" prefHeight="73.0" prefWidth="210.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
