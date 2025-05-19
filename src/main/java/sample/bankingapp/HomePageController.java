@@ -1,8 +1,7 @@
 package sample.bankingapp;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -77,18 +76,111 @@ public class HomePageController {
 
     }
 
-    @FXML
-    void rozpoce() {
-
-    }
 
     @FXML
     void transakceButton() {
 
     }
 
+    @FXML
+    void logoutButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
+    @FXML
+    void info() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("info.fxml"));
+            Parent root = loader.load();
+            InfoController infoController = loader.getController();
+            infoController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) infoButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    void nastaveni() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("nastaveni.fxml"));
+            Parent root = loader.load();
+            NastaveniController nastaveniController = loader.getController();
+            nastaveniController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) nastaveniButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void prevodnik() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("prevodnik.fxml"));
+            Parent root = loader.load();
+            PrevodnikController prevodnikController = loader.getController();
+            prevodnikController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) prevodnikButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void pridatPrijemButton() {
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatPrijem.fxml"));
+                Parent root = loader.load();
+                Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
+
+
+    @FXML
+    void rozpocet() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
+            Parent root = loader.load();
+            RozpocetController rozpocetController = loader.getController();
+            rozpocetController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) rozpocetButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void transakce() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
+            Parent root = loader.load();
+            TransakceController transakceController = loader.getController();
+            transakceController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) transakceButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @FXML
@@ -96,116 +188,7 @@ public class HomePageController {
 
 
 
-//        homeButton.setOnAction(event -> {
-//            try {
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
-//                Parent root = loader.load();
-//                Stage stage = (Stage) homeButton.getScene().getWindow();
-//                stage.setScene(new Scene(root));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        });
 
-
-
-        infoButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("info.fxml"));
-                Parent root = loader.load();
-                InfoController infoController = loader.getController();
-                infoController.setSu(su, aktualniUzivatel);
-                Stage stage = (Stage) infoButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        rozpocetButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) rozpocetButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        transakceButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) transakceButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        prevodnikButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("prevodnik.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) prevodnikButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        nastaveniButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("nastaveni.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) nastaveniButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-      /*  pridatPrijemButton.setOnAction(event -> {
-           try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("prijem.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
-        stage.setScene(new Scene(root));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-});
-
-        pridatVydajButton.setOnAction(event -> {
-            pridatVydajButton.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("rozpocet.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        });*/
-       logoutButton.setOnAction(event -> {
-           try {
-               FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-               Parent root = loader.load();
-               Stage stage = (Stage) logoutButton.getScene().getWindow();
-               stage.setScene(new Scene(root));
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-       });
-
-//        homeButton.setOnAction(e -> SceneManager.switchScene("homePage.fxml", homeButton));
-//        infoButton.setOnAction(e -> SceneManager.switchScene("info.fxml", infoButton));
-//        rozpocetButton.setOnAction(e -> SceneManager.switchScene("rozpocet.fxml", rozpocetButton));
-//        transakceButton.setOnAction(e -> SceneManager.switchScene("transakce.fxml", transakceButton));
-//        prevodnikButton.setOnAction(e -> SceneManager.switchScene("prevodnik.fxml", prevodnikButton));
-//        nastaveniButton.setOnAction(e -> SceneManager.switchScene("nastaveni.fxml", nastaveniButton));
-//        logoutButton.setOnAction(e -> SceneManager.switchScene("login.fxml", null));
     }
 
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
