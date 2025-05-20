@@ -57,6 +57,9 @@ public class HomePageController {
     private ToggleButton transakceButton;
 
     @FXML
+    private Label zustatek;
+
+    @FXML
     void homeButton() {
 
     }
@@ -145,8 +148,11 @@ public class HomePageController {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatPrijem.fxml"));
                 Parent root = loader.load();
+                PrijemController prijemController = loader.getController();
+                prijemController.setSu(su, aktualniUzivatel);
                 Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
                 stage.setScene(new Scene(root));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -186,14 +192,20 @@ public class HomePageController {
     @FXML
     void initialize() {
 
-
-
-
     }
 
-    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
-        this.su = su;
-        this.aktualniUzivatel = uz;
+    private void refreshLabels() {
+        if (this.aktualniUzivatel != null) {
+          prijem_label.setText(String.valueOf(this.aktualniUzivatel.getMesicniPrijem()));
+          zustatek.setText(String.valueOf(this.aktualniUzivatel.getZustatek()));
+        }
+    }
+
+
+    public void setSu(SpravceUzivatelu isu, Uzivatel iuz) {
+        if (isu != null ) this.su = isu;
+        if (iuz != null ) this.aktualniUzivatel = iuz;
+        refreshLabels();
     }
 }
 

@@ -41,12 +41,8 @@ public class LoginController {
     void logIn() {
         String username = username_TextField.getText().trim();
         String password = password_TextField.getText().trim();
-        if (su == null){
-            su = new SpravceUzivatelu();
-        }
         boolean prihlaseniUspesne = false;
         for (Uzivatel uz : su.getSeznamUzivatelu()) {
-
             if ((username.equals(uz.getUzivatelsakeJmeno())) && (password.equals(uz.getHeslo()))) {
                 this.aktualniUzivatel = uz;
                 prihlaseniUspesne = true;

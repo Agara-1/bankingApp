@@ -132,12 +132,12 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="balanceLabel" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text=" $ 5000.5" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="445.0">
+      <Label fx:id="zustatek" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="445.0">
          <font>
             <Font name="SansSerif Bold" size="28.0" />
          </font>
       </Label>
-      <Label fx:id="prijem_label" layoutX="360.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Měsíční příjem" AnchorPane.rightAnchor="230.0">
+      <Label fx:id="prijem_label" layoutX="360.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" AnchorPane.rightAnchor="230.0">
          <font>
             <Font name="SansSerif Regular" size="22.0" />
          </font>
@@ -153,7 +153,7 @@
             <Font name="SansSerif Bold" size="20.0" />
          </font>
       </Button>
-      <Button id="pridatVydaj" fx:id="pridatVydajButton" layoutX="590.0" layoutY="433.0" mnemonicParsing="false" onAction="#pridatVydajButton" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat výdaj" textFill="WHITE">
+      <Button id="pridatVydaj" fx:id="pridatVydajButton" layoutX="590.0" layoutY="433.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat výdaj" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -163,5 +163,15 @@
             <Font name="SansSerif Regular" size="17.0" />
          </font>
       </Button>
+      <Label layoutX="408.0" layoutY="48.0" text="Měsíční příjem">
+         <font>
+            <Font name="Calibri Light" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="48.0" text="Zustatek">
+         <font>
+            <Font name="Calibri Light" size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

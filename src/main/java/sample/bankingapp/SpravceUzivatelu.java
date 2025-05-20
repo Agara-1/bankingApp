@@ -10,7 +10,6 @@ public class SpravceUzivatelu {
 
     public SpravceUzivatelu() {
         this.seznamUzivatelu = nacitaniUzivatelu();
-
     }
 
     public ArrayList<Uzivatel> nacitaniUzivatelu() {
@@ -51,6 +50,9 @@ public class SpravceUzivatelu {
     }
 
     public ArrayList<Uzivatel> getSeznamUzivatelu() {
+        if(seznamUzivatelu == null) {
+            seznamUzivatelu = new ArrayList<>();
+        }
         return seznamUzivatelu;
     }
 }

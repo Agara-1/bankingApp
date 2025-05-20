@@ -41,7 +41,7 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <Button fx:id="pridatButton" layoutX="158.0" layoutY="297.0" mnemonicParsing="false" onAction="#Prijem" prefHeight="57.0" prefWidth="206.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat " textFill="WHITE">
+                        <Button fx:id="pridatButton" layoutX="158.0" layoutY="297.0" mnemonicParsing="false" onAction="#prijem" prefHeight="57.0" prefWidth="206.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat " textFill="WHITE">
                            <font>
                               <Font name="SansSerif Bold" size="24.0" />
                            </font>

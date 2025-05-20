@@ -2,6 +2,7 @@ package sample.bankingapp;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Uzivatel implements Serializable {
@@ -12,12 +13,18 @@ public class Uzivatel implements Serializable {
     private String uzivatelsakeJmeno;
     private String heslo;
     private LocalDate datumZalozeni;
+    private int mesicniPrijem;
+    private int zustatek;
+    private int limit;
+    private ArrayList<Transakce> transakce = new ArrayList<>();
+
 
     public Uzivatel(String jmeno, String uzivatelsakeJmeno, String heslo) {
         this.jmeno = jmeno;
         this.uzivatelsakeJmeno = uzivatelsakeJmeno;
         this.heslo = heslo;
         this.datumZalozeni = LocalDate.now();
+        this.zustatek = 0;
     }
 
     public String generaceUctu() {
@@ -28,6 +35,10 @@ public class Uzivatel implements Serializable {
             }
         }
         return cislo.toString();
+    }
+
+    public void pridaniTransakce(Transakce t) {
+        transakce.add(t);
     }
 
     public String getJmeno() {
@@ -73,5 +84,49 @@ public class Uzivatel implements Serializable {
 
     public StringBuilder getCislo() {
         return cislo;
+    }
+
+    public Random getRnd() {
+        return rnd;
+    }
+
+    public void setRnd(Random rnd) {
+        this.rnd = rnd;
+    }
+
+    public int getCisloGenerator() {
+        return cisloGenerator;
+    }
+
+    public void setCisloGenerator(int cisloGenerator) {
+        this.cisloGenerator = cisloGenerator;
+    }
+
+    public void setCislo(StringBuilder cislo) {
+        this.cislo = cislo;
+    }
+
+    public int getMesicniPrijem() {
+        return mesicniPrijem;
+    }
+
+    public void setMesicniPrijem(int mesicniPrijem) {
+        this.mesicniPrijem = mesicniPrijem;
+    }
+
+    public int getZustatek() {
+        return zustatek;
+    }
+
+    public void setZustatek(int zustatek) {
+        this.zustatek = zustatek;
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
     }
 }
