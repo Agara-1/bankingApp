@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="Navržena dalsi vizualizace">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="Pridani prijmu a predavani uzivatele mezi oknami funguji" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +116,7 @@
       <workItem from="1747331929304" duration="39753000" />
       <workItem from="1747586036799" duration="11215000" />
       <workItem from="1747669545515" duration="15143000" />
-      <workItem from="1747736820505" duration="12960000" />
+      <workItem from="1747736820505" duration="13275000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -233,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747687018247</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Pridani prijmu a predavani uzivatele mezi oknami funguji">
+      <option name="closed" value="true" />
+      <created>1747750331067</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1747750331067</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +250,8 @@
     <MESSAGE value="Vylepseni vzhledu aplikace" />
     <MESSAGE value="Začatek práce na transakční operaci" />
     <MESSAGE value="Navržena dalsi vizualizace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Navržena dalsi vizualizace" />
+    <MESSAGE value="Pridani prijmu a predavani uzivatele mezi oknami funguji" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pridani prijmu a predavani uzivatele mezi oknami funguji" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -270,11 +268,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java</url>
-          <line>197</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java</url>
           <line>151</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -282,11 +275,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java</url>
           <line>52</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java</url>
-          <line>205</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
