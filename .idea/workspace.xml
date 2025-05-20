@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="Začatek práce na transakční operaci">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/assets/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatTransakci.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="Navržena dalsi vizualizace" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +115,7 @@
       <workItem from="1746564398343" duration="17694000" />
       <workItem from="1747331929304" duration="39753000" />
       <workItem from="1747586036799" duration="11215000" />
-      <workItem from="1747669545515" duration="14670000" />
+      <workItem from="1747669545515" duration="15143000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -218,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747686283513</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Navržena dalsi vizualizace">
+      <option name="closed" value="true" />
+      <created>1747687018247</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747687018247</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +240,7 @@
     <MESSAGE value="Nastaveno chovani tlacitek (pres metody)" />
     <MESSAGE value="Vylepseni vzhledu aplikace" />
     <MESSAGE value="Začatek práce na transakční operaci" />
-    <option name="LAST_COMMIT_MESSAGE" value="Začatek práce na transakční operaci" />
+    <MESSAGE value="Navržena dalsi vizualizace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navržena dalsi vizualizace" />
   </component>
 </project>
