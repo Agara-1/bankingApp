@@ -16,7 +16,7 @@ public class Uzivatel implements Serializable {
     private int mesicniPrijem;
     private int zustatek;
     private int limit;
-    private ArrayList<Transakce> transakce = new ArrayList<>();
+    private ArrayList<Transakce> seznamTransakci;
 
 
     public Uzivatel(String jmeno, String uzivatelsakeJmeno, String heslo) {
@@ -25,6 +25,7 @@ public class Uzivatel implements Serializable {
         this.heslo = heslo;
         this.datumZalozeni = LocalDate.now();
         this.zustatek = 0;
+        this.seznamTransakci = new ArrayList<>();
     }
 
     public String generaceUctu() {
@@ -38,7 +39,12 @@ public class Uzivatel implements Serializable {
     }
 
     public void pridaniTransakce(Transakce t) {
-        transakce.add(t);
+        seznamTransakci.add(t);
+    }
+
+
+    public ArrayList<Transakce> getSeznamTransakci() {
+        return seznamTransakci;
     }
 
     public String getJmeno() {

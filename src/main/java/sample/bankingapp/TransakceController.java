@@ -2,19 +2,27 @@ package sample.bankingapp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class TransakceController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
+    // private Uzivatel prijemce;
+    private Transakce transakce = new Transakce();
+
 
     @FXML
     private Button pridatTransakciButton;
@@ -23,12 +31,17 @@ public class TransakceController {
     private Button upravitTransakciButton;
 
     @FXML
-    private ToggleGroup group1;
-    @FXML
-    private Button pridatPrijemButton;
+    private Label castkatransakce_label;
 
     @FXML
-    private Button pridatVydajButton;
+    private Label datumTransakce_label;
+
+
+    @FXML
+    private Label kategorieTransakce_Label;
+
+    @FXML
+    private Label typTransakcce_label;
 
     @FXML
     private Button logoutButton;
@@ -53,10 +66,13 @@ public class TransakceController {
 
     @FXML
     private ResourceBundle resources;
-   // private Uzivatel prijemce;
+
+    @FXML
+    private GridPane tabulkaTransakci_GridPane;
 
     @FXML
     private URL location;
+
     @FXML
     void logoutButton() {
         try {
@@ -163,97 +179,41 @@ public class TransakceController {
     }
 
 
+    private void nactiTransakce() {
 
 
-    @FXML
-    void initialize() {
-        homeButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) homeButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        infoButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("info.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) infoButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        rozpocetButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) rozpocetButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        transakceButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) transakceButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        prevodnikButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("prevodnik.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) prevodnikButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-     /*   prevestButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) prevestButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        ArrayList<Transakce> seznam = aktualniUzivatel.getSeznamTransakci();
+        for (Transakce t : seznam) {
+            String datum = t.getDatum().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+            String typ = t.getTypTransakce().toString();
+            String kategorie = t.getKategorie().toString();
+            int castka = t.getCastka();
+            int cisloRadku = 1;
+            datumTransakce_label.setText(datum);
+            kategorieTransakce_Label.setText(t.getKategorie());
+            typTransakcce_label.setText(typ);
+            castkatransakce_label.setText(String.valueOf(castka));
 
-*/ nastaveniButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("nastaveni.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) nastaveniButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        logoutButton.setOnAction(event -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-                Parent root = loader.load();
-                Stage stage = (Stage) logoutButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+//            Label datum_Label = new Label(datum);
+//            Label typ_Label = new Label(typ);
+//            Label kategorie_Label = new Label(kategorie);
+//            Label castka_Label = new Label(String.valueOf(castka));
+//
+//
+//            tabulkaTransakci_GridPane.addRow(cisloRadku++, datum_Label, typ_Label, kategorie_Label, castka_Label);
+        }
 
     }
 
-    public void setSu(SpravceUzivatelu su,Uzivatel uz) {
+    @FXML
+    void initialize() {
+
+
+    }
+
+    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;
+        nactiTransakce();
     }
 }

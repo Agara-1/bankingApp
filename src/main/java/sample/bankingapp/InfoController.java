@@ -130,22 +130,6 @@ public class InfoController {
         }
     }
 
-    @FXML
-    void pridatPrijemButton() {
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatPrijem.fxml"));
-            Parent root = loader.load();
-            //PrijemController pridatPrijemController = loader.getController();
-            //pridatPrijemController.setSu(su, aktualniUzivatel,);
-            Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 
     @FXML
     void rozpocet() {
@@ -175,6 +159,19 @@ public class InfoController {
         }
     }
 
+    @FXML
+    void home() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+            Parent root = loader.load();
+            HomePageController homePageController = loader.getController();
+            homePageController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void nactiData() {
         jmenoUzivatelText.setText(aktualniUzivatel.getJmeno());
@@ -186,7 +183,6 @@ public class InfoController {
 
     @FXML
     void initialize() {
-
 
 
     }
