@@ -35,24 +35,19 @@
       </AnchorPane>
       <AnchorPane layoutX="223.0" layoutY="53.0" prefHeight="60.0" prefWidth="0.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="logoutButton" layoutX="490.0" layoutY="17.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
+            <Button fx:id="logoutButton" layoutX="490.0" layoutY="17.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
                <font>
                   <Font name="SansSerif Regular" size="17.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="editButton" layoutX="604.0" layoutY="495.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="165.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Edit" textFill="WHITE">
-         <font>
-            <Font name="SansSerif Bold" size="24.0" />
-         </font>
-      </Button>
       <Label layoutX="247.0" layoutY="90.0" text="Informace">
          <font>
             <Font name="SansSerif Bold" size="37.0" />
          </font>
       </Label>
-      <GridPane layoutX="250.0" layoutY="230.0" prefHeight="169.0" prefWidth="476.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="200.0">
+      <GridPane layoutX="250.0" layoutY="230.0" prefHeight="284.0" prefWidth="512.0" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="200.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -73,32 +68,32 @@
          <children>
             <Label text="Číslo účtu">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
             <Label text="Měna" GridPane.rowIndex="6">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label prefHeight="23.0" prefWidth="154.0" text="Jméno majítele" GridPane.rowIndex="2">
+            <Label prefHeight="32.0" prefWidth="191.0" text="Jméno majítele" GridPane.rowIndex="2">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label prefHeight="23.0" prefWidth="160.0" text="Datum založení" GridPane.rowIndex="8">
+            <Label prefHeight="23.0" prefWidth="197.0" text="Datum založení" GridPane.rowIndex="8">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
             <Label layoutX="10.0" layoutY="144.0" prefHeight="31.0" prefWidth="211.0" text="Přihlašovací jméno" GridPane.rowIndex="4">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
             <Label layoutX="10.0" layoutY="20.0" text="Typ učtu" GridPane.rowIndex="10">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
             <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="1" />
@@ -108,32 +103,32 @@
             <Line endX="399.29290771484375" startX="-100.0" stroke="#ababab" GridPane.rowIndex="9" />
             <Label fx:id="jmenoUzivatelText" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="Patrick Kick" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Light" size="20.0" />
+                  <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
             <Label fx:id="CisloUctu" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="4511 4290 3452" textAlignment="CENTER" GridPane.columnIndex="1">
                <font>
-                  <Font name="Calibri Light" size="20.0" />
+                  <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
             <Label fx:id="usernameInfoText" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="Kicker" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
-                  <Font name="Calibri Light" size="20.0" />
+                  <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
             <Label fx:id="mena" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="CZK" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
-                  <Font name="Calibri Light" size="20.0" />
+                  <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
             <Label fx:id="datumText" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="07-08-2025" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <font>
-                  <Font name="Calibri Light" size="20.0" />
+                  <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
             <Label fx:id="typUctu" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="Plus ucet" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="10">
                <font>
-                  <Font name="Calibri Light" size="20.0" />
+                  <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
          </children>
@@ -151,7 +146,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <ToggleButton fx:id="homeButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="65.0" prefWidth="217.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Home">
+            <ToggleButton fx:id="homeButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#home" prefHeight="65.0" prefWidth="217.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Home">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -166,7 +161,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="rozpocetButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" toggleGroup="$group1" GridPane.rowIndex="1">
+            <ToggleButton fx:id="rozpocetButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#rozpocet" prefHeight="88.0" prefWidth="366.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text="Rozpočet" toggleGroup="$group1" GridPane.rowIndex="1">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -178,7 +173,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="transakceButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
+            <ToggleButton fx:id="transakceButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#transakce" prefHeight="102.0" prefWidth="434.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Transakce" toggleGroup="$group1" GridPane.rowIndex="2">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -190,7 +185,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="infoButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Info" toggleGroup="$group1" GridPane.rowIndex="4">
+            <ToggleButton fx:id="infoButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#info" prefHeight="71.0" prefWidth="355.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Info" toggleGroup="$group1" GridPane.rowIndex="4">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -202,7 +197,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="prevodnikButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Převodník " toggleGroup="$group1" GridPane.rowIndex="3">
+            <ToggleButton fx:id="prevodnikButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#prevodnik" prefHeight="74.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Převodník " toggleGroup="$group1" GridPane.rowIndex="3">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -214,7 +209,7 @@
                   </ImageView>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="nastaveniButton" alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="71.0" prefWidth="200.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
+            <ToggleButton fx:id="nastaveniButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#nastaveni" prefHeight="71.0" prefWidth="200.0" style="-fx-background-color: transparent;" styleClass="btnActive-panel" stylesheets="@style.css" text=" Nastavení" toggleGroup="$group1" GridPane.rowIndex="5">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>

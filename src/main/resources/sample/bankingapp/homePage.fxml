@@ -132,14 +132,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="zustatek" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="445.0">
+      <Label fx:id="zustatek" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="445.0">
          <font>
             <Font name="SansSerif Bold" size="28.0" />
          </font>
       </Label>
-      <Label fx:id="prijem_label" layoutX="360.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" AnchorPane.rightAnchor="230.0">
+      <Label fx:id="prijem_label" alignment="CENTER" layoutX="360.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.rightAnchor="230.0">
          <font>
-            <Font name="SansSerif Regular" size="22.0" />
+            <Font name="SansSerif Bold" size="28.0" />
          </font>
       </Label>
       <Label fx:id="kurz_label" layoutX="583.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Kurz koruny" AnchorPane.rightAnchor="15.0">
