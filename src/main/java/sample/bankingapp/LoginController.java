@@ -21,6 +21,10 @@ public class LoginController {
         this.aktualniUzivatel = uz;
     }
 
+    public Uzivatel getAktualniUzivatel() {
+        return aktualniUzivatel;
+    }
+
     @FXML
     private Text chybaText;
 

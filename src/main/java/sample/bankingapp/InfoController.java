@@ -21,21 +21,11 @@ public class InfoController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
+    public InfoController() {
+        this.su = su;
+        this.aktualniUzivatel = su.getAktualniUzivatel();
+    }
 
-
-    @FXML
-    private Button editButton;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-    @FXML
-    private Button pridatPrijemButton;
-
-    @FXML
-    private Button pridatVydajButton;
 
     @FXML
     private Button logoutButton;

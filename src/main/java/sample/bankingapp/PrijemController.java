@@ -19,7 +19,11 @@ import java.time.LocalDate;
 public class PrijemController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
-    private HomePageController homePageController;
+
+    public PrijemController(SpravceUzivatelu su) {
+        this.su = su;
+        this.aktualniUzivatel = su.getAktualniUzivatel();
+    }
 
 
     @FXML

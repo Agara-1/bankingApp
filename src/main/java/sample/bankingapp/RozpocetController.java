@@ -18,6 +18,10 @@ public class RozpocetController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
+    public RozpocetController() {
+        this.su = su;
+        this.aktualniUzivatel = su.getAktualniUzivatel();
+    }
         @FXML
         private ToggleGroup group1;
         @FXML

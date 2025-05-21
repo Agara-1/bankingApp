@@ -22,6 +22,7 @@ public class SignUpController {
 
     public SignUpController() {
         this.su = new SpravceUzivatelu();
+        this.aktualniUzivatel =  su.getAktualniUzivatel();
     }
 
     @FXML
@@ -65,10 +66,7 @@ public class SignUpController {
             chybaText.setText("uzivatel uz existuje");
 
         }
-
-
     }
-
 
     @FXML
     void initialize() {

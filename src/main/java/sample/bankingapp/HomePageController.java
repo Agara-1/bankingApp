@@ -17,20 +17,13 @@ public class HomePageController {
     private Uzivatel aktualniUzivatel;
     private SpravceUzivatelu su;
 
-    @FXML
-    private PieChart graf;
-
-    @FXML
-    private ToggleGroup group1;
-
-    @FXML
-    private ToggleButton homeButton;
+    public HomePageController() {
+        this.su = su;
+        this.aktualniUzivatel = su.getAktualniUzivatel();
+    }
 
     @FXML
     private ToggleButton infoButton;
-
-    @FXML
-    private Label kurz_label;
 
     @FXML
     private Button logoutButton;
@@ -45,9 +38,6 @@ public class HomePageController {
     private Button pridatPrijemButton;
 
     @FXML
-    private Button pridatVydajButton;
-
-    @FXML
     private Label prijem_label;
 
     @FXML
@@ -59,31 +49,6 @@ public class HomePageController {
     @FXML
     private Label zustatek;
 
-    @FXML
-    void homeButton() {
-
-    }
-
-    @FXML
-    void infoButton() {
-
-    }
-
-    @FXML
-    void nastaveniButton() {
-
-    }
-
-    @FXML
-    void prevodnikButton() {
-
-    }
-
-
-    @FXML
-    void transakceButton() {
-
-    }
 
     @FXML
     void logoutButton() {
@@ -157,7 +122,6 @@ public class HomePageController {
                 e.printStackTrace();
             }
     }
-
 
 
     @FXML

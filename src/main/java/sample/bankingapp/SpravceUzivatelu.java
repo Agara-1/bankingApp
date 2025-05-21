@@ -5,11 +5,14 @@ import java.util.ArrayList;
 
 public class SpravceUzivatelu {
     private ArrayList<Uzivatel> seznamUzivatelu;
+    private Uzivatel aktualniUzivatel;
+    private LoginController lC;
     private File soubor = new File("uzivatele.dat");
 
 
     public SpravceUzivatelu() {
         this.seznamUzivatelu = nacitaniUzivatelu();
+        this.aktualniUzivatel = lC.getAktualniUzivatel();
     }
 
     public ArrayList<Uzivatel> nacitaniUzivatelu() {
@@ -54,5 +57,9 @@ public class SpravceUzivatelu {
             seznamUzivatelu = new ArrayList<>();
         }
         return seznamUzivatelu;
+    }
+
+    public Uzivatel getAktualniUzivatel() {
+        return aktualniUzivatel;
     }
 }

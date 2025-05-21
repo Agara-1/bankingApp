@@ -17,6 +17,11 @@ public class NastaveniController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
+
+    public NastaveniController() {
+        this.aktualniUzivatel = su.getAktualniUzivatel();
+    }
+
     @FXML
     private ToggleGroup group1;
     @FXML
