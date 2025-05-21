@@ -20,14 +20,14 @@ public class PrijemController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-    public PrijemController(SpravceUzivatelu su) {
-        this.su = su;
-        this.aktualniUzivatel = su.getAktualniUzivatel();
-    }
 
 
     @FXML
     private Text chybaText;
+
+    @FXML
+    private Button backButton;
+
 
     @FXML
     private TextField mesicniPrijem_TextField;
@@ -48,7 +48,7 @@ public class PrijemController {
         aktualniUzivatel.setMesicniPrijem(prijem);
         aktualniUzivatel.setZustatek(zustatek);
         Transakce transakce = new Transakce();
-        aktualniUzivatel.pridaniTransakce(transakce);
+
         transakce.setKategorie(typPrijmu_TextField.getText());
         transakce.setDatum(LocalDate.now());
         transakce.setTypTransakce(TypTransakce.PRIJEM);
@@ -66,13 +66,20 @@ public class PrijemController {
             e.printStackTrace();
         }
 
+    } @FXML
+    void back() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+            Parent root = loader.load();
+            HomePageController homePageController = loader.getController();
+            homePageController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    @FXML
-    void vojtaPrijem() {
-
-        int a = 5;
-    }
 
     @FXML
     void initialize() {

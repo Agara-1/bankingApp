@@ -58,6 +58,18 @@
                         <Font name="Calibri Light" size="26.0" />
                      </font>
                   </Text>
+                  <Button fx:id="backButton" layoutX="537.0" layoutY="15.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css">
+                     <font>
+                        <Font name="SansSerif Regular" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
