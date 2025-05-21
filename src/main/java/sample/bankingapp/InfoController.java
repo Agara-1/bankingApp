@@ -21,10 +21,6 @@ public class InfoController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-    public InfoController() {
-        this.su = su;
-        this.aktualniUzivatel = su.getAktualniUzivatel();
-    }
 
 
     @FXML

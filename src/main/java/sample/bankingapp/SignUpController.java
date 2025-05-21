@@ -22,7 +22,7 @@ public class SignUpController {
 
     public SignUpController() {
         this.su = new SpravceUzivatelu();
-        this.aktualniUzivatel =  su.getAktualniUzivatel();
+        this.aktualniUzivatel = su.getAktualniUzivatel();
     }
 
     @FXML

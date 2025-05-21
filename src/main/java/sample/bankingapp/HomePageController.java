@@ -17,10 +17,7 @@ public class HomePageController {
     private Uzivatel aktualniUzivatel;
     private SpravceUzivatelu su;
 
-    public HomePageController() {
-        this.su = su;
-        this.aktualniUzivatel = su.getAktualniUzivatel();
-    }
+
 
     @FXML
     private ToggleButton infoButton;
@@ -167,8 +164,10 @@ public class HomePageController {
 
 
     public void setSu(SpravceUzivatelu isu, Uzivatel iuz) {
-        if (isu != null ) this.su = isu;
-        if (iuz != null ) this.aktualniUzivatel = iuz;
+        if (isu != null &&iuz != null) {
+            this.su = isu;
+            this.aktualniUzivatel = iuz;
+        }
         refreshLabels();
     }
 }

@@ -16,10 +16,6 @@ public class PrevodnikController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-    public PrevodnikController() {
-        this.su = su;
-        this.aktualniUzivatel = su.getAktualniUzivatel();
-    }
 
     @FXML
     private Button pridatPrijemButton;
