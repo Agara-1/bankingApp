@@ -6,42 +6,29 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class TransakceController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
     // private Uzivatel prijemce;
-    private Transakce transakce = new Transakce();
 
 
-    @FXML
-    private Button pridatTransakciButton;
-
-    @FXML
-    private Button upravitTransakciButton;
-
-    @FXML
-    private Label castkatransakce_label;
-
-    @FXML
-    private Label datumTransakce_label;
-
-
-    @FXML
-    private Label kategorieTransakce_Label;
-
-    @FXML
-    private Label typTransakcce_label;
+    public TransakceController(SpravceUzivatelu su) {
+        this.su = su;
+        this.aktualniUzivatel = su.getAktualniUzivatel();
+    }
 
     @FXML
     private Button logoutButton;
@@ -64,14 +51,9 @@ public class TransakceController {
     @FXML
     private ToggleButton transakceButton;
 
-    @FXML
-    private ResourceBundle resources;
 
     @FXML
-    private GridPane tabulkaTransakci_GridPane;
-
-    @FXML
-    private URL location;
+    private ListView<Transakce> seznamTransakci_listview;
 
     @FXML
     void logoutButton() {
@@ -130,10 +112,7 @@ public class TransakceController {
         }
     }
 
-    @FXML
-    void upravitLimit() {
 
-    }
 
 
     @FXML
@@ -178,31 +157,56 @@ public class TransakceController {
         }
     }
 
-
     private void nactiTransakce() {
 
+        ObservableList<Transakce> seznam = FXCollections.observableArrayList(aktualniUzivatel.getSeznamTransakci());
+        seznamTransakci_listview.setItems(seznam);
 
-        ArrayList<Transakce> seznam = aktualniUzivatel.getSeznamTransakci();
-        for (Transakce t : seznam) {
-            String datum = t.getDatum().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-            String typ = t.getTypTransakce().toString();
-            String kategorie = t.getKategorie().toString();
-            int castka = t.getCastka();
-            int cisloRadku = 1;
-            datumTransakce_label.setText(datum);
-            kategorieTransakce_Label.setText(t.getKategorie());
-            typTransakcce_label.setText(typ);
-            castkatransakce_label.setText(String.valueOf(castka));
 
-//            Label datum_Label = new Label(datum);
-//            Label typ_Label = new Label(typ);
-//            Label kategorie_Label = new Label(kategorie);
-//            Label castka_Label = new Label(String.valueOf(castka));
-//
-//
-//            tabulkaTransakci_GridPane.addRow(cisloRadku++, datum_Label, typ_Label, kategorie_Label, castka_Label);
-        }
+        seznamTransakci_listview.setCellFactory(listView -> new ListCell<>() {
+            @Override
+            protected void updateItem(Transakce t, boolean empty) {
+                super.updateItem(t, empty);
 
+                if (empty || t == null) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    String datum = t.getDatum().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+                    String typ = t.getTypTransakce().toString();
+                    String kategorie = t.getKategorie();
+                    String castka = t.getCastka() + " Kč";
+
+                    Label datumLabel = new Label(datum);
+                    Label typLabel = new Label(typ);
+                    Label kategorieLabel = new Label(kategorie);
+                    Label castkaLabel = new Label(castka);
+
+                    datumLabel.setPrefWidth(160);
+                    typLabel.setPrefWidth(90);
+                    kategorieLabel.setPrefWidth(120);
+                    castkaLabel.setPrefWidth(150);
+
+                    datumLabel.setStyle("-fx-font-family: 'Calibri Light'; -fx-font-size: 20");
+                    typLabel.setStyle("-fx-font-family: 'Calibri Light'; -fx-font-size: 20");
+                    kategorieLabel.setStyle("-fx-font-family: 'Calibri Light'; -fx-font-size: 20");
+                    castkaLabel.setStyle("-fx-font-family: 'Calibri Light'; -fx-font-size: 20");
+
+
+                    if (typ.equalsIgnoreCase("PRIJEM")) {
+                        castkaLabel.setStyle("-fx-text-fill: green; -fx-font-size: 22");
+                    } else {
+                        castkaLabel.setStyle("-fx-text-fill: red; -fx-font-size: 22");
+                    }
+
+                    HBox box = new HBox(10, datumLabel, kategorieLabel, typLabel, castkaLabel);
+                    box.setAlignment(Pos.CENTER_LEFT);
+                    box.setPadding(new Insets(5, 10, 5, 10));
+
+                    setGraphic(box);
+                }
+            }
+        });
     }
 
     @FXML
