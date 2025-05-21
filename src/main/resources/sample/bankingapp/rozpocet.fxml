@@ -52,29 +52,104 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="55.0" prefWidth="190.0" text="    Jidlo">
+                  <Label fx:id="kategorieJidlo_Label" prefHeight="55.0" prefWidth="190.0" text="    Jidlo">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="12.0" prefHeight="55.0" prefWidth="190.0" text="    Doprava" GridPane.rowIndex="1">
+                  <Label fx:id="kategorieDoprava_Label" layoutX="12.0" layoutY="12.0" prefHeight="55.0" prefWidth="190.0" text="    Doprava" GridPane.rowIndex="1">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="63.0" prefHeight="55.0" prefWidth="190.0" text="    Bezne vydaje" GridPane.rowIndex="2">
+                  <Label fx:id="kategorieBezna_Label" layoutX="12.0" layoutY="63.0" prefHeight="55.0" prefWidth="190.0" text="    Bezne vydaje" GridPane.rowIndex="2">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="113.0" prefHeight="55.0" prefWidth="190.0" text="    Zabava" GridPane.rowIndex="3">
+                  <Label fx:id="kategorieZabava_Label" layoutX="12.0" layoutY="113.0" prefHeight="55.0" prefWidth="190.0" text="    Zabava" GridPane.rowIndex="3">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="12.0" layoutY="163.0" prefHeight="55.0" prefWidth="190.0" text="   Ostatni" GridPane.rowIndex="4">
+                  <Label fx:id="kategorieOstatni_Label" layoutX="12.0" layoutY="163.0" prefHeight="55.0" prefWidth="190.0" text="   Ostatni" GridPane.rowIndex="4">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="limitJidlo_Label" alignment="CENTER" prefHeight="82.0" prefWidth="142.0" textAlignment="CENTER" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="limitDoprava_Label" alignment="CENTER" layoutX="173.0" layoutY="29.0" prefHeight="78.0" prefWidth="191.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="limitBezny_Label" alignment="CENTER" layoutX="173.0" layoutY="80.0" prefHeight="81.0" prefWidth="241.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="limitZabava_Label" alignment="CENTER" layoutX="173.0" layoutY="130.0" prefHeight="79.0" prefWidth="249.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="limitOstatni_Label" alignment="CENTER" layoutX="173.0" layoutY="180.0" prefHeight="88.0" prefWidth="191.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="utracenoJidlo_Label" alignment="CENTER" layoutX="173.0" layoutY="230.0" prefHeight="87.0" prefWidth="202.0" textAlignment="CENTER" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="utracenoDoprava_Label" alignment="CENTER" layoutX="279.0" layoutY="29.0" prefHeight="82.0" prefWidth="143.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="utracenoBezne_Label" alignment="CENTER" layoutX="279.0" layoutY="80.0" prefHeight="78.0" prefWidth="139.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="utracenoZabava_Label" alignment="CENTER" layoutX="279.0" layoutY="130.0" prefHeight="51.0" prefWidth="155.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="utracenoOstatni_Label" alignment="CENTER" layoutX="279.0" layoutY="180.0" prefHeight="66.0" prefWidth="114.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zbyvaJidlo_Label" alignment="CENTER" layoutX="279.0" layoutY="230.0" prefHeight="71.0" prefWidth="330.0" textAlignment="CENTER" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zbyvaDoprava_Label" alignment="CENTER" layoutX="384.0" layoutY="29.0" prefHeight="64.0" prefWidth="263.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zbyvaBezne_Label" alignment="CENTER" layoutX="384.0" layoutY="80.0" prefHeight="75.0" prefWidth="189.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zbyvaZabava_Label" alignment="CENTER" layoutX="384.0" layoutY="130.0" prefHeight="61.0" prefWidth="320.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zbyvaOstatni_Label" alignment="CENTER" layoutX="384.0" layoutY="180.0" prefHeight="49.0" prefWidth="177.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Calibri Light" size="20.0" />
                      </font>
                   </Label>
                </children>

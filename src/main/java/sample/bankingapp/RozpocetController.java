@@ -1,15 +1,16 @@
 package sample.bankingapp;
 
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
@@ -18,47 +19,110 @@ public class RozpocetController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-    public RozpocetController() {
-        this.su = su;
-        this.aktualniUzivatel = su.getAktualniUzivatel();
+
+    @FXML
+    private Button logoutButton;
+
+    @FXML
+    private Button upravitLimitButton;
+
+    @FXML
+    private ToggleButton homeButton;
+
+    @FXML
+    private ToggleButton infoButton;
+
+    @FXML
+    private ToggleButton nastaveniButton;
+
+    @FXML
+    private ToggleButton prevodnikButton;
+
+    @FXML
+    private ToggleButton rozpocetButton;
+
+    @FXML
+    private ToggleButton transakceButton;
+    @FXML
+    private Label kategorieBezna_Label;
+
+    @FXML
+    private Label kategorieDoprava_Label;
+
+    @FXML
+    private Label kategorieJidlo_Label;
+
+    @FXML
+    private Label kategorieOstatni_Label;
+
+    @FXML
+    private Label kategorieZabava_Label;
+
+
+    @FXML
+    private Label limitBezny_Label;
+    @FXML
+    private Label limitDoprava_Label;
+
+    @FXML
+    private Label limitJidlo_Label;
+
+    @FXML
+    private Label limitOstatni_Label;
+
+    @FXML
+    private Label limitZabava_Label;
+
+    @FXML
+    private Label utracenoBezne_Label;
+
+    @FXML
+    private Label utracenoDoprava_Label;
+
+    @FXML
+    private Label utracenoJidlo_Label;
+
+    @FXML
+    private Label utracenoOstatni_Label;
+
+    @FXML
+    private Label utracenoZabava_Label;
+
+    @FXML
+    private Label zbyvaBezne_Label;
+
+    @FXML
+    private Label zbyvaDoprava_Label;
+
+    @FXML
+    private Label zbyvaJidlo_Label;
+
+    @FXML
+    private Label zbyvaOstatni_Label;
+
+    @FXML
+    private Label zbyvaZabava_Label;
+
+
+    public void rozpocitat() {
+        int soucet = 0;
+        int zakladniLimit = 1000;
+        limitJidlo_Label.setText(String.valueOf(zakladniLimit));
+        limitDoprava_Label.setText(String.valueOf(zakladniLimit));
+        limitBezny_Label.setText(String.valueOf(zakladniLimit));
+        limitZabava_Label.setText(String.valueOf(zakladniLimit));
+        limitOstatni_Label.setText(String.valueOf(zakladniLimit));
+
+        for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
+            if (t.getKategorie().equals(kategorieJidlo_Label.getText())) {
+                soucet+=t.getCastka();
+                utracenoJidlo_Label.setText(soucet + "");
+            }
+
+        }
+
+
     }
-        @FXML
-        private ToggleGroup group1;
-        @FXML
-        private Button pridatPrijemButton;
-
-        @FXML
-        private Button pridatVydajButton;
-
-        @FXML
-        private Button logoutButton;
-
-        @FXML
-        private Button upravitLimitButton;
-
-        @FXML
-        private ToggleButton homeButton;
-
-        @FXML
-        private ToggleButton infoButton;
-
-        @FXML
-        private ToggleButton nastaveniButton;
-
-        @FXML
-        private ToggleButton prevodnikButton;
-
-        @FXML
-        private ToggleButton rozpocetButton;
-
-        @FXML
-        private ToggleButton transakceButton;
-
-        @FXML
-        private ResourceBundle resources;
-
-        @FXML
-        private URL location;
 
 
     @FXML
@@ -166,15 +230,16 @@ public class RozpocetController {
         }
     }
 
-        @FXML
-        void initialize() {
+    @FXML
+    void initialize() {
 
 
-        }
+    }
 
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;
+        rozpocitat();
     }
 }
 
