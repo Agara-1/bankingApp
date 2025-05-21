@@ -33,7 +33,7 @@
       </AnchorPane>
       <AnchorPane layoutX="199.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="pridatTransakciButton" layoutX="33.0" layoutY="484.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="192.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat transakci" textFill="WHITE" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="375.0" AnchorPane.topAnchor="484.0">
+            <Button fx:id="pridatTransakciButton" layoutX="33.0" layoutY="484.0" mnemonicParsing="false" onAction="#poslatPenize" prefHeight="54.0" prefWidth="192.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat transakci" textFill="WHITE" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="375.0" AnchorPane.topAnchor="484.0">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>

@@ -25,11 +25,6 @@ public class TransakceController {
     // private Uzivatel prijemce;
 
 
-    public TransakceController(SpravceUzivatelu su) {
-        this.su = su;
-        this.aktualniUzivatel = su.getAktualniUzivatel();
-    }
-
     @FXML
     private Button logoutButton;
 
@@ -51,9 +46,26 @@ public class TransakceController {
     @FXML
     private ToggleButton transakceButton;
 
-
     @FXML
     private ListView<Transakce> seznamTransakci_listview;
+
+    @FXML
+    private Button pridatTransakciButton;
+
+
+    @FXML
+    void poslatPenize() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatTransakci.fxml"));
+            Parent root = loader.load();
+            PridatTransakciController controller = loader.getController();
+            controller.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) pridatTransakciButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void logoutButton() {
@@ -111,8 +123,6 @@ public class TransakceController {
             e.printStackTrace();
         }
     }
-
-
 
 
     @FXML

@@ -2,6 +2,7 @@ package sample.bankingapp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,38 +15,55 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PridatTransakciController {
+    private SpravceUzivatelu su;
+    private Uzivatel aktualniUzivatel;
+
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
+    private Button backButton;
 
     @FXML
     private TextField castkaNaPoslani_TextField;
 
     @FXML
-    private Text chybaText;
-
-    @FXML
-    private TextField cisloUctuNaPoslani_TextField;
-
-    @FXML
     private Button poslatButton;
 
     @FXML
-    void poslat(ActionEvent event) {
+    private TextField kategoriePrijmu_TextField;
 
+    @FXML
+    void poslat() {
+        int vydaj = Integer.parseInt(castkaNaPoslani_TextField.getText());
+        int zustatek = aktualniUzivatel.getZustatek() - vydaj;
+        aktualniUzivatel.setZustatek(zustatek);
+        Transakce transakce = new Transakce();
+
+        transakce.setKategorie(kategoriePrijmu_TextField.getText());
+        transakce.setDatum(LocalDate.now());
+        transakce.setTypTransakce(TypTransakce.VYDAJ);
+        transakce.setCastka(vydaj);
+
+        aktualniUzivatel.pridaniTransakce(transakce);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
+            Parent root = loader.load();
+            TransakceController controller = loader.getController();
+            controller.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) poslatButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
-    void back(ActionEvent event) {
+    void back() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
             Parent root = loader.load();
             TransakceController transakceController = loader.getController();
-            //transakceController.setSu(su, aktualniUzivatel);
-            //Stage stage = (Stage) transakceButton.getScene().getWindow();
-            //stage.setScene(new Scene(root));
+            transakceController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,5 +72,9 @@ public class PridatTransakciController {
     void initialize() {
 
     }
+    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
+        this.su = su;
+        this.aktualniUzivatel = uz;
 
+    }
 }
