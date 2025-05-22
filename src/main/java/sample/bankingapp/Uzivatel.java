@@ -7,17 +7,20 @@ import java.util.Random;
 
 public class Uzivatel implements Serializable {
     private Random rnd = new Random();
-    private int cisloGenerator;
     private StringBuilder cislo = new StringBuilder();
     private String jmeno;
     private String uzivatelsakeJmeno;
     private String heslo;
     private LocalDate datumZalozeni;
-    private int mesicniPrijem;
+    private int mesicniPrijem ;
     private int zustatek;
-    private int limit;
-    private ArrayList<Transakce> seznamTransakci;
+    private int limitJidlo;
+    private int limitDoprava;
+    private int limitZabava;
+    private int limitBezny;
+    private int limitOstatni;
 
+    private ArrayList<Transakce> seznamTransakci;
 
     public Uzivatel(String jmeno, String uzivatelsakeJmeno, String heslo) {
         this.jmeno = jmeno;
@@ -26,6 +29,11 @@ public class Uzivatel implements Serializable {
         this.datumZalozeni = LocalDate.now();
         this.zustatek = 0;
         this.seznamTransakci = new ArrayList<>();
+        this.limitJidlo = 1000;
+        this.limitDoprava = 1000;
+        this.limitZabava = 1000;
+        this.limitBezny = 1000;
+        this.limitOstatni = 1000;
     }
 
     public String generaceUctu() {
@@ -84,33 +92,6 @@ public class Uzivatel implements Serializable {
         return datumZalozeni;
     }
 
-    public void setDatumZalozeni(LocalDate datumZalozeni) {
-        this.datumZalozeni = datumZalozeni;
-    }
-
-    public StringBuilder getCislo() {
-        return cislo;
-    }
-
-    public Random getRnd() {
-        return rnd;
-    }
-
-    public void setRnd(Random rnd) {
-        this.rnd = rnd;
-    }
-
-    public int getCisloGenerator() {
-        return cisloGenerator;
-    }
-
-    public void setCisloGenerator(int cisloGenerator) {
-        this.cisloGenerator = cisloGenerator;
-    }
-
-    public void setCislo(StringBuilder cislo) {
-        this.cislo = cislo;
-    }
 
     public int getMesicniPrijem() {
         return mesicniPrijem;
@@ -128,11 +109,43 @@ public class Uzivatel implements Serializable {
         this.zustatek = zustatek;
     }
 
-    public int getLimit() {
-        return limit;
+    public int getLimitOstatni() {
+        return limitOstatni;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setLimitOstatni(int limitOstatni) {
+        this.limitOstatni = limitOstatni;
+    }
+
+    public int getLimitBezny() {
+        return limitBezny;
+    }
+
+    public void setLimitBezny(int limitBezny) {
+        this.limitBezny = limitBezny;
+    }
+
+    public int getLimitZabava() {
+        return limitZabava;
+    }
+
+    public void setLimitZabava(int limitZabava) {
+        this.limitZabava = limitZabava;
+    }
+
+    public int getLimitDoprava() {
+        return limitDoprava;
+    }
+
+    public void setLimitDoprava(int limitDoprava) {
+        this.limitDoprava = limitDoprava;
+    }
+
+    public int getLimitJidlo() {
+        return limitJidlo;
+    }
+
+    public void setLimitJidlo(int limitJidlo) {
+        this.limitJidlo = limitJidlo;
     }
 }
