@@ -7,7 +7,8 @@ public class Transakce {
     private int id;
     private LocalDate datum;
     private int castka;
-    private String kategorie;
+    private KategorieTransakci kategorieVydaj;
+    private String kategoriePrijem;
     private TypTransakce typTransakce;
 
     public int getId() {
@@ -34,12 +35,12 @@ public class Transakce {
         this.castka = castka;
     }
 
-    public String getKategorie() {
-        return kategorie;
+    public KategorieTransakci getKategorie() {
+        return kategorieVydaj;
     }
 
-    public void setKategorie(String kategorie) {
-        this.kategorie = kategorie;
+    public void setKategorie(KategorieTransakci kategorie) {
+        this.kategorieVydaj = kategorie;
     }
 
     public TypTransakce getTypTransakce() {
@@ -48,5 +49,13 @@ public class Transakce {
 
     public void setTypTransakce(TypTransakce typTransakce) {
         this.typTransakce = typTransakce;
+    }
+
+    public String getKategoriePrijem() {
+        return kategoriePrijem;
+    }
+
+    public void setKategoriePrijem(String kategoriePrijem) {
+        this.kategoriePrijem = kategoriePrijem;
     }
 }

@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -28,8 +29,9 @@ public class PridatTransakciController {
     @FXML
     private Button poslatButton;
 
+
     @FXML
-    private TextField kategoriePrijmu_TextField;
+    private ComboBox<KategorieTransakci> kategorieVydaje_ComboBox;
 
     @FXML
     void poslat() {
@@ -38,7 +40,7 @@ public class PridatTransakciController {
         aktualniUzivatel.setZustatek(zustatek);
         Transakce transakce = new Transakce();
 
-        transakce.setKategorie(kategoriePrijmu_TextField.getText());
+        transakce.setKategorie(kategorieVydaje_ComboBox.getValue());
         transakce.setDatum(LocalDate.now());
         transakce.setTypTransakce(TypTransakce.VYDAJ);
         transakce.setCastka(vydaj);
@@ -70,7 +72,7 @@ public class PridatTransakciController {
     }
     @FXML
     void initialize() {
-
+        kategorieVydaje_ComboBox.getItems().addAll(KategorieTransakci.values());
     }
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;

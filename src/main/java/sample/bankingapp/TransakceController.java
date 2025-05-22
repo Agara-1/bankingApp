@@ -25,6 +25,7 @@ public class TransakceController {
     // private Uzivatel prijemce;
 
 
+
     @FXML
     private Button logoutButton;
 
@@ -184,7 +185,13 @@ public class TransakceController {
                 } else {
                     String datum = t.getDatum().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
                     String typ = t.getTypTransakce().toString();
-                    String kategorie = t.getKategorie();
+                    String kategorie = "";
+                    if(t.getKategorie()==null){
+                        kategorie = String.valueOf(t.getKategoriePrijem());
+                    }else if(t.getKategoriePrijem()==null){
+                        kategorie = String.valueOf(t.getKategorie());
+                    }
+                    
                     String castka = t.getCastka() + " Kč";
 
                     Label datumLabel = new Label(datum);

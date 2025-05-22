@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -29,7 +30,7 @@
             </AnchorPane>
             <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="602.0" style="-fx-background-color: #f4f6f7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane layoutX="40.0" layoutY="93.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="93.0">
+                  <AnchorPane layoutX="40.0" layoutY="93.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="kategorie-ComboBox" stylesheets="@../../../../../../bankingApp/bankingApp1/src/main/resources/sample/bankingapp/style.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="93.0">
                      <children>
                         <Label layoutX="111.0" layoutY="31.0" text="Přidat transakci">
                            <font>
@@ -51,11 +52,7 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="kategoriePrijmu_TextField" layoutX="85.0" layoutY="211.0" prefHeight="39.0" prefWidth="350.0" promptText="Kategorie vydaje:" AnchorPane.topAnchor="230.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
+                        <ComboBox fx:id="kategorieVydaje_ComboBox" layoutX="87.0" layoutY="230.0" prefHeight="39.0" prefWidth="350.0" promptText="Kategorie transakci" styleClass="kategorie-ComboBox" stylesheets="@style.css" AnchorPane.topAnchor="230.0" />
                      </children>
                   </AnchorPane>
                   <Text fx:id="chybaText" fill="#c32222" layoutX="186.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="228.0">
@@ -63,7 +60,7 @@
                         <Font name="Calibri Light" size="26.0" />
                      </font>
                   </Text>
-                  <Button fx:id="backButton" layoutX="534.0" layoutY="19.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css">
+                  <Button fx:id="backButton" layoutX="534.0" layoutY="19.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@../../../../../../bankingApp/src/main/resources/sample/bankingapp/style.css">
                      <font>
                         <Font name="SansSerif Regular" size="17.0" />
                      </font>
