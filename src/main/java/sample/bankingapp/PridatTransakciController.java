@@ -40,7 +40,7 @@ public class PridatTransakciController {
         aktualniUzivatel.setZustatek(zustatek);
         Transakce transakce = new Transakce();
 
-        transakce.setKategorie(kategorieVydaje_ComboBox.getValue());
+        transakce.setKategorieVydaj(kategorieVydaje_ComboBox.getValue());
         transakce.setDatum(LocalDate.now());
         transakce.setTypTransakce(TypTransakce.VYDAJ);
         transakce.setCastka(vydaj);

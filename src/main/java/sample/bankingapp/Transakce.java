@@ -1,7 +1,6 @@
 package sample.bankingapp;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Transakce {
     private int id;
@@ -23,6 +22,7 @@ public class Transakce {
         return datum;
     }
 
+
     public void setDatum(LocalDate datum) {
         this.datum = datum;
     }
@@ -35,11 +35,11 @@ public class Transakce {
         this.castka = castka;
     }
 
-    public KategorieTransakci getKategorie() {
+    public KategorieTransakci getKategorieVydaj() {
         return kategorieVydaj;
     }
 
-    public void setKategorie(KategorieTransakci kategorie) {
+    public void setKategorieVydaj(KategorieTransakci kategorie) {
         this.kategorieVydaj = kategorie;
     }
 

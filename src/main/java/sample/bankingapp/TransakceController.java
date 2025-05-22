@@ -1,10 +1,7 @@
 package sample.bankingapp;
 
 import java.io.IOException;
-import java.net.URL;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,7 +12,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -186,10 +182,10 @@ public class TransakceController {
                     String datum = t.getDatum().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
                     String typ = t.getTypTransakce().toString();
                     String kategorie = "";
-                    if(t.getKategorie()==null){
+                    if(t.getKategorieVydaj()==null){
                         kategorie = String.valueOf(t.getKategoriePrijem());
                     }else if(t.getKategoriePrijem()==null){
-                        kategorie = String.valueOf(t.getKategorie());
+                        kategorie = String.valueOf(t.getKategorieVydaj());
                     }
                     
                     String castka = t.getCastka() + " Kč";
