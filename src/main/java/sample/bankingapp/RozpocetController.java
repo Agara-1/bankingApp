@@ -2,17 +2,13 @@ package sample.bankingapp;
 
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.jar.JarFile;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class RozpocetController {
@@ -22,9 +18,6 @@ public class RozpocetController {
 
     @FXML
     private Button logoutButton;
-
-    @FXML
-    private Button upravitLimitButton;
 
     @FXML
     private ToggleButton homeButton;
@@ -107,6 +100,7 @@ public class RozpocetController {
     public void rozpocitat() {
         int soucet = 0;
         int zakladniLimit = 1000;
+
         limitJidlo_Label.setText(String.valueOf(zakladniLimit));
         limitDoprava_Label.setText(String.valueOf(zakladniLimit));
         limitBezny_Label.setText(String.valueOf(zakladniLimit));
@@ -114,9 +108,28 @@ public class RozpocetController {
         limitOstatni_Label.setText(String.valueOf(zakladniLimit));
 
         for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
-            if (t.getKategorie().equals(kategorieJidlo_Label.getText())) {
-                soucet+=t.getCastka();
-                utracenoJidlo_Label.setText(soucet + "");
+
+            switch (t.getKategorie()) {
+                case JIDLO:
+                    soucet+=t.getCastka();
+                    utracenoJidlo_Label.setText(String.valueOf(soucet));
+                    break;
+                case DOPRAVA:
+                    soucet+=t.getCastka();
+                    utracenoDoprava_Label.setText(String.valueOf(soucet));
+                    break;
+                case ZABAVA:
+                    soucet+=t.getCastka();
+                    utracenoZabava_Label.setText(String.valueOf(soucet));
+                    break;
+                case BEZNE_VYDAJE:
+                    soucet+=t.getCastka();
+                    utracenoBezne_Label.setText(String.valueOf(soucet));
+                    break;
+                case OSTATNI:
+                    soucet+=t.getCastka();
+                    utracenoOstatni_Label.setText(String.valueOf(soucet));
+                    break;
             }
 
         }
