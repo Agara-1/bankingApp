@@ -3,13 +3,12 @@ package sample.bankingapp;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class PrevodnikController {
@@ -18,13 +17,19 @@ public class PrevodnikController {
 
 
     @FXML
-    private Button pridatPrijemButton;
+    private ComboBox<Mena> mena_1_ComboBox;
 
     @FXML
-    private Button prevestButton;
+    private ComboBox<Mena> mena_2_ComboBox;
 
     @FXML
-    private Button logoutButton;
+    private Label castkaPo_Label;
+
+    @FXML
+    private TextField castkaPred_TextField;
+
+    @FXML
+    private ToggleGroup group1;
 
     @FXML
     private ToggleButton homeButton;
@@ -33,7 +38,13 @@ public class PrevodnikController {
     private ToggleButton infoButton;
 
     @FXML
+    private Button logoutButton;
+
+    @FXML
     private ToggleButton nastaveniButton;
+
+    @FXML
+    private Button prevest;
 
     @FXML
     private ToggleButton prevodnikButton;
@@ -44,14 +55,46 @@ public class PrevodnikController {
     @FXML
     private ToggleButton transakceButton;
 
-    @FXML
-    private ResourceBundle resources;
+    public double zCZKDo(Mena mena) {
+        switch (mena) {
+            case CZK:
+                return 1.0;
+            case USD:
+                return 0.045;
+            case EUR:
+                return 0.041;
+            case GBP:
+                return 0.035;
+            default:return 1.0;
+        }
+
+    }
+    public double doCZK(Mena mena) {
+        switch (mena) {
+            case CZK:
+                return 1.0;
+            case USD:
+                return 22.0;
+            case EUR:
+                return 24.5;
+            case GBP:
+                return 28.3;
+            default:
+                return 1.0;
+        }
+    }
 
     @FXML
-    private URL location;
-
-    @FXML
-    private ToggleGroup group1;
+    void prevest() {
+        try {
+double castka = Double.parseDouble(castkaPred_TextField.getText());
+double vCZK = castka * doCZK(mena_1_ComboBox.getSelectionModel().getSelectedItem());
+double vysledek = vCZK * zCZKDo(mena_2_ComboBox.getSelectionModel().getSelectedItem());
+castkaPo_Label.setText(String.format("%.2f", vysledek));
+        } catch (NumberFormatException e) {
+            castkaPo_Label.setText("Neplatná částka.");
+        }
+    }
 
 
     @FXML
@@ -112,14 +155,6 @@ public class PrevodnikController {
     }
 
     @FXML
-    void prevest() {
-
-    }
-
-
-
-
-    @FXML
     void rozpocet() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
@@ -164,7 +199,10 @@ public class PrevodnikController {
 
     @FXML
     void initialize() {
-
+        mena_1_ComboBox.getItems().addAll(Mena.values());
+        mena_2_ComboBox.getItems().addAll(Mena.values());
+        mena_1_ComboBox.setValue(Mena.CZK);
+        mena_2_ComboBox.setValue(Mena.USD);
     }
 
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
