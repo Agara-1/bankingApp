@@ -10,7 +10,6 @@
     -fx-background-color: #b3b6b7 !important;
 }
 
-
 .btnActive-green:hover {
     -fx-background-color: #1abc9c !important;
 }
@@ -37,7 +36,6 @@
 
 .gradient-button {
     -fx-background-color: linear-gradient(to left, #76d7c4, #17a589) !important;
-
 }
 
 .gradient-button:hover {
@@ -65,7 +63,6 @@
     -fx-background-radius: 8px 8px 0 0;
     -fx-border-color: #909497;
     -fx-border-radius: 8px 8px 0 0;
-
 }
 
 .DolniRohy-Pane {
@@ -73,18 +70,37 @@
     -fx-background-radius: 0 0 8px 8px;
     -fx-border-color: #909497;
     -fx-border-radius: 0 0 8px 8px;
-
 }
 
 .kategorie-ComboBox {
-    -fx-background-color:	#fbfdfd;
+    -fx-font-family: "Calibri Light";
+    -fx-background-color: #fbfdfd;
     -fx-text-fill: #a9a9a9;
     -fx-prompt-text-fill: #888888;
     -fx-border-color: #c9c9c9;
     -fx-border-radius: 4;
     -fx-background-radius: 4;
     -fx-font-size: 16px;
-
 }
 
+.kategorieMeny-ComboBox {
+    -fx-font-family: "Calibri Light";
+    -fx-background-color: #fbfdfd;
+    -fx-text-fill: #a9a9a9;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-color: #c9c9c9;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-size: 23px;
+}
 
+.vstupniMena {
+    -fx-font-family: "Calibri Light";
+    -fx-background-color: #fbfdfd;
+    -fx-text-fill: #a9a9a9;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-color: #c9c9c9;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-size: 23px;
+}
