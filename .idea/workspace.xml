@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="Pridani prijmu a predavani uzivatele mezi oknami funguji">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Mena.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/UpravitLimitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/upravitLimit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="drobne upravy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uzivatele.dat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +233,47 @@
       <option name="project" value="LOCAL" />
       <updated>1747750331067</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="dodelavani rozpoctu aby se vypisovalo kolik se utratilo za danou kategorii">
+      <option name="closed" value="true" />
+      <created>1747949816713</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747949816713</updated>
+    </task>
+    <task id="LOCAL-00016" summary="udelani prevosniku men z korun na usd eur gbp">
+      <option name="closed" value="true" />
+      <created>1747949957891</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1747949957891</updated>
+    </task>
+    <task id="LOCAL-00017" summary="udelani prevosniku men z korun na usd eur gbp">
+      <option name="closed" value="true" />
+      <created>1747949998189</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1747949998189</updated>
+    </task>
+    <task id="LOCAL-00018" summary="priprava nastaveni pro zmenu hodnot">
+      <option name="closed" value="true" />
+      <created>1747950043745</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1747950043745</updated>
+    </task>
+    <task id="LOCAL-00019" summary="drobne upravy">
+      <option name="closed" value="true" />
+      <created>1747950091067</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1747950091067</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +294,11 @@
     <MESSAGE value="Začatek práce na transakční operaci" />
     <MESSAGE value="Navržena dalsi vizualizace" />
     <MESSAGE value="Pridani prijmu a predavani uzivatele mezi oknami funguji" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pridani prijmu a predavani uzivatele mezi oknami funguji" />
+    <MESSAGE value="dodelavani rozpoctu aby se vypisovalo kolik se utratilo za danou kategorii" />
+    <MESSAGE value="udelani prevosniku men z korun na usd eur gbp" />
+    <MESSAGE value="priprava nastaveni pro zmenu hodnot" />
+    <MESSAGE value="drobne upravy" />
+    <option name="LAST_COMMIT_MESSAGE" value="drobne upravy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
