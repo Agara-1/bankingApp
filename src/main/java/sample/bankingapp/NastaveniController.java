@@ -2,15 +2,14 @@ package sample.bankingapp;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class NastaveniController {
@@ -18,26 +17,14 @@ public class NastaveniController {
     private Uzivatel aktualniUzivatel;
 
 
-    public NastaveniController() {
-        this.aktualniUzivatel = su.getAktualniUzivatel();
-    }
-
-    @FXML
-    private ToggleGroup group1;
-    @FXML
-    private Button pridatPrijemButton;
-
-    @FXML
-    private Button pridatVydajButton;
-
-    @FXML
-    private Button logoutButton;
-
     @FXML
     private ToggleButton homeButton;
 
     @FXML
     private ToggleButton infoButton;
+
+    @FXML
+    private Button logoutButton;
 
     @FXML
     private ToggleButton nastaveniButton;
@@ -52,10 +39,25 @@ public class NastaveniController {
     private ToggleButton transakceButton;
 
     @FXML
-    private ResourceBundle resources;
+    private TextField hesloNaUpravu;
 
     @FXML
-    private URL location;
+    private ComboBox<Mena> menaNaUpravu_ComboBox;
+
+    @FXML
+    private TextField jmenoNaUpravu;
+
+    @FXML
+    private TextField usernameNaUpravu;
+
+    @FXML
+    private Button vymazatButton;
+
+
+    @FXML
+    void vymazat() {
+        aktualniUzivatel.getSeznamTransakci().clear();
+    }
 
 
     @FXML
@@ -115,13 +117,6 @@ public class NastaveniController {
         }
     }
 
-    @FXML
-    void upravit() {
-
-    }
-
-
-
 
     @FXML
     void rozpocet() {
@@ -166,14 +161,36 @@ public class NastaveniController {
 
     }
 
+    public void nactiHodnoty() {
+        jmenoNaUpravu.setPromptText(aktualniUzivatel.getJmeno());
+        usernameNaUpravu.setPromptText(aktualniUzivatel.getUzivatelsakeJmeno());
+        hesloNaUpravu.setPromptText(aktualniUzivatel.getHeslo());
+
+
+
+    }
+    @FXML
+    void ulozit() {
+
+        if (jmenoNaUpravu == null || jmenoNaUpravu.getText().equals("")) {
+            aktualniUzivatel.setJmeno(jmenoNaUpravu.getText());
+        } else if (usernameNaUpravu == null || usernameNaUpravu.getText().equals("")) {
+            aktualniUzivatel.setUzivatelsakeJmeno(usernameNaUpravu.getText());
+        } else if (hesloNaUpravu == null || hesloNaUpravu.getText().equals("")) {
+            aktualniUzivatel.setHeslo(hesloNaUpravu.getText());
+        }
+    }
 
     @FXML
     void initialize() {
+        menaNaUpravu_ComboBox.getItems().addAll(Mena.values());
+        menaNaUpravu_ComboBox.setValue(Mena.CZK);
 
     }
 
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;
+        nactiHodnoty();
     }
 }
