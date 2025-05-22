@@ -41,6 +41,8 @@ public class PrijemController {
 
     @FXML
     private Label typTransakcce_label;
+
+
     @FXML
     void prijem() {
         int prijem = Integer.parseInt(mesicniPrijem_TextField.getText());
@@ -49,7 +51,7 @@ public class PrijemController {
         aktualniUzivatel.setZustatek(zustatek);
         Transakce transakce = new Transakce();
 
-        transakce.setKategorie(typPrijmu_TextField.getText());
+        transakce.setKategoriePrijem(typPrijmu_TextField.getText());
         transakce.setDatum(LocalDate.now());
         transakce.setTypTransakce(TypTransakce.PRIJEM);
         transakce.setCastka(prijem);
@@ -66,7 +68,9 @@ public class PrijemController {
             e.printStackTrace();
         }
 
-    } @FXML
+    }
+
+    @FXML
     void back() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));

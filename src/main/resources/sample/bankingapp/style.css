@@ -56,7 +56,8 @@
 }
 
 .transakce-container Text {
-    -fx-font-family: 'Calibri Light';-fx-font-size: 20;
+    -fx-font-family: 'Calibri Light';
+    -fx-font-size: 20;
 }
 
 .HroniRohy-Pane {
@@ -74,4 +75,16 @@
     -fx-border-radius: 0 0 8px 8px;
 
 }
+
+.kategorie-ComboBox {
+    -fx-background-color:	#fbfdfd;
+    -fx-text-fill: #a9a9a9;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-color: #c9c9c9;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-size: 16px;
+
+}
+
 

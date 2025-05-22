@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="Pridani prijmu a predavani uzivatele mezi oknami funguji">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/KategorieTransakci.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TypTransakce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TypTransakce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatTransakci.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatTransakci.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/transakce.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/transakce.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uzivatele.dat" beforeDir="false" afterPath="$PROJECT_DIR$/uzivatele.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +26,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -46,12 +41,12 @@
     &quot;assignee&quot;: &quot;Agara-1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Agara-1/bankingApp.git&quot;,
-    &quot;accountId&quot;: &quot;20027674-a1fe-4c43-a3b8-79b21eb5ce37&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Agara-1/bankingApp.git",
+    "accountId": "e6fc4069-e901-46b0-a454-7dce28dd24e8"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -63,28 +58,27 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2vtnn3S0N5vTaGby9H5ZVd30GJg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.editor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sakal\IdeaProjects\VelkeProjekty\bankingApp\src\main\resources\sample\bankingapp\assets" />
@@ -135,6 +129,7 @@
       <workItem from="1747586036799" duration="11215000" />
       <workItem from="1747669545515" duration="15143000" />
       <workItem from="1747736820505" duration="13275000" />
+      <workItem from="1747901720701" duration="10450000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
