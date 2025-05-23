@@ -69,6 +69,8 @@ public class TransakceController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
+            LoginController loginController = loader.getController();
+            loginController.setSu(su,aktualniUzivatel);
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {

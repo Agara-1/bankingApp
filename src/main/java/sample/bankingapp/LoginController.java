@@ -16,10 +16,7 @@ public class LoginController {
     private Uzivatel aktualniUzivatel;
 
 
-    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
-        this.su = su;
-        this.aktualniUzivatel = uz;
-    }
+
 
     public Uzivatel getAktualniUzivatel() {
         return aktualniUzivatel;
@@ -89,5 +86,8 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
+    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
+        this.su = su;
+        this.aktualniUzivatel = uz;
+    }
 }
