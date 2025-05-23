@@ -65,6 +65,8 @@ public class NastaveniController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
+            LoginController loginController = loader.getController();
+            loginController.setSu(su, aktualniUzivatel);
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
@@ -167,18 +169,27 @@ public class NastaveniController {
         hesloNaUpravu.setPromptText(aktualniUzivatel.getHeslo());
 
 
-
     }
+
     @FXML
     void ulozit() {
+        String jmeno = jmenoNaUpravu.getText();
+        String username = usernameNaUpravu.getText();
+        String heslo = hesloNaUpravu.getText();
 
-        if (jmenoNaUpravu == null || jmenoNaUpravu.getText().equals("")) {
-            aktualniUzivatel.setJmeno(jmenoNaUpravu.getText());
-        } else if (usernameNaUpravu == null || usernameNaUpravu.getText().equals("")) {
+        if (!jmeno.isBlank()) {
+            aktualniUzivatel.setJmeno(jmeno);
+        }
+        if (!username.isBlank()) {
             aktualniUzivatel.setUzivatelsakeJmeno(usernameNaUpravu.getText());
-        } else if (hesloNaUpravu == null || hesloNaUpravu.getText().equals("")) {
+        }
+        if (!heslo.isBlank()) {
             aktualniUzivatel.setHeslo(hesloNaUpravu.getText());
         }
+        if (menaNaUpravu_ComboBox.getValue() != null) {
+            aktualniUzivatel.setMena(menaNaUpravu_ComboBox.getValue());
+        }
+su.serializaceUzivatelu();
     }
 
     @FXML
