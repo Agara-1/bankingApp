@@ -7,12 +7,13 @@ import java.util.Random;
 
 public class Uzivatel implements Serializable {
     private Random rnd = new Random();
-    private StringBuilder cislo = new StringBuilder();
+    private String cisloUctu;
     private String jmeno;
     private String uzivatelsakeJmeno;
     private String heslo;
     private LocalDate datumZalozeni;
-    private int mesicniPrijem ;
+    private Mena mena;
+    private int mesicniPrijem;
     private int zustatek;
     private int limitJidlo;
     private int limitDoprava;
@@ -34,9 +35,11 @@ public class Uzivatel implements Serializable {
         this.limitZabava = 1000;
         this.limitBezny = 1000;
         this.limitOstatni = 1000;
+        cisloUctu = generaceUctu();
     }
 
     public String generaceUctu() {
+        StringBuilder cislo = new StringBuilder();
         for (int i = 0; i < 12; i++) {
             cislo.append(rnd.nextInt(10));
             if ((i + 1) % 4 == 0 && i < 11) {
@@ -147,5 +150,17 @@ public class Uzivatel implements Serializable {
 
     public void setLimitJidlo(int limitJidlo) {
         this.limitJidlo = limitJidlo;
+    }
+
+    public Mena getMena() {
+        return mena;
+    }
+
+    public void setMena(Mena mena) {
+        this.mena = mena;
+    }
+
+    public String getCisloUctu() {
+        return cisloUctu;
     }
 }
