@@ -49,6 +49,7 @@ public class InfoController {
 
     @FXML
     private Label datumText;
+
     @FXML
     private Label typUctu;
 
@@ -64,6 +65,8 @@ public class InfoController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
+            LoginController loginController = loader.getController();
+            loginController.setSu(su,aktualniUzivatel);
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
@@ -162,7 +165,7 @@ public class InfoController {
     private void nactiData() {
         jmenoUzivatelText.setText(aktualniUzivatel.getJmeno());
         usernameInfoText.setText(aktualniUzivatel.getUzivatelsakeJmeno());
-        CisloUctu.setText(aktualniUzivatel.generaceUctu());
+        CisloUctu.setText(aktualniUzivatel.getCisloUctu());
         datumText.setText(aktualniUzivatel.getDatumZalozeni().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
     }
 
