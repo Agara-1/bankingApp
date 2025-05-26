@@ -167,7 +167,7 @@ public class NastaveniController {
         jmenoNaUpravu.setPromptText(aktualniUzivatel.getJmeno());
         usernameNaUpravu.setPromptText(aktualniUzivatel.getUzivatelsakeJmeno());
         hesloNaUpravu.setPromptText(aktualniUzivatel.getHeslo());
-
+        menaNaUpravu_ComboBox.setValue(aktualniUzivatel.getMena());
 
     }
 
@@ -189,19 +189,20 @@ public class NastaveniController {
         if (menaNaUpravu_ComboBox.getValue() != null) {
             aktualniUzivatel.setMena(menaNaUpravu_ComboBox.getValue());
         }
-su.serializaceUzivatelu();
+        su.serializaceUzivatelu();
     }
 
     @FXML
     void initialize() {
-        menaNaUpravu_ComboBox.getItems().addAll(Mena.values());
-        menaNaUpravu_ComboBox.setValue(Mena.CZK);
 
     }
 
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;
+
+        menaNaUpravu_ComboBox.getItems().addAll(Mena.values());
+        menaNaUpravu_ComboBox.setValue(aktualniUzivatel.getMena());
         nactiHodnoty();
     }
 }
