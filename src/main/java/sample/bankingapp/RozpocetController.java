@@ -13,7 +13,11 @@ import javafx.stage.Stage;
 public class RozpocetController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
-
+    private int soucetJidlo = 0;
+    private int soucetDoprava = 0;
+    private int soucetZabava = 0;
+    private int soucetBezny = 0;
+    private int soucetOstatni = 0;
 
     @FXML
     private Button upravitLimitButton;
@@ -53,9 +57,12 @@ public class RozpocetController {
     @FXML
     private Label kategorieZabava_Label;
 
+    @FXML
+    private ProgressBar progresRozpocet_ProgressBar;
 
     @FXML
     private Label limitBezny_Label;
+
     @FXML
     private Label limitDoprava_Label;
 
@@ -99,12 +106,30 @@ public class RozpocetController {
     private Label zbyvaZabava_Label;
 
 
+    public void progres() {
+
+        int celkovyVydaje = 0;
+        double prog = 0;
+
+        for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
+            if (t.getTypTransakce() == TypTransakce.VYDAJ) {
+                celkovyVydaje += t.getCastka();
+            }
+        }
+
+        if (aktualniUzivatel.getMesicniPrijem() > 0) {
+            prog = (double) celkovyVydaje / aktualniUzivatel.getMesicniPrijem();
+        }
+
+        progresRozpocet_ProgressBar.setProgress(Math.min(prog, 1.0));
+        progresRozpocet_ProgressBar.getStyleClass().removeAll("green-progress");
+        progresRozpocet_ProgressBar.getStyleClass().add("green-progress");
+
+    }
+
+
     public void rozpocitat() {
-        int soucetJidlo = 0;
-        int soucetDoprava = 0;
-        int soucetZabava = 0;
-        int soucetBezny = 0;
-        int soucetOstatni = 0;
+
         int limitJidlo = aktualniUzivatel.getLimitJidlo();
         int limitDoprava = aktualniUzivatel.getLimitDoprava();
         int limitZabava = aktualniUzivatel.getLimitZabava();
@@ -133,7 +158,7 @@ public class RozpocetController {
                     case ZABAVA:
                         soucetZabava += t.getCastka();
                         utracenoZabava_Label.setText(String.valueOf(soucetZabava));
-                        utracenoZabava_Label.setText(String.valueOf(limitZabava - soucetZabava));
+                        zbyvaZabava_Label.setText(String.valueOf(limitZabava - soucetZabava));
                         break;
                     case BEZNE_VYDAJE:
                         soucetBezny += t.getCastka();
@@ -143,7 +168,7 @@ public class RozpocetController {
                     case OSTATNI:
                         soucetOstatni += t.getCastka();
                         utracenoOstatni_Label.setText(String.valueOf(soucetOstatni));
-                        zbyvaOstatni_Label.setText(String.valueOf(limitOstatni- - soucetOstatni));
+                        zbyvaOstatni_Label.setText(String.valueOf(limitOstatni - -soucetOstatni));
                         break;
                 }
 
@@ -158,7 +183,7 @@ public class RozpocetController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
-            loginController.setSu(su,aktualniUzivatel);
+            loginController.setSu(su, aktualniUzivatel);
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
@@ -226,7 +251,6 @@ public class RozpocetController {
     }
 
 
-
     @FXML
     void rozpocet() {
         try {
@@ -279,47 +303,9 @@ public class RozpocetController {
         this.su = su;
         this.aktualniUzivatel = uz;
         rozpocitat();
+        progres();
     }
 
-    public Label getLimitBezny_Label() {
-        return limitBezny_Label;
-    }
-
-    public void setLimitBezny_Label(Label limitBezny_Label) {
-        this.limitBezny_Label = limitBezny_Label;
-    }
-
-    public Label getLimitDoprava_Label() {
-        return limitDoprava_Label;
-    }
-
-    public void setLimitDoprava_Label(Label limitDoprava_Label) {
-        this.limitDoprava_Label = limitDoprava_Label;
-    }
-
-    public Label getLimitJidlo_Label() {
-        return limitJidlo_Label;
-    }
-
-    public void setLimitJidlo_Label(Label limitJidlo_Label) {
-        this.limitJidlo_Label = limitJidlo_Label;
-    }
-
-    public Label getLimitOstatni_Label() {
-        return limitOstatni_Label;
-    }
-
-    public void setLimitOstatni_Label(Label limitOstatni_Label) {
-        this.limitOstatni_Label = limitOstatni_Label;
-    }
-
-    public Label getLimitZabava_Label() {
-        return limitZabava_Label;
-    }
-
-    public void setLimitZabava_Label(Label limitZabava_Label) {
-        this.limitZabava_Label = limitZabava_Label;
-    }
 
 }
 

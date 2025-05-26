@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
@@ -36,7 +38,20 @@
                   <Font name="SansSerif Bold" size="21.0" />
                </font>
             </Button>
-            <AnchorPane layoutX="143.0" layoutY="81.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497; -fx-border-width: 1.5;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="80.0" />
+            <AnchorPane layoutX="143.0" layoutY="81.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497; -fx-border-width: 1.5;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="70.0">
+               <children>
+                  <ProgressBar fx:id="progresRozpocet_ProgressBar" layoutX="15.0" layoutY="82.0" prefHeight="34.0" prefWidth="511.0" progress="0.0" style="-fx-border-radius: 8;" AnchorPane.topAnchor="82.0">
+                     <styleClass>
+                        <String fx:value="track" />
+                        <String fx:value="bar" />
+                     </styleClass>
+                  </ProgressBar>
+                  <Label layoutX="15.0" layoutY="22.0" text="Rozpočet">
+                     <font>
+                        <Font name="SansSerif Bold" size="37.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
             <GridPane layoutX="30.0" layoutY="247.0" prefHeight="255.0" prefWidth="540.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8; -fx-border-width: 1.5;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="161.0" />
