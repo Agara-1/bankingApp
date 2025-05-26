@@ -41,7 +41,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label fx:id="castkaPo_Label" layoutX="227.0" layoutY="294.0" prefHeight="60.0" prefWidth="250.0" style="-fx-border-radius: 8;" styleClass="vstupniMena" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="320.0">
+      <Label fx:id="castkaPo_Label" layoutX="227.0" layoutY="294.0" prefHeight="60.0" prefWidth="250.0" style="-fx-border-radius: 8; -fx-background-color: #fbfdfd;; -fx-border-color: #c9c9c9;;" styleClass="vstupniMena" text="  " AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="320.0">
          <font>
             <Font name="Calibri Light" size="22.0" />
          </font>
