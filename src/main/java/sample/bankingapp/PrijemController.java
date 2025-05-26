@@ -3,6 +3,7 @@ package sample.bankingapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,10 +14,11 @@ import javafx.stage.Stage;
 
 import javax.crypto.KeyAgreement;
 import java.io.IOException;
+import java.io.Serializable;
 import java.security.Key;
 import java.time.LocalDate;
 
-public class PrijemController {
+public class PrijemController implements Serializable {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
@@ -57,6 +59,7 @@ public class PrijemController {
         transakce.setCastka(prijem);
 
         aktualniUzivatel.pridaniTransakce(transakce);
+        su.serializaceUzivatelu();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
             Parent root = loader.load();

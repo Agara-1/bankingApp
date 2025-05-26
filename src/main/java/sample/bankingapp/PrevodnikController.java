@@ -28,8 +28,7 @@ public class PrevodnikController {
     @FXML
     private TextField castkaPred_TextField;
 
-    @FXML
-    private ToggleGroup group1;
+
 
     @FXML
     private ToggleButton homeButton;
@@ -43,8 +42,6 @@ public class PrevodnikController {
     @FXML
     private ToggleButton nastaveniButton;
 
-    @FXML
-    private Button prevest;
 
     @FXML
     private ToggleButton prevodnikButton;

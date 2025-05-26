@@ -28,6 +28,7 @@ public class Uzivatel implements Serializable {
         this.uzivatelsakeJmeno = uzivatelsakeJmeno;
         this.heslo = heslo;
         this.datumZalozeni = LocalDate.now();
+       this.mena = Mena.CZK;
         this.zustatek = 0;
         this.seznamTransakci = new ArrayList<>();
         this.limitJidlo = 1000;
@@ -136,9 +137,7 @@ public class Uzivatel implements Serializable {
         this.limitZabava = limitZabava;
     }
 
-    public int getLimitDoprava() {
-        return limitDoprava;
-    }
+    public int getLimitDoprava() {return limitDoprava;}
 
     public void setLimitDoprava(int limitDoprava) {
         this.limitDoprava = limitDoprava;

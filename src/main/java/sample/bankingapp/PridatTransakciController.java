@@ -46,6 +46,8 @@ public class PridatTransakciController {
         transakce.setCastka(vydaj);
 
         aktualniUzivatel.pridaniTransakce(transakce);
+
+        su.serializaceUzivatelu();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
             Parent root = loader.load();

@@ -48,40 +48,34 @@ public class UpravitLimitController {
 
     @FXML
     void potvrdit() {
-
         String castka = castkaNaPoslani_TextField.getText();
-//        limitDoprava_Label.setText(String.valueOf(zakladniLimit));
-//        limitBezny_Label.setText(String.valueOf(zakladniLimit));
-//        limitZabava_Label.setText(String.valueOf(zakladniLimit));
-//        limitOstatni_Label.setText(String.valueOf(zakladniLimit));
+        KategorieTransakci kategorie = kategorieVydaje_ComboBox.getValue();
 
         if (kategorieVydaje_ComboBox == null || castka.isEmpty()) {
             chybaText.setText("Vyber kategorii a zadej částku.");
             return;
         }
 
-        for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
-            if (t.getTypTransakce() == TypTransakce.VYDAJ && t.getKategorieVydaj() != null) {
-                switch (t.getKategorieVydaj()) {
-                    case JIDLO:
-                        aktualniUzivatel.setLimitJidlo(Integer.parseInt(castka));
-                        break;
-                    case DOPRAVA:
-                        aktualniUzivatel.setLimitDoprava(Integer.parseInt(castka));
-                        break;
-                    case ZABAVA:
-                        aktualniUzivatel.setLimitZabava(Integer.parseInt(castka));
-                        break;
-                    case BEZNE_VYDAJE:
-                        aktualniUzivatel.setLimitBezny(Integer.parseInt(castka));
-                        break;
-                    case OSTATNI:
-                        aktualniUzivatel.setLimitOstatni(Integer.parseInt(castka));
-                        break;
-                }
-
-            }
+        switch (kategorie) {
+            case JIDLO:
+                aktualniUzivatel.setLimitJidlo(Integer.parseInt(castka));
+                break;
+            case DOPRAVA:
+                aktualniUzivatel.setLimitDoprava(Integer.parseInt(castka));
+                break;
+            case ZABAVA:
+                aktualniUzivatel.setLimitZabava(Integer.parseInt(castka));
+                break;
+            case BEZNE_VYDAJE:
+                aktualniUzivatel.setLimitBezny(Integer.parseInt(castka));
+                break;
+            case OSTATNI:
+                aktualniUzivatel.setLimitOstatni(Integer.parseInt(castka));
+                break;
         }
+
+        su.serializaceUzivatelu();
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
             Parent root = loader.load();

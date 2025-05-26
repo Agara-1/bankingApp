@@ -1,8 +1,9 @@
 package sample.bankingapp;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Transakce {
+public class Transakce implements Serializable {
     private int id;
     private LocalDate datum;
     private int castka;
