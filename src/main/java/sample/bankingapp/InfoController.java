@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +21,6 @@ public class InfoController {
 
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
-
 
 
     @FXML
@@ -51,7 +51,7 @@ public class InfoController {
     private Label datumText;
 
     @FXML
-    private Label typUctu;
+    private Label mena_Label;
 
     @FXML
     private Label usernameInfoText;
@@ -66,7 +66,7 @@ public class InfoController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
-            loginController.setSu(su,aktualniUzivatel);
+            loginController.setSu(su, aktualniUzivatel);
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
@@ -163,10 +163,12 @@ public class InfoController {
     }
 
     private void nactiData() {
+        String mena = aktualniUzivatel.getMena().toString();
         jmenoUzivatelText.setText(aktualniUzivatel.getJmeno());
         usernameInfoText.setText(aktualniUzivatel.getUzivatelsakeJmeno());
         CisloUctu.setText(aktualniUzivatel.getCisloUctu());
         datumText.setText(aktualniUzivatel.getDatumZalozeni().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+        mena_Label.setText(mena);
     }
 
 
@@ -181,7 +183,6 @@ public class InfoController {
         this.aktualniUzivatel = uz;
         nactiData();
     }
-
 
 
 }

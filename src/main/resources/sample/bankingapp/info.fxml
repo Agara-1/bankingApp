@@ -116,7 +116,7 @@
                   <Font name="Calibri Light" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="mena" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" text="CZK" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Label fx:id="mena_Label" alignment="CENTER" prefHeight="107.0" prefWidth="295.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font name="Calibri Light" size="22.0" />
                </font>
