@@ -104,3 +104,22 @@
     -fx-background-radius: 4;
     -fx-font-size: 23px;
 }
+
+.vystupniMena {
+    -fx-font-family: "Calibri Light";
+    -fx-background-color: #fbfdfd;
+    -fx-text-fill: #a9a9a9;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-color: #c9c9c9;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-size: 23px;
+}
+
+.green-progress .track {
+    -fx-background-color: #fbfdfd;!important;
+}
+
+.green-progress .bar {
+    -fx-background-color: #117864 !important;
+}
