@@ -18,7 +18,7 @@ import java.io.Serializable;
 import java.security.Key;
 import java.time.LocalDate;
 
-public class PrijemController implements Serializable {
+public class PrijemController  {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
