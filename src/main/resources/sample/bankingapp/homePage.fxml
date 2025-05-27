@@ -132,30 +132,20 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="zustatek" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="82.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="445.0">
+      <Label fx:id="zustatek" alignment="CENTER" contentDisplay="CENTER" layoutX="590.0" layoutY="144.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="590.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="140.0">
          <font>
-            <Font name="SansSerif Bold" size="28.0" />
+            <Font name="SansSerif Bold" size="34.0" />
          </font>
       </Label>
-      <Label fx:id="prijem_label" alignment="CENTER" layoutX="360.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.rightAnchor="230.0">
+      <Label fx:id="prijem_label" alignment="CENTER" layoutX="590.0" layoutY="290.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="210.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="290.0">
          <font>
-            <Font name="SansSerif Bold" size="28.0" />
+            <Font name="SansSerif Bold" size="34.0" />
          </font>
       </Label>
-      <Label fx:id="kurz_label" layoutX="583.0" layoutY="82.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-color: #909497; -fx-border-radius: 8;" text="Kurz koruny" AnchorPane.rightAnchor="15.0">
+      <PieChart id="graf" fx:id="graf_Piechart" layoutX="214.0" layoutY="143.0" legendSide="TOP" legendVisible="false" prefHeight="360.0" prefWidth="360.0" style="-fx-border-color: #909497; -fx-background-radius: 8; -fx-border-radius: 8;" stylesheets="@style.css" title="Rozpocet" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="140.0" />
+      <Button id="pridatPrijem" fx:id="pridatPrijemButton" layoutX="590.0" layoutY="433.0" mnemonicParsing="false" onAction="#pridatPrijemButton" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text=" + Přidat přijem" textFill="WHITE" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="430.0">
          <font>
-            <Font name="SansSerif Regular" size="22.0" />
-         </font>
-      </Label>
-      <PieChart id="graf" fx:id="graf" layoutX="217.0" layoutY="194.0" prefHeight="360.0" prefWidth="360.0" style="-fx-border-color: #909497; -fx-background-radius: 8; -fx-border-radius: 8;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="210.0" />
-      <Button id="pridatPrijem" fx:id="pridatPrijemButton" layoutX="590.0" layoutY="265.0" mnemonicParsing="false" onAction="#pridatPrijemButton" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat přijem" textFill="WHITE">
-         <font>
-            <Font name="SansSerif Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button id="pridatVydaj" fx:id="pridatVydajButton" layoutX="590.0" layoutY="433.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat výdaj" textFill="WHITE">
-         <font>
-            <Font name="SansSerif Bold" size="20.0" />
+            <Font name="SansSerif Bold" size="21.0" />
          </font>
       </Button>
       <Button fx:id="logoutButton" layoutX="690.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
@@ -163,14 +153,19 @@
             <Font name="SansSerif Regular" size="17.0" />
          </font>
       </Button>
-      <Label layoutX="408.0" layoutY="48.0" text="Měsíční příjem">
+      <Label layoutX="627.0" layoutY="256.0" text="Měsíční příjem">
          <font>
             <Font name="Calibri Light" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="244.0" layoutY="48.0" text="Zustatek">
+      <Label layoutX="655.0" layoutY="110.0" text="Zustatek">
          <font>
             <Font name="Calibri Light" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="48.0" prefHeight="43.0" prefWidth="224.0" text="Home Page">
+         <font>
+            <Font name="SansSerif Bold" size="37.0" />
          </font>
       </Label>
    </children>

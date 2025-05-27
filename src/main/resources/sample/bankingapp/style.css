@@ -116,10 +116,16 @@
     -fx-font-size: 23px;
 }
 
-.green-progress .track {
-    -fx-background-color: #fbfdfd;!important;
+.progress-bar .track {
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 10;
 }
 
-.green-progress .bar {
-    -fx-background-color: #117864 !important;
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to left, #1abc9c, #117864) !important;
+    -fx-background-radius: 10;
+}
+.chart-content {
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
 }

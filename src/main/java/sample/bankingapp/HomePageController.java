@@ -18,6 +18,8 @@ public class HomePageController {
     private SpravceUzivatelu su;
 
 
+    @FXML
+    private PieChart graf_Piechart;
 
     @FXML
     private ToggleButton infoButton;
@@ -53,7 +55,7 @@ public class HomePageController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
-            loginController.setSu(su,aktualniUzivatel);
+            loginController.setSu(su, aktualniUzivatel);
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
@@ -109,17 +111,17 @@ public class HomePageController {
     @FXML
     void pridatPrijemButton() {
 
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatPrijem.fxml"));
-                Parent root = loader.load();
-                PrijemController prijemController = loader.getController();
-                prijemController.setSu(su, aktualniUzivatel);
-                Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
-                stage.setScene(new Scene(root));
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatPrijem.fxml"));
+            Parent root = loader.load();
+            PrijemController prijemController = loader.getController();
+            prijemController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -158,15 +160,62 @@ public class HomePageController {
     }
 
     private void refreshLabels() {
+        RozpocetController rC = new RozpocetController();
         if (this.aktualniUzivatel != null) {
-          prijem_label.setText(String.valueOf(this.aktualniUzivatel.getMesicniPrijem()));
-          zustatek.setText(String.valueOf(this.aktualniUzivatel.getZustatek()));
+            prijem_label.setText(String.valueOf(this.aktualniUzivatel.getMesicniPrijem()));
+            zustatek.setText(String.valueOf(this.aktualniUzivatel.getZustatek()));
+
+            int jidlo = 0;
+            int doprava = 0;
+            int zabava = 0;
+            int bezny = 0;
+            int ostatni = 0;
+            for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
+                if (t.getTypTransakce() == TypTransakce.VYDAJ && t.getKategorieVydaj() != null) {
+                    switch (t.getKategorieVydaj()) {
+                        case JIDLO:
+                            jidlo += t.getCastka();
+                            break;
+                        case DOPRAVA:
+                            doprava += t.getCastka();
+                            break;
+                        case ZABAVA:
+                            zabava += t.getCastka();
+                            break;
+                        case BEZNE_VYDAJE:
+                            bezny += t.getCastka();
+                            break;
+                        case OSTATNI:
+                            ostatni += t.getCastka();
+                            break;
+                    }
+
+                }
+
+                graf_Piechart.getData().clear();
+                if (jidlo != 0) {
+                    graf_Piechart.getData().add(new PieChart.Data("Jidlo", jidlo));
+                }
+                if (doprava != 0) {
+                    graf_Piechart.getData().add(new PieChart.Data("Doprava", doprava));
+                }
+                if (zabava != 0) {
+                    graf_Piechart.getData().add(new PieChart.Data("Zabava", zabava));
+                }
+                if (bezny != 0) {
+                    graf_Piechart.getData().add(new PieChart.Data("Běžné výdaje", bezny));
+                }
+                if (ostatni != 0) {
+                    graf_Piechart.getData().add(new PieChart.Data("Ostatni", ostatni));
+                }
+
+            }
         }
     }
 
 
     public void setSu(SpravceUzivatelu isu, Uzivatel iuz) {
-        if (isu != null &&iuz != null) {
+        if (isu != null && iuz != null) {
             this.su = isu;
             this.aktualniUzivatel = iuz;
         }
