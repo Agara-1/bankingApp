@@ -55,7 +55,7 @@
                         <ComboBox fx:id="kategorieVydaje_ComboBox" layoutX="87.0" layoutY="230.0" prefHeight="39.0" prefWidth="350.0" promptText="Kategorie transakci" styleClass="kategorie-ComboBox" stylesheets="@style.css" AnchorPane.topAnchor="230.0" />
                      </children>
                   </AnchorPane>
-                  <Text fx:id="chybaText" fill="#c32222" layoutX="186.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="228.0">
+                  <Text fx:id="chybaText" fill="#c32222" layoutX="157.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="287.0">
                      <font>
                         <Font name="Calibri Light" size="26.0" />
                      </font>

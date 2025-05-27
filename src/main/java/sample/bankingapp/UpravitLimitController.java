@@ -51,8 +51,21 @@ public class UpravitLimitController {
         String castka = castkaNaPoslani_TextField.getText();
         KategorieTransakci kategorie = kategorieVydaje_ComboBox.getValue();
 
-        if (kategorieVydaje_ComboBox == null || castka.isEmpty()) {
+        if (kategorie == null || castkaNaPoslani_TextField.getText().isEmpty()) {
             chybaText.setText("Vyber kategorii a zadej částku.");
+            return;
+        }
+
+        int castkaCislo;
+        try {
+            castkaCislo = Integer.parseInt(castkaNaPoslani_TextField.getText());
+        } catch (NumberFormatException e) {
+            chybaText.setText("Částka musí být celé číslo.");
+            return;
+        }
+
+        if (castkaCislo <= 0) {
+            chybaText.setText("Částka musí být kladné číslo.");
             return;
         }
 

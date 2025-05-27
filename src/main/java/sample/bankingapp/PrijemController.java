@@ -23,7 +23,6 @@ public class PrijemController implements Serializable {
     private Uzivatel aktualniUzivatel;
 
 
-
     @FXML
     private Text chybaText;
 
@@ -47,29 +46,53 @@ public class PrijemController implements Serializable {
 
     @FXML
     void prijem() {
+
         int prijem = Integer.parseInt(mesicniPrijem_TextField.getText());
         int zustatek = aktualniUzivatel.getZustatek() + prijem;
+
+        if (mesicniPrijem_TextField.getText().isEmpty() || typPrijmu_TextField.getText().isEmpty()) {
+            chybaText.setText("Musíte zadat všechny hodnoty.");
+            return;
+        }
+
+
+        try {
+            prijem = Integer.parseInt(mesicniPrijem_TextField.getText());
+        } catch (NumberFormatException e) {
+            chybaText.setText("Příjem musí být celé číslo.");
+            return;
+        }
+
+        if (prijem <= 0) {
+            chybaText.setText("Příjem musí být kladné číslo.");
+            return;
+        }
+
         aktualniUzivatel.setMesicniPrijem(prijem);
         aktualniUzivatel.setZustatek(zustatek);
         Transakce transakce = new Transakce();
 
-        transakce.setKategoriePrijem(typPrijmu_TextField.getText());
-        transakce.setDatum(LocalDate.now());
-        transakce.setTypTransakce(TypTransakce.PRIJEM);
-        transakce.setCastka(prijem);
 
-        aktualniUzivatel.pridaniTransakce(transakce);
-        su.serializaceUzivatelu();
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
-            Parent root = loader.load();
-            HomePageController controller = loader.getController();
-            controller.setSu(su, aktualniUzivatel);
-            Stage stage = (Stage) pridatButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            transakce.setKategoriePrijem(typPrijmu_TextField.getText());
+            transakce.setDatum(LocalDate.now());
+            transakce.setTypTransakce(TypTransakce.PRIJEM);
+            transakce.setCastka(prijem);
+
+            aktualniUzivatel.pridaniTransakce(transakce);
+            su.serializaceUzivatelu();
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+                Parent root = loader.load();
+                HomePageController controller = loader.getController();
+                controller.setSu(su, aktualniUzivatel);
+                Stage stage = (Stage) pridatButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
 
     }
 

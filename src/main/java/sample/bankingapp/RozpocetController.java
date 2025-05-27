@@ -42,20 +42,7 @@ public class RozpocetController {
 
     @FXML
     private ToggleButton transakceButton;
-    @FXML
-    private Label kategorieBezna_Label;
 
-    @FXML
-    private Label kategorieDoprava_Label;
-
-    @FXML
-    private Label kategorieJidlo_Label;
-
-    @FXML
-    private Label kategorieOstatni_Label;
-
-    @FXML
-    private Label kategorieZabava_Label;
 
     @FXML
     private ProgressBar progresRozpocet_ProgressBar;
@@ -122,9 +109,6 @@ public class RozpocetController {
         }
 
         progresRozpocet_ProgressBar.setProgress(Math.min(prog, 1.0));
-        progresRozpocet_ProgressBar.getStyleClass().removeAll("green-progress");
-        progresRozpocet_ProgressBar.getStyleClass().add("green-progress");
-
     }
 
 
@@ -306,7 +290,25 @@ public class RozpocetController {
         progres();
     }
 
+    public int getSoucetJidlo() {
+        return soucetJidlo;
+    }
 
+    public int getSoucetDoprava() {
+        return soucetDoprava;
+    }
+
+    public int getSoucetZabava() {
+        return soucetZabava;
+    }
+
+    public int getSoucetBezny() {
+        return soucetBezny;
+    }
+
+    public int getSoucetOstatni() {
+        return soucetOstatni;
+    }
 }
 
 

@@ -190,7 +190,7 @@ public class TransakceController {
                         kategorie = String.valueOf(t.getKategorieVydaj());
                     }
                     
-                    String castka = t.getCastka() + " Kč";
+                    String castka = String.valueOf(t.getCastka());
 
                     Label datumLabel = new Label(datum);
                     Label typLabel = new Label(typ);

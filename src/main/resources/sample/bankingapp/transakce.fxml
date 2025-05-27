@@ -24,7 +24,7 @@
                   <Image url="@assets/bankLogo.png" />
                </image>
             </ImageView>
-            <Label layoutX="25.0" layoutY="150.0" text="MiCash" AnchorPane.topAnchor="140.0">
+            <Label layoutX="25.0" layoutY="150.0" text="MiCash" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="140.0">
                <font>
                   <Font name="SansSerif Bold" size="40.0" />
                </font>
@@ -33,9 +33,9 @@
       </AnchorPane>
       <AnchorPane layoutX="199.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="pridatTransakciButton" layoutX="33.0" layoutY="484.0" mnemonicParsing="false" onAction="#poslatPenize" prefHeight="54.0" prefWidth="192.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat transakci" textFill="WHITE" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="375.0" AnchorPane.topAnchor="484.0">
+            <Button fx:id="pridatTransakciButton" layoutX="197.0" layoutY="482.0" mnemonicParsing="false" onAction="#poslatPenize" prefHeight="60.0" prefWidth="220.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="gradient-button" stylesheets="@style.css" text="Přidat transakci" textFill="WHITE" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="490.0">
                <font>
-                  <Font name="SansSerif Bold" size="16.0" />
+                  <Font name="SansSerif Bold" size="21.0" />
                </font>
             </Button>
             <Label layoutX="33.0" layoutY="88.0" prefHeight="43.0" prefWidth="200.0" text="Transakce">
@@ -43,11 +43,6 @@
                   <Font name="SansSerif Bold" size="37.0" />
                </font>
             </Label>
-            <Button fx:id="upravitTransakciButton" layoutX="377.0" layoutY="484.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="192.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Upravit transakci" AnchorPane.leftAnchor="377.0">
-               <font>
-                  <Font name="SansSerif Regular" size="17.0" />
-               </font>
-            </Button>
             <Button fx:id="logoutButton" layoutX="490.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="17.0" prefWidth="96.0" style="-fx-background-color: #f4f6f7; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="btnActive-logout" stylesheets="@style.css" text="Logout">
                <font>
                   <Font name="SansSerif Regular" size="17.0" />
