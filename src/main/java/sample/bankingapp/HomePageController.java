@@ -13,6 +13,19 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
+/**
+ Controller, který ovládá hlavní okno celé aplikace.
+ * <p>
+ * Umožňuje uživateli:
+ * <ul>
+ *     <li>otevřít okno pro přidání příjmu,</li>
+ *     <li>přidat měsíční příjem,</li>
+ *     <li>zobrazit aktuální zůstatek,</li>
+ *     <li>prohlížet graf výdajů podle kategorií.</li>
+ * </ul>
+ * Graf slouží k vizualizaci informací o tom, kolik a za co uživatel utratil.
+
+ */
 public class HomePageController {
     private Uzivatel aktualniUzivatel;
     private SpravceUzivatelu su;
@@ -20,7 +33,9 @@ public class HomePageController {
 
     @FXML
     private PieChart graf_Piechart;
-
+    /**
+     * Prvky používané v okně HomePage.
+     */
     @FXML
     private ToggleButton infoButton;
 
@@ -48,7 +63,14 @@ public class HomePageController {
     @FXML
     private Label zustatek;
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     * Po stisknutí tlačítka se zároveň uživatel odhlásí a je přesměrován na přihlašovací obrazovku.
+     */
     @FXML
     void logoutButton() {
         try {
@@ -63,6 +85,13 @@ public class HomePageController {
         }
     }
 
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
 
     @FXML
     void info() {
@@ -78,6 +107,13 @@ public class HomePageController {
         }
     }
 
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
 
     @FXML
     void nastaveni() {
@@ -93,6 +129,13 @@ public class HomePageController {
         }
 
     }
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
 
     @FXML
     void prevodnik() {
@@ -107,7 +150,17 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller
+     * a zavolá na něm metodu setSu(), pomocí které předá
+     * aktuálního uživatele a správce uživatelů.
+     * Poté nastaví nové okno jako aktivní scénu.
+     * <p>
+     * Konkrétně se přepne na okno, ve kterém může uživatel přidat
+     * svůj měsíční příjem.
+     */
     @FXML
     void pridatPrijemButton() {
 
@@ -124,6 +177,13 @@ public class HomePageController {
         }
     }
 
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
 
     @FXML
     void rozpocet() {
@@ -138,6 +198,13 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
 
     @FXML
     void transakce() {
@@ -158,7 +225,15 @@ public class HomePageController {
     void initialize() {
 
     }
-
+    /**
+     * Aktualizuje zobrazení zůstatku a měsíčního příjmu na hlavním okně.
+     * <p>
+     * Tato metoda se volá po přidání nového měsíčního příjmu uživatelem.
+     * Obnoví hodnoty v příslušných Label prvcích, aby zobrazovaly
+     * aktuální zůstatek a měsíční příjem uživatele.
+     * Zároveň nastaví nové hodnoty pro koláčový diagram, který vizualizuje rozložení výdajů
+     * podle jednotlivých kategorií.
+     */
     private void refreshLabels() {
         RozpocetController rC = new RozpocetController();
         if (this.aktualniUzivatel != null) {
@@ -213,7 +288,13 @@ public class HomePageController {
         }
     }
 
-
+    /**
+     * Nastaví aktuálního uživatele a zavolá metodu refreshLabels(),
+     * která aktualizuje zobrazení zůstatku a měsíčního příjmu.
+     * <p>
+     * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
+     * se veškeré informace spojené s uživatelem správně zobrazí.
+     */
     public void setSu(SpravceUzivatelu isu, Uzivatel iuz) {
         if (isu != null && iuz != null) {
             this.su = isu;

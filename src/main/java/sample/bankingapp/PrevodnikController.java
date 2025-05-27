@@ -15,7 +15,9 @@ public class PrevodnikController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-
+    /**
+     * Prvky používané v okně HomePage.
+     */
     @FXML
     private ComboBox<Mena> mena_1_ComboBox;
 
@@ -28,8 +30,6 @@ public class PrevodnikController {
     @FXML
     private TextField castkaPred_TextField;
 
-
-
     @FXML
     private ToggleButton homeButton;
 
@@ -41,7 +41,6 @@ public class PrevodnikController {
 
     @FXML
     private ToggleButton nastaveniButton;
-
 
     @FXML
     private ToggleButton prevodnikButton;

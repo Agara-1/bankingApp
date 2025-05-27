@@ -4,6 +4,8 @@ module sample.bankingapp {
 
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires org.junit.jupiter.api;
+    requires org.testng;
 
     opens sample.bankingapp to javafx.fxml;
     exports sample.bankingapp;

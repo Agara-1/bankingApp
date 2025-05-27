@@ -12,11 +12,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+/**
+ * Třída umožňující správu uživatelského účtu.
+ * Obsahuje funkce pro změnu jména, přihlašovacího jména a hesla.
+ * Uživatel zde může také vymazat historii transakcí a změnit výchozí měnu.
+ * Po stisknutí tlačítka „Uložit“ se všechny změněné údaje uloží a nahradí původní hodnoty.
+ */
+
 public class NastaveniController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-
+    /**
+     * Prvky používané v okně HomePage.
+     */
     @FXML
     private ToggleButton homeButton;
 
@@ -53,13 +62,21 @@ public class NastaveniController {
     @FXML
     private Button vymazatButton;
 
-
+    /**
+     * Vymaže celou historii transakcí aktuálního uživatele.
+     * Tato akce je nevratná a odstraní všechny záznamy o předchozích transakcích.
+     */
     @FXML
     void vymazat() {
         aktualniUzivatel.getSeznamTransakci().clear();
     }
-
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     * Po stisknutí tlačítka se zároveň uživatel odhlásí a je přesměrován na přihlašovací obrazovku.
+     */
     @FXML
     void logoutButton() {
         try {
@@ -74,7 +91,13 @@ public class NastaveniController {
         }
     }
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void info() {
         try {
@@ -89,7 +112,13 @@ public class NastaveniController {
         }
     }
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void nastaveni() {
         try {
@@ -104,7 +133,13 @@ public class NastaveniController {
         }
 
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void prevodnik() {
         try {
@@ -119,7 +154,13 @@ public class NastaveniController {
         }
     }
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void rozpocet() {
         try {
@@ -133,7 +174,13 @@ public class NastaveniController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void transakce() {
         try {
@@ -147,7 +194,13 @@ public class NastaveniController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void home() {
         try {
@@ -162,7 +215,11 @@ public class NastaveniController {
         }
 
     }
-
+    /**
+     * Načte a zobrazí všechny informace o uživateli a jeho účtu v okně.
+     * Tato metoda získá data jako jméno, přihlašovací jméno, heslo a
+     * měnu a následně je nastaví do odpovídajících prvků ve scéně.
+     */
     public void nactiHodnoty() {
         jmenoNaUpravu.setPromptText(aktualniUzivatel.getJmeno());
         usernameNaUpravu.setPromptText(aktualniUzivatel.getUzivatelsakeJmeno());
@@ -170,7 +227,10 @@ public class NastaveniController {
         menaNaUpravu_ComboBox.setValue(aktualniUzivatel.getMena());
 
     }
-
+    /**
+     * Zkontroluje, zda zadaná hodnota není prázdná.
+     * Pokud není prázdná, uloží ji po stisknutí tlačítka a provede serializaci do souboru.
+     */
     @FXML
     void ulozit() {
         String jmeno = jmenoNaUpravu.getText();
@@ -194,13 +254,18 @@ public class NastaveniController {
 
     @FXML
     void initialize() {
-
     }
-
-    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
+        /**
+         * Nastaví aktuálního uživatele a zavolá metodu nactiHodnoty(),
+         * která aktualizuje zobrazení jména, přihlašovacího jména, hesla a měny.
+         * Dále nastaví příslušné hodnoty do prvků typu ComboBox,
+         * aby odpovídaly datům aktuálního uživatele.
+         * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
+         * se veškeré informace spojené s uživatelem správně zobrazí.
+         */
+        public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;
-
         menaNaUpravu_ComboBox.getItems().addAll(Mena.values());
         menaNaUpravu_ComboBox.setValue(aktualniUzivatel.getMena());
         nactiHodnoty();

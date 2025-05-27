@@ -7,8 +7,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ *Třída HelloAplication spouští celou aplikaci.
+ */
 public class HelloApplication extends Application {
-
+    /**
+     * * Metoda  otevře první okno aplikace a to registrační obrazovku (SignUp).
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));

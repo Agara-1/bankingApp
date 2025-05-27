@@ -16,12 +16,27 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-
+/**
+ * Třída zobrazuje kompletní informace o aktuálně přihlášeném uživateli.
+ * <p>
+ * Obsahuje prvky uživatelského rozhraní, které zobrazují:
+ * <ul>
+ *     <li>Jméno uživatele</li>
+ *     <li>Přihlašovací jméno</li>
+ *     <li>Datum založení účtu</li>
+ *     <li>Typ účtu</li>
+ *     <li>Měnu, kterou uživatel používá</li>
+ *     <li>Číslo účtu</li>
+ * </ul>
+ */
 public class InfoController {
 
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
+/**
+ * Prvky používané v okně HomePage.
+ */
 
     @FXML
     private Button logoutButton;
@@ -59,7 +74,13 @@ public class InfoController {
     @FXML
     private Label jmenoUzivatelText;
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     * Po stisknutí tlačítka se zároveň uživatel odhlásí a je přesměrován na přihlašovací obrazovku.
+     */
     @FXML
     void logoutButton() {
         try {
@@ -74,7 +95,12 @@ public class InfoController {
         }
     }
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void info() {
         try {
@@ -89,7 +115,12 @@ public class InfoController {
         }
     }
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void nastaveni() {
         try {
@@ -104,7 +135,12 @@ public class InfoController {
         }
 
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void prevodnik() {
         try {
@@ -119,7 +155,12 @@ public class InfoController {
         }
     }
 
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void rozpocet() {
         try {
@@ -133,7 +174,12 @@ public class InfoController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void transakce() {
         try {
@@ -147,7 +193,12 @@ public class InfoController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void home() {
         try {
@@ -161,7 +212,12 @@ public class InfoController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Načte a zobrazí všechny informace o uživateli a jeho účtu v okně.
+     * Tato metoda získá data jako jméno, přihlašovací jméno, datum založení účtu,
+     * typ účtu, měnu a číslo účtu, a následně je nastaví do odpovídajících prvků
+     * ve scéně.
+     */
     private void nactiData() {
         String mena = aktualniUzivatel.getMena().toString();
         jmenoUzivatelText.setText(aktualniUzivatel.getJmeno());
@@ -177,7 +233,14 @@ public class InfoController {
 
 
     }
-
+    /**
+     * Nastaví aktuálního uživatele a zavolá metodu nactiData(),
+     * která načte jméno, přihlašovací jméno, datum založení účtu,
+     * typ účtu, měnu a číslo účtu.
+     * <p>
+     * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
+     * se veškeré informace spojené s uživatelem správně zobrazí.
+     */
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;

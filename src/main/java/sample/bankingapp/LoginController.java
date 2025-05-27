@@ -8,20 +8,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
+/**
+ * Třída zodpovědná za přihlášení uživatele.
+ * Provádí ověření zadaného uživatelského jména a hesla.
+ * Pokud existuje uživatel se zadaným jménem a heslem v seznamu uživatelů,
+ * přihlásí daného uživatele.
+ */
 public class LoginController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
 
-
-
-    public Uzivatel getAktualniUzivatel() {
-        return aktualniUzivatel;
-    }
-
+    /**
+     * Prvky používané v okně HomePage.
+     */
     @FXML
     private Text chybaText;
 
@@ -37,7 +39,12 @@ public class LoginController {
     @FXML
     private TextField password_TextField;
 
-
+    /**
+     * Pokusí se přihlásit uživatele na základě zadaného jména a hesla.
+     * Porovná zadané údaje s existujícími uživateli v seznamu.
+     * Pokud se shodují, uživatel je přihlášen a automaticky se otevře hlavní okno (homePage).
+     * Pokud údaje nesedí, zobrazí se chybová zpráva.
+     */
     @FXML
     void logIn() {
         String username = username_TextField.getText().trim();
@@ -72,7 +79,13 @@ public class LoginController {
 
     }
 
-
+    /**
+     * Přepne na nové okno (SignUp) po kliknutí na tlačítko.
+     * <p>
+     * Tato metoda načte nové FXML okno, získá jeho controller,
+     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
+     * Následně nastaví nové okno jako aktivní scénu.
+     */
     @FXML
     void swichToSignUp() {
         try {
@@ -86,8 +99,19 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Nastaví aktuálního uživatele která aktualizuje
+     * zobrazení zůstatku a měsíčního příjmu.
+     * <p>
+     * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
+     * se veškeré informace spojené s uživatelem správně zobrazí.
+     */
     public void setSu(SpravceUzivatelu su, Uzivatel uz) {
         this.su = su;
         this.aktualniUzivatel = uz;
+    }
+    public Uzivatel getAktualniUzivatel() {
+        return aktualniUzivatel;
     }
 }
