@@ -1,0 +1,543 @@
+Index: src/main/java/sample/bankingapp/Uzivatel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample.bankingapp;\r\n\r\nimport java.io.Serializable;\r\nimport java.time.LocalDate;\r\nimport java.util.ArrayList;\r\nimport java.util.Random;\r\n\r\npublic class Uzivatel implements Serializable {\r\n    private Random rnd = new Random();\r\n    private String cisloUctu;\r\n    private String jmeno;\r\n    private String uzivatelsakeJmeno;\r\n    private String heslo;\r\n    private LocalDate datumZalozeni;\r\n    private Mena mena;\r\n    private int mesicniPrijem;\r\n    private int zustatek;\r\n    private int limitJidlo;\r\n    private int limitDoprava;\r\n    private int limitZabava;\r\n    private int limitBezny;\r\n    private int limitOstatni;\r\n\r\n    private ArrayList<Transakce> seznamTransakci;\r\n\r\n    public Uzivatel(String jmeno, String uzivatelsakeJmeno, String heslo) {\r\n        this.jmeno = jmeno;\r\n        this.uzivatelsakeJmeno = uzivatelsakeJmeno;\r\n        this.heslo = heslo;\r\n        this.datumZalozeni = LocalDate.now();\r\n       this.mena = Mena.CZK;\r\n        this.zustatek = 0;\r\n        this.seznamTransakci = new ArrayList<>();\r\n        this.limitJidlo = 1000;\r\n        this.limitDoprava = 1000;\r\n        this.limitZabava = 1000;\r\n        this.limitBezny = 1000;\r\n        this.limitOstatni = 1000;\r\n        cisloUctu = generaceUctu();\r\n    }\r\n\r\n    public String generaceUctu() {\r\n        StringBuilder cislo = new StringBuilder();\r\n        for (int i = 0; i < 12; i++) {\r\n            cislo.append(rnd.nextInt(10));\r\n            if ((i + 1) % 4 == 0 && i < 11) {\r\n                cislo.append(\" \");\r\n            }\r\n        }\r\n        return cislo.toString();\r\n    }\r\n\r\n    public void pridaniTransakce(Transakce t) {\r\n        seznamTransakci.add(t);\r\n    }\r\n\r\n\r\n    public ArrayList<Transakce> getSeznamTransakci() {\r\n        return seznamTransakci;\r\n    }\r\n\r\n    public String getJmeno() {\r\n        return jmeno;\r\n    }\r\n\r\n    public void setJmeno(String jmeno) {\r\n        this.jmeno = jmeno;\r\n    }\r\n\r\n    public String getUzivatelsakeJmeno() {\r\n        return uzivatelsakeJmeno;\r\n    }\r\n\r\n    public void setUzivatelsakeJmeno(String uzivatelsakeJmeno) {\r\n        this.uzivatelsakeJmeno = uzivatelsakeJmeno;\r\n    }\r\n\r\n    public String getHeslo() {\r\n        return heslo;\r\n    }\r\n\r\n    public void setHeslo(String heslo) {\r\n        this.heslo = heslo;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Uzivatel{\" +\r\n                \"jmeno='\" + jmeno + '\\'' +\r\n                \", uzivatelsakeJmeno='\" + uzivatelsakeJmeno + '\\'' +\r\n                \", heslo='\" + heslo + '\\'' +\r\n                '}';\r\n    }\r\n\r\n    public LocalDate getDatumZalozeni() {\r\n        return datumZalozeni;\r\n    }\r\n\r\n\r\n    public int getMesicniPrijem() {\r\n        return mesicniPrijem;\r\n    }\r\n\r\n    public void setMesicniPrijem(int mesicniPrijem) {\r\n        this.mesicniPrijem = mesicniPrijem;\r\n    }\r\n\r\n    public int getZustatek() {\r\n        return zustatek;\r\n    }\r\n\r\n    public void setZustatek(int zustatek) {\r\n        this.zustatek = zustatek;\r\n    }\r\n\r\n    public int getLimitOstatni() {\r\n        return limitOstatni;\r\n    }\r\n\r\n    public void setLimitOstatni(int limitOstatni) {\r\n        this.limitOstatni = limitOstatni;\r\n    }\r\n\r\n    public int getLimitBezny() {\r\n        return limitBezny;\r\n    }\r\n\r\n    public void setLimitBezny(int limitBezny) {\r\n        this.limitBezny = limitBezny;\r\n    }\r\n\r\n    public int getLimitZabava() {\r\n        return limitZabava;\r\n    }\r\n\r\n    public void setLimitZabava(int limitZabava) {\r\n        this.limitZabava = limitZabava;\r\n    }\r\n\r\n    public int getLimitDoprava() {return limitDoprava;}\r\n\r\n    public void setLimitDoprava(int limitDoprava) {\r\n        this.limitDoprava = limitDoprava;\r\n    }\r\n\r\n    public int getLimitJidlo() {\r\n        return limitJidlo;\r\n    }\r\n\r\n    public void setLimitJidlo(int limitJidlo) {\r\n        this.limitJidlo = limitJidlo;\r\n    }\r\n\r\n    public Mena getMena() {\r\n        return mena;\r\n    }\r\n\r\n    public void setMena(Mena mena) {\r\n        this.mena = mena;\r\n    }\r\n\r\n    public String getCisloUctu() {\r\n        return cisloUctu;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/bankingapp/Uzivatel.java b/src/main/java/sample/bankingapp/Uzivatel.java
+--- a/src/main/java/sample/bankingapp/Uzivatel.java	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/src/main/java/sample/bankingapp/Uzivatel.java	(date 1748374119367)
+@@ -162,4 +162,6 @@
+     public String getCisloUctu() {
+         return cisloUctu;
+     }
++
++
+ }
+\ No newline at end of file
+Index: src/main/java/sample/bankingapp/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample.bankingapp;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class HelloApplication extends Application {\r\n\r\n    @Override\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"signup.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load() );\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/bankingapp/HelloApplication.java b/src/main/java/sample/bankingapp/HelloApplication.java
+--- a/src/main/java/sample/bankingapp/HelloApplication.java	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/src/main/java/sample/bankingapp/HelloApplication.java	(date 1748374760146)
+@@ -7,8 +7,15 @@
+ 
+ import java.io.IOException;
+ 
++/**
++ *Třída HelloAplication spouští celou aplikaci.
++ */
+ public class HelloApplication extends Application {
+-
++    /**
++     * * Metoda  otevře první okno aplikace a to registrační obrazovku (SignUp).
++     * @param stage
++     * @throws IOException
++     */
+     @Override
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));
+Index: src/main/java/sample/bankingapp/HomePageController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample.bankingapp;\r\n\r\nimport java.io.IOException;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.chart.PieChart;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.ToggleButton;\r\nimport javafx.scene.control.ToggleGroup;\r\nimport javafx.stage.Stage;\r\n\r\npublic class HomePageController {\r\n    private Uzivatel aktualniUzivatel;\r\n    private SpravceUzivatelu su;\r\n\r\n\r\n\r\n    @FXML\r\n    private ToggleButton infoButton;\r\n\r\n    @FXML\r\n    private Button logoutButton;\r\n\r\n    @FXML\r\n    private ToggleButton nastaveniButton;\r\n\r\n    @FXML\r\n    private ToggleButton prevodnikButton;\r\n\r\n    @FXML\r\n    private Button pridatPrijemButton;\r\n\r\n    @FXML\r\n    private Label prijem_label;\r\n\r\n    @FXML\r\n    private ToggleButton rozpocetButton;\r\n\r\n    @FXML\r\n    private ToggleButton transakceButton;\r\n\r\n    @FXML\r\n    private Label zustatek;\r\n\r\n\r\n    @FXML\r\n    void logoutButton() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"login.fxml\"));\r\n            Parent root = loader.load();\r\n            LoginController loginController = loader.getController();\r\n            loginController.setSu(su,aktualniUzivatel);\r\n            Stage stage = (Stage) logoutButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void info() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"info.fxml\"));\r\n            Parent root = loader.load();\r\n            InfoController infoController = loader.getController();\r\n            infoController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) infoButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void nastaveni() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"nastaveni.fxml\"));\r\n            Parent root = loader.load();\r\n            NastaveniController nastaveniController = loader.getController();\r\n            nastaveniController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) nastaveniButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n    }\r\n\r\n    @FXML\r\n    void prevodnik() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"prevodnik.fxml\"));\r\n            Parent root = loader.load();\r\n            PrevodnikController prevodnikController = loader.getController();\r\n            prevodnikController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) prevodnikButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    void pridatPrijemButton() {\r\n\r\n            try {\r\n                FXMLLoader loader = new FXMLLoader(getClass().getResource(\"pridatPrijem.fxml\"));\r\n                Parent root = loader.load();\r\n                PrijemController prijemController = loader.getController();\r\n                prijemController.setSu(su, aktualniUzivatel);\r\n                Stage stage = (Stage) pridatPrijemButton.getScene().getWindow();\r\n                stage.setScene(new Scene(root));\r\n\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void rozpocet() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"rozpocet.fxml\"));\r\n            Parent root = loader.load();\r\n            RozpocetController rozpocetController = loader.getController();\r\n            rozpocetController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) rozpocetButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    void transakce() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"transakce.fxml\"));\r\n            Parent root = loader.load();\r\n            TransakceController transakceController = loader.getController();\r\n            transakceController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) transakceButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void initialize() {\r\n\r\n    }\r\n\r\n    private void refreshLabels() {\r\n        if (this.aktualniUzivatel != null) {\r\n          prijem_label.setText(String.valueOf(this.aktualniUzivatel.getMesicniPrijem()));\r\n          zustatek.setText(String.valueOf(this.aktualniUzivatel.getZustatek()));\r\n        }\r\n    }\r\n\r\n\r\n    public void setSu(SpravceUzivatelu isu, Uzivatel iuz) {\r\n        if (isu != null &&iuz != null) {\r\n            this.su = isu;\r\n            this.aktualniUzivatel = iuz;\r\n        }\r\n        refreshLabels();\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/bankingapp/HomePageController.java b/src/main/java/sample/bankingapp/HomePageController.java
+--- a/src/main/java/sample/bankingapp/HomePageController.java	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/src/main/java/sample/bankingapp/HomePageController.java	(date 1748376003717)
+@@ -13,12 +13,27 @@
+ import javafx.scene.control.ToggleGroup;
+ import javafx.stage.Stage;
+ 
++/**
++ Controller, který ovládá hlavní okno celé aplikace.
++ * <p>
++ * Umožňuje uživateli:
++ * <ul>
++ *     <li>otevřít okno pro přidání příjmu,</li>
++ *     <li>přidat měsíční příjem,</li>
++ *     <li>zobrazit aktuální zůstatek,</li>
++ *     <li>prohlížet graf výdajů podle kategorií.</li>
++ * </ul>
++ * Graf slouží k vizualizaci informací o tom, kolik a za co uživatel utratil.
++
++ */
+ public class HomePageController {
+     private Uzivatel aktualniUzivatel;
+     private SpravceUzivatelu su;
+ 
+ 
+-
++    /**
++     * Prvky používané v okně HomePage.
++     */
+     @FXML
+     private ToggleButton infoButton;
+ 
+@@ -46,6 +61,13 @@
+     @FXML
+     private Label zustatek;
+ 
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller,
++     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
++     * Následně nastaví nové okno jako aktivní scénu.
++     */
+ 
+     @FXML
+     void logoutButton() {
+@@ -61,6 +83,13 @@
+         }
+     }
+ 
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller,
++     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
++     * Následně nastaví nové okno jako aktivní scénu.
++     */
+ 
+     @FXML
+     void info() {
+@@ -76,6 +105,13 @@
+         }
+     }
+ 
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller,
++     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
++     * Následně nastaví nové okno jako aktivní scénu.
++     */
+ 
+     @FXML
+     void nastaveni() {
+@@ -91,6 +127,13 @@
+         }
+ 
+     }
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller,
++     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
++     * Následně nastaví nové okno jako aktivní scénu.
++     */
+ 
+     @FXML
+     void prevodnik() {
+@@ -105,7 +148,17 @@
+             e.printStackTrace();
+         }
+     }
+-
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller
++     * a zavolá na něm metodu setSu(), pomocí které předá
++     * aktuálního uživatele a správce uživatelů.
++     * Poté nastaví nové okno jako aktivní scénu.
++     * <p>
++     * Konkrétně se přepne na okno, ve kterém může uživatel přidat
++     * svůj měsíční příjem.
++     */
+     @FXML
+     void pridatPrijemButton() {
+ 
+@@ -122,6 +175,13 @@
+             }
+     }
+ 
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller,
++     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
++     * Následně nastaví nové okno jako aktivní scénu.
++     */
+ 
+     @FXML
+     void rozpocet() {
+@@ -136,6 +196,13 @@
+             e.printStackTrace();
+         }
+     }
++    /**
++     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
++     * <p>
++     * Tato metoda načte nové FXML okno, získá jeho controller,
++     * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
++     * Následně nastaví nové okno jako aktivní scénu.
++     */
+ 
+     @FXML
+     void transakce() {
+@@ -156,7 +223,13 @@
+     void initialize() {
+ 
+     }
+-
++    /**
++     * Aktualizuje zobrazení zůstatku a měsíčního příjmu na hlavním okně.
++     * <p>
++     * Tato metoda se volá po přidání nového měsíčního příjmu uživatelem.
++     * Obnoví hodnoty v příslušných Label prvcích, aby zobrazovaly
++     * aktuální zůstatek a měsíční příjem uživatele.
++     */
+     private void refreshLabels() {
+         if (this.aktualniUzivatel != null) {
+           prijem_label.setText(String.valueOf(this.aktualniUzivatel.getMesicniPrijem()));
+@@ -164,7 +237,13 @@
+         }
+     }
+ 
+-
++    /**
++     * Nastaví aktuálního uživatele a zavolá metodu refreshLabels(),
++     * která aktualizuje zobrazení zůstatku a měsíčního příjmu.
++     * <p>
++     * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
++     * se veškeré informace spojené s uživatelem správně zobrazí.
++     */
+     public void setSu(SpravceUzivatelu isu, Uzivatel iuz) {
+         if (isu != null &&iuz != null) {
+             this.su = isu;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2fd4e2e2-aa65-4a2e-8617-8843caf4cef0\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/Mena.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/Mena.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/UpravitLimitController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/UpravitLimitController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/uzivatele.dat\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaFXApplication\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Enum\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Agara-1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Agara-1/bankingApp.git&quot;,\r\n    &quot;accountId&quot;: &quot;20027674-a1fe-4c43-a3b8-79b21eb5ce37&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2vtnn3S0N5vTaGby9H5ZVd30GJg\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\sakal\\IdeaProjects\\VelkeProjekty\\bankingApp\\src\\main\\resources\\sample\\bankingapp\" />\r\n      <recent name=\"C:\\Users\\sakal\\IdeaProjects\\VelkeProjekty\\bankingApp\\src\\main\\resources\\sample\\bankingapp\\assets\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"sample.bankingapp.HelloApplication\" />\r\n      <module name=\"bankingApp\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"sample.bankingapp.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2fd4e2e2-aa65-4a2e-8617-8843caf4cef0\" name=\"Changes\" comment=\"\" />\r\n      <created>1744973402693</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1744973402693</updated>\r\n      <workItem from=\"1744973403762\" duration=\"17175000\" />\r\n      <workItem from=\"1745226450256\" duration=\"2616000\" />\r\n      <workItem from=\"1745229457421\" duration=\"17415000\" />\r\n      <workItem from=\"1746564398343\" duration=\"17694000\" />\r\n      <workItem from=\"1747331929304\" duration=\"39753000\" />\r\n      <workItem from=\"1747586036799\" duration=\"11215000\" />\r\n      <workItem from=\"1747669545515\" duration=\"15143000\" />\r\n      <workItem from=\"1747736820505\" duration=\"13275000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"vytvareni uvodniho okna v programu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745781137687</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745781137687</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"vytvareni ona login v programu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745781174378</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745781174378</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"vytvareni okna rozpocet v programu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745781197926</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745781197926</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"vytvareni okna signup v programu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745781241684</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745781241684</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"pridani stylu pro ruzna tlacitka pomoci css\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745781283103</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745781283103</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"drobne zmeny(vsechno co se commitovalo 27.4.2025 bylo vytvoreno 19.4 az 21.4)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745781365062</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745781365062</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"prepinani mezi okny\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1746996748553</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1746996748553</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"upraveni a vylepseni vzhledu\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747081565015</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747081565015</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"uprava vzhledu,prepinani mezi okny, serializace, ulozeni uzivatele, dodelavani okna info, zpracovani registrace a prihlasovani\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747601171788</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747601171788</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Nastaveno chovani tlacitek (pres metody)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747685607202</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747685607202</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Vylepseni vzhledu aplikace\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747685778667</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747685778667</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Začatek práce na transakční operaci\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747686283513</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747686283513</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Navržena dalsi vizualizace\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747687018247</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747687018247</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Pridani prijmu a predavani uzivatele mezi oknami funguji\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747750331067</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747750331067</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"dodelavani rozpoctu aby se vypisovalo kolik se utratilo za danou kategorii\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747949816713</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747949816713</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"udelani prevosniku men z korun na usd eur gbp\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747949957891</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747949957891</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"udelani prevosniku men z korun na usd eur gbp\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747949998189</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747949998189</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"priprava nastaveni pro zmenu hodnot\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747950043745</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747950043745</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"drobne upravy\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747950091067</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747950091067</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"20\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"vytvareni uvodniho okna v programu\" />\r\n    <MESSAGE value=\"vytvareni ona login v programu\" />\r\n    <MESSAGE value=\"vytvareni okna rozpocet v programu\" />\r\n    <MESSAGE value=\"vytvareni okna signup v programu\" />\r\n    <MESSAGE value=\"pridani stylu pro ruzna tlacitka pomoci css\" />\r\n    <MESSAGE value=\"drobne zmeny(vsechno co se commitovalo 27.4.2025 bylo vytvoreno 19.4 az 21.4)\" />\r\n    <MESSAGE value=\"prepinani mezi okny\" />\r\n    <MESSAGE value=\"upraveni a vylepseni vzhledu\" />\r\n    <MESSAGE value=\"uprava vzhledu,prepinani mezi okny, serializace, ulozeni uzivatele, dodelavani okna info, zpracovani registrace a prihlasovani\" />\r\n    <MESSAGE value=\"Nastaveno chovani tlacitek (pres metody)\" />\r\n    <MESSAGE value=\"Vylepseni vzhledu aplikace\" />\r\n    <MESSAGE value=\"Začatek práce na transakční operaci\" />\r\n    <MESSAGE value=\"Navržena dalsi vizualizace\" />\r\n    <MESSAGE value=\"Pridani prijmu a predavani uzivatele mezi oknami funguji\" />\r\n    <MESSAGE value=\"dodelavani rozpoctu aby se vypisovalo kolik se utratilo za danou kategorii\" />\r\n    <MESSAGE value=\"udelani prevosniku men z korun na usd eur gbp\" />\r\n    <MESSAGE value=\"priprava nastaveni pro zmenu hodnot\" />\r\n    <MESSAGE value=\"drobne upravy\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"drobne upravy\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java</url>\r\n          <line>151</line>\r\n          <option name=\"timeStamp\" value=\"15\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-field\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java</url>\r\n          <line>15</line>\r\n          <properties field=\"aktualniUzivatel\" class=\"sample.bankingapp.LoginController\" />\r\n          <option name=\"timeStamp\" value=\"21\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/.idea/workspace.xml	(date 1748376209083)
+@@ -4,25 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="drobne zmeny">
++      <change afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Testovani/UzivatelTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Mena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Mena.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/UpravitLimitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/UpravitLimitController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/style.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/uzivatele.dat" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -34,8 +25,8 @@
+       <list>
+         <option value="JavaFXApplication" />
+         <option value="FxmlFile" />
+-        <option value="Class" />
+         <option value="Enum" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+@@ -70,24 +61,31 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.HelloApplication.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "git-widget-placeholder": "master",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/sakal/IdeaProjects/VelkeProjekty/bankingApp/lib",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Libraries",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "settings.editor.selected.configurable": "configurable.group.editor",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\sakal\IdeaProjects\VelkeProjekty\bankingApp" />
++    </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\sakal\IdeaProjects\VelkeProjekty\bankingApp\src\main\resources\sample\bankingapp" />
+       <recent name="C:\Users\sakal\IdeaProjects\VelkeProjekty\bankingApp\src\main\resources\sample\bankingapp\assets" />
+@@ -116,8 +114,8 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
++        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
++        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -137,6 +135,8 @@
+       <workItem from="1747586036799" duration="11215000" />
+       <workItem from="1747669545515" duration="15143000" />
+       <workItem from="1747736820505" duration="13275000" />
++      <workItem from="1748291866678" duration="453000" />
++      <workItem from="1748366822386" duration="8488000" />
+     </task>
+     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
+       <option name="closed" value="true" />
+@@ -290,7 +290,55 @@
+       <option name="project" value="LOCAL" />
+       <updated>1747950091067</updated>
+     </task>
+-    <option name="localTasksCounter" value="20" />
++    <task id="LOCAL-00020" summary="nastaveni meny podle toho ktera je v nastaveni">
++      <option name="closed" value="true" />
++      <created>1748291951387</created>
++      <option name="number" value="00020" />
++      <option name="presentableId" value="LOCAL-00020" />
++      <option name="project" value="LOCAL" />
++      <updated>1748291951387</updated>
++    </task>
++    <task id="LOCAL-00021" summary="nastaveni meny pro info">
++      <option name="closed" value="true" />
++      <created>1748291980214</created>
++      <option name="number" value="00021" />
++      <option name="presentableId" value="LOCAL-00021" />
++      <option name="project" value="LOCAL" />
++      <updated>1748291980214</updated>
++    </task>
++    <task id="LOCAL-00022" summary="vylepseni vzhledu">
++      <option name="closed" value="true" />
++      <created>1748292045250</created>
++      <option name="number" value="00022" />
++      <option name="presentableId" value="LOCAL-00022" />
++      <option name="project" value="LOCAL" />
++      <updated>1748292045250</updated>
++    </task>
++    <task id="LOCAL-00023" summary="pridani progresBaru">
++      <option name="closed" value="true" />
++      <created>1748292083865</created>
++      <option name="number" value="00023" />
++      <option name="presentableId" value="LOCAL-00023" />
++      <option name="project" value="LOCAL" />
++      <updated>1748292083865</updated>
++    </task>
++    <task id="LOCAL-00024" summary="serializace zustatku, transakci, a limitu">
++      <option name="closed" value="true" />
++      <created>1748292202376</created>
++      <option name="number" value="00024" />
++      <option name="presentableId" value="LOCAL-00024" />
++      <option name="project" value="LOCAL" />
++      <updated>1748292202376</updated>
++    </task>
++    <task id="LOCAL-00025" summary="drobne zmeny">
++      <option name="closed" value="true" />
++      <created>1748292233839</created>
++      <option name="number" value="00025" />
++      <option name="presentableId" value="LOCAL-00025" />
++      <option name="project" value="LOCAL" />
++      <updated>1748292233839</updated>
++    </task>
++    <option name="localTasksCounter" value="26" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -315,16 +363,17 @@
+     <MESSAGE value="udelani prevosniku men z korun na usd eur gbp" />
+     <MESSAGE value="priprava nastaveni pro zmenu hodnot" />
+     <MESSAGE value="drobne upravy" />
+-    <option name="LAST_COMMIT_MESSAGE" value="drobne upravy" />
++    <MESSAGE value="nastaveni meny podle toho ktera je v nastaveni" />
++    <MESSAGE value="nastaveni meny pro info" />
++    <MESSAGE value="vylepseni vzhledu" />
++    <MESSAGE value="pridani progresBaru" />
++    <MESSAGE value="serializace zustatku, transakci, a limitu" />
++    <MESSAGE value="drobne zmeny" />
++    <option name="LAST_COMMIT_MESSAGE" value="drobne zmeny" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+       <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java</url>
+-          <line>151</line>
+-          <option name="timeStamp" value="15" />
+-        </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-field">
+           <url>file://$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java</url>
+           <line>15</line>
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>sample</groupId>\r\n    <artifactId>bankingApp</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>bankingApp</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <junit.version>5.10.2</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-controls</artifactId>\r\n            <version>17.0.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-fxml</artifactId>\r\n            <version>17.0.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.dlsc.formsfx</groupId>\r\n            <artifactId>formsfx-core</artifactId>\r\n            <version>11.6.0</version>\r\n            <exclusions>\r\n                <exclusion>\r\n                    <groupId>org.openjfx</groupId>\r\n                    <artifactId>*</artifactId>\r\n                </exclusion>\r\n            </exclusions>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.kordamp.bootstrapfx</groupId>\r\n            <artifactId>bootstrapfx-core</artifactId>\r\n            <version>0.4.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <version>3.13.0</version>\r\n                <configuration>\r\n                    <source>23</source>\r\n                    <target>23</target>\r\n                </configuration>\r\n            </plugin>\r\n            <plugin>\r\n                <groupId>org.openjfx</groupId>\r\n                <artifactId>javafx-maven-plugin</artifactId>\r\n                <version>0.0.8</version>\r\n                <executions>\r\n                    <execution>\r\n                        <!-- Default configuration for running with: mvn clean javafx:run -->\r\n                        <id>default-cli</id>\r\n                        <configuration>\r\n                            <mainClass>sample.bankingapp/sample.bankingapp.HelloApplication</mainClass>\r\n                            <launcher>app</launcher>\r\n                            <jlinkZipName>app</jlinkZipName>\r\n                            <jlinkImageName>app</jlinkImageName>\r\n                            <noManPages>true</noManPages>\r\n                            <stripDebug>true</stripDebug>\r\n                            <noHeaderFiles>true</noHeaderFiles>\r\n                        </configuration>\r\n                    </execution>\r\n                </executions>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/pom.xml	(date 1748374155457)
+@@ -53,6 +53,18 @@
+             <version>${junit.version}</version>
+             <scope>test</scope>
+         </dependency>
++        <dependency>
++            <groupId>org.testng</groupId>
++            <artifactId>testng</artifactId>
++            <version>RELEASE</version>
++            <scope>compile</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter-api</artifactId>
++            <version>5.12.1</version>
++            <scope>compile</scope>
++        </dependency>
+     </dependencies>
+ 
+     <build>
+Index: src/main/java/sample/bankingapp/PrijemController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample.bankingapp;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.text.Text;\r\nimport javafx.stage.Stage;\r\n\r\nimport javax.crypto.KeyAgreement;\r\nimport java.io.IOException;\r\nimport java.io.Serializable;\r\nimport java.security.Key;\r\nimport java.time.LocalDate;\r\n\r\npublic class PrijemController implements Serializable {\r\n    private SpravceUzivatelu su;\r\n    private Uzivatel aktualniUzivatel;\r\n\r\n\r\n\r\n    @FXML\r\n    private Text chybaText;\r\n\r\n    @FXML\r\n    private Button backButton;\r\n\r\n\r\n    @FXML\r\n    private TextField mesicniPrijem_TextField;\r\n\r\n    @FXML\r\n    private Button pridatButton;\r\n\r\n    @FXML\r\n    private TextField typPrijmu_TextField;\r\n\r\n\r\n    @FXML\r\n    private Label typTransakcce_label;\r\n\r\n\r\n    @FXML\r\n    void prijem() {\r\n        int prijem = Integer.parseInt(mesicniPrijem_TextField.getText());\r\n        int zustatek = aktualniUzivatel.getZustatek() + prijem;\r\n        aktualniUzivatel.setMesicniPrijem(prijem);\r\n        aktualniUzivatel.setZustatek(zustatek);\r\n        Transakce transakce = new Transakce();\r\n\r\n        transakce.setKategoriePrijem(typPrijmu_TextField.getText());\r\n        transakce.setDatum(LocalDate.now());\r\n        transakce.setTypTransakce(TypTransakce.PRIJEM);\r\n        transakce.setCastka(prijem);\r\n\r\n        aktualniUzivatel.pridaniTransakce(transakce);\r\n        su.serializaceUzivatelu();\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"homePage.fxml\"));\r\n            Parent root = loader.load();\r\n            HomePageController controller = loader.getController();\r\n            controller.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) pridatButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n    }\r\n\r\n    @FXML\r\n    void back() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"homePage.fxml\"));\r\n            Parent root = loader.load();\r\n            HomePageController homePageController = loader.getController();\r\n            homePageController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) backButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void initialize() {\r\n\r\n    }\r\n\r\n    public void setSu(SpravceUzivatelu su, Uzivatel uz) {\r\n        this.su = su;\r\n        this.aktualniUzivatel = uz;\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/bankingapp/PrijemController.java b/src/main/java/sample/bankingapp/PrijemController.java
+--- a/src/main/java/sample/bankingapp/PrijemController.java	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/src/main/java/sample/bankingapp/PrijemController.java	(date 1748370682813)
+@@ -18,7 +18,7 @@
+ import java.security.Key;
+ import java.time.LocalDate;
+ 
+-public class PrijemController implements Serializable {
++public class PrijemController  {
+     private SpravceUzivatelu su;
+     private Uzivatel aktualniUzivatel;
+ 
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module sample.bankingapp {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n\r\n    requires com.dlsc.formsfx;\r\n    requires org.kordamp.bootstrapfx.core;\r\n\r\n    opens sample.bankingapp to javafx.fxml;\r\n    exports sample.bankingapp;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/src/main/java/module-info.java	(date 1748374119361)
+@@ -4,6 +4,8 @@
+ 
+     requires com.dlsc.formsfx;
+     requires org.kordamp.bootstrapfx.core;
++    requires org.junit.jupiter.api;
++    requires org.testng;
+ 
+     opens sample.bankingapp to javafx.fxml;
+     exports sample.bankingapp;
+Index: src/main/java/sample/bankingapp/PrevodnikController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sample.bankingapp;\r\n\r\nimport java.io.IOException;\r\nimport java.net.URL;\r\nimport java.util.ResourceBundle;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.*;\r\nimport javafx.stage.Stage;\r\n\r\npublic class PrevodnikController {\r\n    private SpravceUzivatelu su;\r\n    private Uzivatel aktualniUzivatel;\r\n\r\n\r\n    @FXML\r\n    private ComboBox<Mena> mena_1_ComboBox;\r\n\r\n    @FXML\r\n    private ComboBox<Mena> mena_2_ComboBox;\r\n\r\n    @FXML\r\n    private Label castkaPo_Label;\r\n\r\n    @FXML\r\n    private TextField castkaPred_TextField;\r\n\r\n\r\n\r\n    @FXML\r\n    private ToggleButton homeButton;\r\n\r\n    @FXML\r\n    private ToggleButton infoButton;\r\n\r\n    @FXML\r\n    private Button logoutButton;\r\n\r\n    @FXML\r\n    private ToggleButton nastaveniButton;\r\n\r\n\r\n    @FXML\r\n    private ToggleButton prevodnikButton;\r\n\r\n    @FXML\r\n    private ToggleButton rozpocetButton;\r\n\r\n    @FXML\r\n    private ToggleButton transakceButton;\r\n\r\n    public double zCZKDo(Mena mena) {\r\n        switch (mena) {\r\n            case CZK:\r\n                return 1.0;\r\n            case USD:\r\n                return 0.045;\r\n            case EUR:\r\n                return 0.041;\r\n            case GBP:\r\n                return 0.035;\r\n            default:return 1.0;\r\n        }\r\n\r\n    }\r\n    public double doCZK(Mena mena) {\r\n        switch (mena) {\r\n            case CZK:\r\n                return 1.0;\r\n            case USD:\r\n                return 22.0;\r\n            case EUR:\r\n                return 24.5;\r\n            case GBP:\r\n                return 28.3;\r\n            default:\r\n                return 1.0;\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    void prevest() {\r\n        try {\r\ndouble castka = Double.parseDouble(castkaPred_TextField.getText());\r\ndouble vCZK = castka * doCZK(mena_1_ComboBox.getSelectionModel().getSelectedItem());\r\ndouble vysledek = vCZK * zCZKDo(mena_2_ComboBox.getSelectionModel().getSelectedItem());\r\ncastkaPo_Label.setText(String.format(\"%.2f\", vysledek));\r\n        } catch (NumberFormatException e) {\r\n            castkaPo_Label.setText(\"Neplatná částka.\");\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void logoutButton() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"login.fxml\"));\r\n            Parent root = loader.load();\r\n            LoginController loginController = loader.getController();\r\n            loginController.setSu(su,aktualniUzivatel);\r\n            Stage stage = (Stage) logoutButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void info() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"info.fxml\"));\r\n            Parent root = loader.load();\r\n            InfoController infoController = loader.getController();\r\n            infoController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) infoButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    @FXML\r\n    void nastaveni() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"nastaveni.fxml\"));\r\n            Parent root = loader.load();\r\n            NastaveniController nastaveniController = loader.getController();\r\n            nastaveniController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) nastaveniButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n    }\r\n\r\n    @FXML\r\n    void prevodnik() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"prevodnik.fxml\"));\r\n            Parent root = loader.load();\r\n            PrevodnikController prevodnikController = loader.getController();\r\n            prevodnikController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) prevodnikButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    void rozpocet() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"rozpocet.fxml\"));\r\n            Parent root = loader.load();\r\n            RozpocetController rozpocetController = loader.getController();\r\n            rozpocetController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) rozpocetButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    void transakce() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"transakce.fxml\"));\r\n            Parent root = loader.load();\r\n            TransakceController transakceController = loader.getController();\r\n            transakceController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) transakceButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    void home() {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"homePage.fxml\"));\r\n            Parent root = loader.load();\r\n            HomePageController homePageController = loader.getController();\r\n            homePageController.setSu(su, aktualniUzivatel);\r\n            Stage stage = (Stage) homeButton.getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n    }\r\n\r\n    @FXML\r\n    void initialize() {\r\n        mena_1_ComboBox.getItems().addAll(Mena.values());\r\n        mena_2_ComboBox.getItems().addAll(Mena.values());\r\n        mena_1_ComboBox.setValue(Mena.CZK);\r\n        mena_2_ComboBox.setValue(Mena.USD);\r\n    }\r\n\r\n    public void setSu(SpravceUzivatelu su, Uzivatel uz) {\r\n        this.su = su;\r\n        this.aktualniUzivatel = uz;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/bankingapp/PrevodnikController.java b/src/main/java/sample/bankingapp/PrevodnikController.java
+--- a/src/main/java/sample/bankingapp/PrevodnikController.java	(revision e980676d829e9ad60f4b10e21bc15c595ca526bc)
++++ b/src/main/java/sample/bankingapp/PrevodnikController.java	(date 1748370661215)
+@@ -28,8 +28,6 @@
+     @FXML
+     private TextField castkaPred_TextField;
+ 
+-
+-
+     @FXML
+     private ToggleButton homeButton;
+ 
+Index: src/main/java/sample/bankingapp/Testovani/UzivatelTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/bankingapp/Testovani/UzivatelTest.java b/src/main/java/sample/bankingapp/Testovani/UzivatelTest.java
+new file mode 100644
+--- /dev/null	(date 1748374271638)
++++ b/src/main/java/sample/bankingapp/Testovani/UzivatelTest.java	(date 1748374271638)
+@@ -0,0 +1,30 @@
++package sample.bankingapp.Testovani;
++
++
++
++    import org.testng.annotations.Test;
++    import sample.bankingapp.Transakce;
++    import sample.bankingapp.Uzivatel;
++
++    import static org.junit.jupiter.api.Assertions.*;
++    import static org.testng.AssertJUnit.assertEquals;
++
++public class UzivatelTest {
++
++//        @Test
++//        void testZustatekPoJedneTransakci() {
++//            Uzivatel uzivatel = new Uzivatel("Karel");
++//            uzivatel.pridejTransakci(new Transakce("Káva", -50));
++//            assertEquals(-50, uzivatel.getZustatek());
++//        }
++//
++//        @Test
++//        void testViceTransakci() {
++//            Uzivatel u = new Uzivatel("Petr");
++//            u.pridejTransakci(new Transakce("Oběd", -100));
++//            u.pridejTransakci(new Transakce("Výplata", 1000));
++//            assertEquals(900, u.getZustatek());
++//        }
++    }
++
++
