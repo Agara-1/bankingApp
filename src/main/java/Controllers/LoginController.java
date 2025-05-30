@@ -1,4 +1,4 @@
-package sample.bankingapp;
+package Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import Models.SpravceUzivatelu;
+import sample.bankingapp.Uzivatel;
+
 import java.io.IOException;
 
 /**
@@ -16,13 +19,14 @@ import java.io.IOException;
  * Pokud existuje uživatel se zadaným jménem a heslem v seznamu uživatelů,
  * přihlásí daného uživatele.
  */
+@SuppressWarnings("CallToPrintStackTrace")
 public class LoginController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
 
     /**
-     * Prvky používané v okně HomePage.
+     * Prvky používané v okně.
      */
     @FXML
     private Text chybaText;
@@ -38,6 +42,40 @@ public class LoginController {
 
     @FXML
     private TextField password_TextField;
+    /**
+     * Ověřuje, zda uživatel zadal všechny požadované hodnoty při registraci.
+     * Metoda kontroluje, zda parametry nejsou null ani prázdné.
+     * Pokud některý z parametrů není správně vyplněn, vypíše chybovou hlášku do textového pole  chybaText.
+
+     * @param uZJmeno    Uživatelské jméno zadané ve formuláři.
+     * @param heslo      Heslo zadané ve formuláři.
+     * @return           true, pokud jsou všechny hodnoty vyplněné a validní; jinak {@code false}.
+     */
+    public boolean kontrola(String uZJmeno,String heslo){
+        if ( uZJmeno.isEmpty() || heslo.isEmpty()) {
+            chybaText.setText("Zadejte vsechny hodnoty");
+            return false;
+        }
+        return true;
+    }
+    /**
+     * Provede přechod na domovskou stránku aplikace.
+     * Tato metoda se volá po úspěšném přihlášení uživatele v metodě logIn.
+     * Načte a zobrazí hlavní okno aplikace.
+     */
+    private void prechod(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/homePage.fxml"));
+            Parent root = loader.load();
+            HomePageController homePageController = loader.getController();
+            homePageController.setSu(su, aktualniUzivatel);
+            Stage stage = (Stage) mainLogInButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Pokusí se přihlásit uživatele na základě zadaného jména a hesla.
@@ -50,26 +88,20 @@ public class LoginController {
         String username = username_TextField.getText().trim();
         String password = password_TextField.getText().trim();
         boolean prihlaseniUspesne = false;
-        for (Uzivatel uz : su.getSeznamUzivatelu()) {
-            if ((username.equals(uz.getUzivatelsakeJmeno())) && (password.equals(uz.getHeslo()))) {
-                this.aktualniUzivatel = uz;
-                prihlaseniUspesne = true;
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
-                    Parent root = loader.load();
-                    HomePageController homePageController = loader.getController();
-                    homePageController.setSu(su, aktualniUzivatel);
-                    Stage stage = (Stage) mainLogInButton.getScene().getWindow();
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }break;
+        if (kontrola(username,password)){
+            for (Uzivatel uz : su.getSeznamUzivatelu()) {
+                if ((username.equals(uz.getUzivatelsakeJmeno())) && (password.equals(uz.getHeslo()))) {
+                    this.aktualniUzivatel = uz;
+                    prihlaseniUspesne = true;
+                    prechod();
+                    break;
+                }
+            }
+            if (!prihlaseniUspesne) {
+                chybaText.setText("Špatné uživatelské heslo nebo jmeno");
             }
         }
-        if (!prihlaseniUspesne) {
-            chybaText.setText("Špatné uživatelské heslo nebo jmeno");
-        }
+
     }
 
 
@@ -89,7 +121,7 @@ public class LoginController {
     @FXML
     void swichToSignUp() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/signup.fxml"));
             Parent root = loader.load();
             SignUpController controller = loader.getController();
             controller.setSu(su);
