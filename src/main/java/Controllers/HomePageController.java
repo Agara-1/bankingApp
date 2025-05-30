@@ -258,6 +258,7 @@ public class HomePageController {
         if (ostatni != 0) {
             graf_Piechart.getData().add(new PieChart.Data("Ostatni", ostatni));
         }
+        su.serializaceUzivatelu();
     }
 
     /**
@@ -289,6 +290,7 @@ public class HomePageController {
                 }
             }
         }
+        su.serializaceUzivatelu();
     }
 
     /**

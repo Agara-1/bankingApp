@@ -54,7 +54,7 @@ public class UpravitLimitController {
     @FXML
     void back() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/rozpocet.fxml"));
             Parent root = loader.load();
             RozpocetController rozpocetController = loader.getController();
             rozpocetController.setSu(su, aktualniUzivatel);
@@ -74,7 +74,7 @@ public class UpravitLimitController {
      */
     private void prechod() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/rozpocet.fxml"));
             Parent root = loader.load();
             RozpocetController rozpocetController = loader.getController();
             rozpocetController.setSu(su, aktualniUzivatel);

@@ -30,7 +30,7 @@
             </AnchorPane>
             <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="602.0" style="-fx-background-color: #f4f6f7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane layoutX="40.0" layoutY="93.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="kategorie-ComboBox" stylesheets="@../../../../../bankingApp1/src/main/resources/sample/bankingapp/style.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="93.0">
+                  <AnchorPane layoutX="40.0" layoutY="93.0" prefHeight="276.0" prefWidth="330.0" style="-fx-background-color: #f7f9f9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #909497;" styleClass="kategorie-ComboBox" stylesheets="@style.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="93.0">
                      <children>
                         <Label layoutX="140.0" layoutY="31.0" text="Upravit Limit">
                            <font>

@@ -9,49 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="testy zacatek">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Testovani/NastaveniTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sample/bankingapp/Testovani/NastaveniControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2025_20_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2025_20_07__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2025_09_08_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2025_09_08__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_05_2025_16_59_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_05_2025_16_59__Changes_.xml" beforeDir="false" />
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="java docs">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2025_08_04_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2025_08_04__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/KategorieTransakci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/KategorieTransakci.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Mena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Mena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/NastaveniController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrevodnikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PrevodnikController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PridatTransakciController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PridatTransakciController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/PrijemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PrijemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/RozpocetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/RozpocetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/SpravceUzivatelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/SpravceUzivatelu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Testovani/UzivatelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Transakce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Transakce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TransakceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/TransakceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/TypTransakce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/TypTransakce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/UpravitLimitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpravitLimitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/bankingapp/Uzivatel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/homePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/info.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/nastaveni.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/prevodnik.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatPrijem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpravitLimitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpravitLimitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatTransakci.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/pridatTransakci.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/rozpocet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/signup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/transakce.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/transakce.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/upravitLimit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/bankingapp/upravitLimit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uzivatele.dat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +55,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -106,6 +73,7 @@
     "JUnit.NastaveniControllerTest.executor": "Run",
     "JUnit.NastaveniTest.executor": "Run",
     "JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo.executor": "Run",
+    "JUnit.NastaveniTest.vymazat.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -142,7 +110,7 @@
       <recent name="sample.bankingapp.Testovani" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NastaveniTest.vymazat">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sample.bankingapp.HelloApplication" />
       <module name="bankingApp" />
@@ -235,8 +203,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NastaveniTest.vymazat" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JUnit.NastaveniTest.vymazat" />
         <item itemvalue="JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo" />
       </list>
     </recent_temporary>
@@ -266,7 +234,7 @@
       <workItem from="1747669545515" duration="15143000" />
       <workItem from="1747736820505" duration="13275000" />
       <workItem from="1748448958560" duration="5732000" />
-      <workItem from="1748455536632" duration="34469000" />
+      <workItem from="1748455536632" duration="39819000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -444,7 +412,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748380112497</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="java docs + rozdeleni metod na mensi">
+      <option name="closed" value="true" />
+      <created>1748600813523</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1748600813523</updated>
+    </task>
+    <task id="LOCAL-00024" summary="java docs">
+      <option name="closed" value="true" />
+      <created>1748600884173</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1748600884173</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,6 +455,8 @@
     <MESSAGE value="Java docs" />
     <MESSAGE value="drobne upravy" />
     <MESSAGE value="testy zacatek" />
-    <option name="LAST_COMMIT_MESSAGE" value="testy zacatek" />
+    <MESSAGE value="java docs + rozdeleni metod na mensi" />
+    <MESSAGE value="java docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="java docs" />
   </component>
 </project>
