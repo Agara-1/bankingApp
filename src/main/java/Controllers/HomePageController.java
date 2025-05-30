@@ -1,7 +1,11 @@
-package sample.bankingapp;
+package Controllers;
 
 import java.io.IOException;
 
+import Models.SpravceUzivatelu;
+import Models.Transakce;
+import Models.TypTransakce;
+import sample.bankingapp.Uzivatel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,11 +14,10 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
- Controller, který ovládá hlavní okno celé aplikace.
+ * Controller, který ovládá hlavní okno celé aplikace.
  * <p>
  * Umožňuje uživateli:
  * <ul>
@@ -24,12 +27,16 @@ import javafx.stage.Stage;
  *     <li>prohlížet graf výdajů podle kategorií.</li>
  * </ul>
  * Graf slouží k vizualizaci informací o tom, kolik a za co uživatel utratil.
-
  */
+@SuppressWarnings("CallToPrintStackTrace")
 public class HomePageController {
     private Uzivatel aktualniUzivatel;
     private SpravceUzivatelu su;
-
+    private int jidlo = 0;
+    private int doprava = 0;
+    private int zabava = 0;
+    private int bezny = 0;
+    private int ostatni = 0;
 
     @FXML
     private PieChart graf_Piechart;
@@ -64,8 +71,7 @@ public class HomePageController {
     private Label zustatek;
 
     /**
-     * Přepne na nové okno (scénu) po kliknutí na tlačítko.
-     * <p>
+     * Přepne na nové okno po kliknutí na tlačítko.
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -74,7 +80,7 @@ public class HomePageController {
     @FXML
     void logoutButton() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/login.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
             loginController.setSu(su, aktualniUzivatel);
@@ -96,7 +102,7 @@ public class HomePageController {
     @FXML
     void info() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("info.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/info.fxml"));
             Parent root = loader.load();
             InfoController infoController = loader.getController();
             infoController.setSu(su, aktualniUzivatel);
@@ -118,7 +124,7 @@ public class HomePageController {
     @FXML
     void nastaveni() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("nastaveni.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/nastaveni.fxml"));
             Parent root = loader.load();
             NastaveniController nastaveniController = loader.getController();
             nastaveniController.setSu(su, aktualniUzivatel);
@@ -129,6 +135,7 @@ public class HomePageController {
         }
 
     }
+
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
      * <p>
@@ -140,7 +147,7 @@ public class HomePageController {
     @FXML
     void prevodnik() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("prevodnik.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/prevodnik.fxml"));
             Parent root = loader.load();
             PrevodnikController prevodnikController = loader.getController();
             prevodnikController.setSu(su, aktualniUzivatel);
@@ -150,6 +157,7 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
+
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
      * <p>
@@ -165,7 +173,7 @@ public class HomePageController {
     void pridatPrijemButton() {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("pridatPrijem.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/pridatPrijem.fxml"));
             Parent root = loader.load();
             PrijemController prijemController = loader.getController();
             prijemController.setSu(su, aktualniUzivatel);
@@ -188,7 +196,7 @@ public class HomePageController {
     @FXML
     void rozpocet() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/rozpocet.fxml"));
             Parent root = loader.load();
             RozpocetController rozpocetController = loader.getController();
             rozpocetController.setSu(su, aktualniUzivatel);
@@ -198,6 +206,7 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
+
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
      * <p>
@@ -209,7 +218,7 @@ public class HomePageController {
     @FXML
     void transakce() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/transakce.fxml"));
             Parent root = loader.load();
             TransakceController transakceController = loader.getController();
             transakceController.setSu(su, aktualniUzivatel);
@@ -225,6 +234,63 @@ public class HomePageController {
     void initialize() {
 
     }
+
+    /**
+     * Zapíše položky do grafu na základě jejich kategorií (např. Jídlo, Ostatní).
+     * Tato metoda slouží k vizuálnímu zobrazení rozdělení výdajů nebo jiných dat podle kategorií
+     * v grafické podobě pomocí  koláčového grafu.
+     * Používá se pro přehled o rozpočtu.
+     */
+    public void nahravaniPolozekGrafu() {
+        graf_Piechart.getData().clear();
+        if (jidlo != 0) {
+            graf_Piechart.getData().add(new PieChart.Data("Jidlo", jidlo));
+        }
+        if (doprava != 0) {
+            graf_Piechart.getData().add(new PieChart.Data("Doprava", doprava));
+        }
+        if (zabava != 0) {
+            graf_Piechart.getData().add(new PieChart.Data("Zabava", zabava));
+        }
+        if (bezny != 0) {
+            graf_Piechart.getData().add(new PieChart.Data("Běžné výdaje", bezny));
+        }
+        if (ostatni != 0) {
+            graf_Piechart.getData().add(new PieChart.Data("Ostatni", ostatni));
+        }
+    }
+
+    /**
+     * Přiřadí hodnoty jednotlivým položkám v koláčovém grafu.
+     * Tato metoda nastavuje konkrétní datové hodnoty pro každou kategorii,
+     * která je zobrazena v koláčovém grafu (např. Jídlo, Doprava, Ostatní).
+     * Slouží k vizuálnímu znázornění podílu jednotlivých kategorií
+     * na celkových datech.
+     */
+    public void nahravanihodnotGrafu() {
+        for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
+            if (t.getTypTransakce() == TypTransakce.VYDAJ && t.getKategorieVydaj() != null) {
+                switch (t.getKategorieVydaj()) {
+                    case JIDLO:
+                        jidlo += t.getCastka();
+                        break;
+                    case DOPRAVA:
+                        doprava += t.getCastka();
+                        break;
+                    case ZABAVA:
+                        zabava += t.getCastka();
+                        break;
+                    case BEZNE_VYDAJE:
+                        bezny += t.getCastka();
+                        break;
+                    case OSTATNI:
+                        ostatni += t.getCastka();
+                        break;
+                }
+            }
+        }
+    }
+
     /**
      * Aktualizuje zobrazení zůstatku a měsíčního příjmu na hlavním okně.
      * <p>
@@ -235,56 +301,14 @@ public class HomePageController {
      * podle jednotlivých kategorií.
      */
     private void refreshLabels() {
-        RozpocetController rC = new RozpocetController();
+
         if (this.aktualniUzivatel != null) {
             prijem_label.setText(String.valueOf(this.aktualniUzivatel.getMesicniPrijem()));
             zustatek.setText(String.valueOf(this.aktualniUzivatel.getZustatek()));
+            nahravanihodnotGrafu();
+            nahravaniPolozekGrafu();
 
-            int jidlo = 0;
-            int doprava = 0;
-            int zabava = 0;
-            int bezny = 0;
-            int ostatni = 0;
-            for (Transakce t : aktualniUzivatel.getSeznamTransakci()) {
-                if (t.getTypTransakce() == TypTransakce.VYDAJ && t.getKategorieVydaj() != null) {
-                    switch (t.getKategorieVydaj()) {
-                        case JIDLO:
-                            jidlo += t.getCastka();
-                            break;
-                        case DOPRAVA:
-                            doprava += t.getCastka();
-                            break;
-                        case ZABAVA:
-                            zabava += t.getCastka();
-                            break;
-                        case BEZNE_VYDAJE:
-                            bezny += t.getCastka();
-                            break;
-                        case OSTATNI:
-                            ostatni += t.getCastka();
-                            break;
-                    }
 
-                }
-
-                graf_Piechart.getData().clear();
-                if (jidlo != 0) {
-                    graf_Piechart.getData().add(new PieChart.Data("Jidlo", jidlo));
-                }
-                if (doprava != 0) {
-                    graf_Piechart.getData().add(new PieChart.Data("Doprava", doprava));
-                }
-                if (zabava != 0) {
-                    graf_Piechart.getData().add(new PieChart.Data("Zabava", zabava));
-                }
-                if (bezny != 0) {
-                    graf_Piechart.getData().add(new PieChart.Data("Běžné výdaje", bezny));
-                }
-                if (ostatni != 0) {
-                    graf_Piechart.getData().add(new PieChart.Data("Ostatni", ostatni));
-                }
-
-            }
         }
     }
 
@@ -302,8 +326,6 @@ public class HomePageController {
         }
         refreshLabels();
     }
+
 }
-
-
-
 

@@ -1,51 +1,40 @@
-package sample.bankingapp;
+package Controllers;
 
 import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Random;
-import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
-/**
- * Třída zobrazuje kompletní informace o aktuálně přihlášeném uživateli.
- * <p>
- * Obsahuje prvky uživatelského rozhraní, které zobrazují:
- * <ul>
- *     <li>Jméno uživatele</li>
- *     <li>Přihlašovací jméno</li>
- *     <li>Datum založení účtu</li>
- *     <li>Typ účtu</li>
- *     <li>Měnu, kterou uživatel používá</li>
- *     <li>Číslo účtu</li>
- * </ul>
- */
-public class InfoController {
+import Models.Mena;
+import Models.SpravceUzivatelu;
+import sample.bankingapp.Uzivatel;
 
+/**
+ * Třída umožňující správu uživatelského účtu.
+ * Obsahuje funkce pro změnu jména, přihlašovacího jména a hesla.
+ * Uživatel zde může také vymazat historii transakcí a změnit výchozí měnu.
+ * Po stisknutí tlačítka „Uložit“ se všechny změněné údaje uloží a nahradí původní hodnoty.
+ */
+
+@SuppressWarnings("CallToPrintStackTrace")
+public class NastaveniController {
     private SpravceUzivatelu su;
     private Uzivatel aktualniUzivatel;
 
-/**
- * Prvky používané v okně HomePage.
- */
-
-    @FXML
-    private Button logoutButton;
-
+    /**
+     * Prvky používané v okně63333333.
+     */
     @FXML
     private ToggleButton homeButton;
 
     @FXML
     private ToggleButton infoButton;
+
+    @FXML
+    private Button logoutButton;
 
     @FXML
     private ToggleButton nastaveniButton;
@@ -60,20 +49,26 @@ public class InfoController {
     private ToggleButton transakceButton;
 
     @FXML
-    private Label CisloUctu;
+    private TextField hesloNaUpravu;
 
     @FXML
-    private Label datumText;
+    private ComboBox<Mena> menaNaUpravu_ComboBox;
 
     @FXML
-    private Label mena_Label;
+    private TextField jmenoNaUpravu;
 
     @FXML
-    private Label usernameInfoText;
+    private TextField usernameNaUpravu;
 
+
+    /**
+     * Vymaže celou historii transakcí aktuálního uživatele.
+     * Tato akce je nevratná a odstraní všechny záznamy o předchozích transakcích.
+     */
     @FXML
-    private Label jmenoUzivatelText;
-
+    public void vymazat() {
+        aktualniUzivatel.getSeznamTransakci().clear();
+    }
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
      * Tato metoda načte nové FXML okno, získá jeho controller,
@@ -84,7 +79,7 @@ public class InfoController {
     @FXML
     void logoutButton() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/login.fxml"));
             Parent root = loader.load();
             LoginController loginController = loader.getController();
             loginController.setSu(su, aktualniUzivatel);
@@ -97,6 +92,7 @@ public class InfoController {
 
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -104,7 +100,7 @@ public class InfoController {
     @FXML
     void info() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("info.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/info.fxml"));
             Parent root = loader.load();
             InfoController infoController = loader.getController();
             infoController.setSu(su, aktualniUzivatel);
@@ -117,6 +113,7 @@ public class InfoController {
 
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -124,7 +121,7 @@ public class InfoController {
     @FXML
     void nastaveni() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("nastaveni.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/nastaveni.fxml"));
             Parent root = loader.load();
             NastaveniController nastaveniController = loader.getController();
             nastaveniController.setSu(su, aktualniUzivatel);
@@ -137,6 +134,7 @@ public class InfoController {
     }
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -144,7 +142,7 @@ public class InfoController {
     @FXML
     void prevodnik() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("prevodnik.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/prevodnik.fxml"));
             Parent root = loader.load();
             PrevodnikController prevodnikController = loader.getController();
             prevodnikController.setSu(su, aktualniUzivatel);
@@ -157,6 +155,7 @@ public class InfoController {
 
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -164,7 +163,7 @@ public class InfoController {
     @FXML
     void rozpocet() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("rozpocet.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/rozpocet.fxml"));
             Parent root = loader.load();
             RozpocetController rozpocetController = loader.getController();
             rozpocetController.setSu(su, aktualniUzivatel);
@@ -176,6 +175,7 @@ public class InfoController {
     }
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -183,7 +183,7 @@ public class InfoController {
     @FXML
     void transakce() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("transakce.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/transakce.fxml"));
             Parent root = loader.load();
             TransakceController transakceController = loader.getController();
             transakceController.setSu(su, aktualniUzivatel);
@@ -195,6 +195,7 @@ public class InfoController {
     }
     /**
      * Přepne na nové okno (scénu) po kliknutí na tlačítko.
+     * <p>
      * Tato metoda načte nové FXML okno, získá jeho controller,
      * a zavolá na něm metodu setSu() pomocí které předá aktuálního uživatele.
      * Následně nastaví nové okno jako aktivní scénu.
@@ -202,7 +203,7 @@ public class InfoController {
     @FXML
     void home() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("homePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/bankingapp/homePage.fxml"));
             Parent root = loader.load();
             HomePageController homePageController = loader.getController();
             homePageController.setSu(su, aktualniUzivatel);
@@ -211,41 +212,61 @@ public class InfoController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
     /**
      * Načte a zobrazí všechny informace o uživateli a jeho účtu v okně.
-     * Tato metoda získá data jako jméno, přihlašovací jméno, datum založení účtu,
-     * typ účtu, měnu a číslo účtu, a následně je nastaví do odpovídajících prvků
-     * ve scéně.
+     * Tato metoda získá data jako jméno, přihlašovací jméno, heslo a
+     * měnu a následně je nastaví do odpovídajících prvků ve scéně.
      */
-    private void nactiData() {
-        String mena = aktualniUzivatel.getMena().toString();
-        jmenoUzivatelText.setText(aktualniUzivatel.getJmeno());
-        usernameInfoText.setText(aktualniUzivatel.getUzivatelsakeJmeno());
-        CisloUctu.setText(aktualniUzivatel.getCisloUctu());
-        datumText.setText(aktualniUzivatel.getDatumZalozeni().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
-        mena_Label.setText(mena);
-    }
-
-
-    @FXML
-    void initialize() {
-
+    public void nactiHodnoty() {
+        jmenoNaUpravu.setPromptText(aktualniUzivatel.getJmeno());
+        usernameNaUpravu.setPromptText(aktualniUzivatel.getUzivatelsakeJmeno());
+        hesloNaUpravu.setPromptText(aktualniUzivatel.getHeslo());
+        menaNaUpravu_ComboBox.setValue(aktualniUzivatel.getMena());
 
     }
     /**
-     * Nastaví aktuálního uživatele a zavolá metodu nactiData(),
-     * která načte jméno, přihlašovací jméno, datum založení účtu,
-     * typ účtu, měnu a číslo účtu.
-     * <p>
-     * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
-     * se veškeré informace spojené s uživatelem správně zobrazí.
+     * Zkontroluje, zda zadaná hodnota není prázdná.
+     * Pokud není prázdná, uloží ji po stisknutí tlačítka a provede serializaci do souboru.
      */
-    public void setSu(SpravceUzivatelu su, Uzivatel uz) {
-        this.su = su;
-        this.aktualniUzivatel = uz;
-        nactiData();
+    @FXML
+    public void ulozit() {
+        String jmeno = jmenoNaUpravu.getText();
+        String username = usernameNaUpravu.getText();
+        String heslo = hesloNaUpravu.getText();
+
+        if (!jmeno.isBlank()) {
+            aktualniUzivatel.setJmeno(jmeno);
+        }
+        if (!username.isBlank()) {
+            aktualniUzivatel.setUzivatelsakeJmeno(usernameNaUpravu.getText());
+        }
+        if (!heslo.isBlank()) {
+            aktualniUzivatel.setHeslo(hesloNaUpravu.getText());
+        }
+        if (menaNaUpravu_ComboBox.getValue() != null) {
+            aktualniUzivatel.setMena(menaNaUpravu_ComboBox.getValue());
+        }
+        su.serializaceUzivatelu();
     }
 
-
+    @FXML
+    void initialize() {
+    }
+        /**
+         * Nastaví aktuálního uživatele a zavolá metodu nactiHodnoty(),
+         * která aktualizuje zobrazení jména, přihlašovacího jména, hesla a měny.
+         * Dále nastaví příslušné hodnoty do prvků typu ComboBox,
+         * aby odpovídaly datům aktuálního uživatele.
+         * Tato metoda se používá při přechodu mezi okny, aby zajistila, že
+         * se veškeré informace spojené s uživatelem správně zobrazí.
+         */
+        public void setSu(SpravceUzivatelu su, Uzivatel uz) {
+        this.su = su;
+        this.aktualniUzivatel = uz;
+        menaNaUpravu_ComboBox.getItems().addAll(Mena.values());
+        menaNaUpravu_ComboBox.setValue(aktualniUzivatel.getMena());
+        nactiHodnoty();
+    }
 }

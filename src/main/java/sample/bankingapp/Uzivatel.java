@@ -1,5 +1,8 @@
 package sample.bankingapp;
 
+import Models.Mena;
+import Models.Transakce;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -22,7 +25,11 @@ public class Uzivatel implements Serializable {
     private int limitOstatni;
 
     private ArrayList<Transakce> seznamTransakci;
-
+    /**
+     *  Uzivatel reprezentuje uživatele bankovní aplikace.
+     * Obsahuje osobní údaje, účetní informace, seznam transakcí, nastavení měny a rozpočtové limity.
+     * Slouží k ukládání a správě dat jednoho uživatele.
+     */
     public Uzivatel(String jmeno, String uzivatelsakeJmeno, String heslo) {
         this.jmeno = jmeno;
         this.uzivatelsakeJmeno = uzivatelsakeJmeno;
@@ -38,7 +45,10 @@ public class Uzivatel implements Serializable {
         this.limitOstatni = 1000;
         cisloUctu = generaceUctu();
     }
-
+    /**
+     * Vygeneruje náhodné číslo účtu ve formátu "XXXX XXXX XXXX".
+     * @return formátované číslo účtu
+     */
     public String generaceUctu() {
         StringBuilder cislo = new StringBuilder();
         for (int i = 0; i < 12; i++) {
@@ -49,7 +59,10 @@ public class Uzivatel implements Serializable {
         }
         return cislo.toString();
     }
-
+    /**
+     * Přidá novou transakci do seznamu transakcí uživatele.
+     * @param t instance transakce, která se má přidat
+     */
     public void pridaniTransakce(Transakce t) {
         seznamTransakci.add(t);
     }

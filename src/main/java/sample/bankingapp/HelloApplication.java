@@ -13,12 +13,10 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     /**
      * * Metoda  otevře první okno aplikace a to registrační obrazovku (SignUp).
-     * @param stage
-     * @throws IOException
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/sample/bankingapp/signup.fxml"));
         Scene scene = new Scene(fxmlLoader.load() );
         stage.setScene(scene);
         stage.show();
