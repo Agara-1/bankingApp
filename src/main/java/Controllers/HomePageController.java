@@ -309,8 +309,6 @@ public class HomePageController {
             zustatek.setText(String.valueOf(this.aktualniUzivatel.getZustatek()));
             nahravanihodnotGrafu();
             nahravaniPolozekGrafu();
-
-
         }
     }
 

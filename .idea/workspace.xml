@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="rebuild">
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="dokumentace projektu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/NastaveniController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uzivatele.dat" beforeDir="false" afterPath="$PROJECT_DIR$/uzivatele.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomePageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,34 +63,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "JUnit.NastaveniControllerTest.executor": "Run",
-    "JUnit.NastaveniTest.executor": "Run",
-    "JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo.executor": "Run",
-    "JUnit.NastaveniTest.ulozit.executor": "Run",
-    "JUnit.NastaveniTest.vymazat.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sakal/Downloads/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.web.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NastaveniControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NastaveniTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NastaveniTest.ulozit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NastaveniTest.vymazat.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sakal/Downloads/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib/javafx.web.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sakal\IdeaProjects\VelkeProjekty\bankingApp" />
@@ -251,7 +250,8 @@
       <workItem from="1747736820505" duration="13275000" />
       <workItem from="1748448958560" duration="5732000" />
       <workItem from="1748455536632" duration="44923000" />
-      <workItem from="1748705557907" duration="1977000" />
+      <workItem from="1748705557907" duration="2438000" />
+      <workItem from="1748709292219" duration="418000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -461,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748639884561</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="dokumentace projektu">
+      <option name="closed" value="true" />
+      <created>1748709177481</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1748709177481</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,6 +500,7 @@
     <MESSAGE value="java docs" />
     <MESSAGE value="drobne zmeny oprava malych chyb" />
     <MESSAGE value="rebuild" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild" />
+    <MESSAGE value="dokumentace projektu" />
+    <option name="LAST_COMMIT_MESSAGE" value="dokumentace projektu" />
   </component>
 </project>
