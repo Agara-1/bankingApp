@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="drobne zmeny oprava malych chyb" />
+    <list default="true" id="2fd4e2e2-aa65-4a2e-8617-8843caf4cef0" name="Changes" comment="rebuild">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/NastaveniController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/NastaveniController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uzivatele.dat" beforeDir="false" afterPath="$PROJECT_DIR$/uzivatele.dat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +70,7 @@
     "JUnit.NastaveniControllerTest.executor": "Run",
     "JUnit.NastaveniTest.executor": "Run",
     "JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo.executor": "Run",
+    "JUnit.NastaveniTest.ulozit.executor": "Run",
     "JUnit.NastaveniTest.vymazat.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -80,7 +85,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "Errors",
@@ -103,7 +108,7 @@
       <recent name="sample.bankingapp.Testovani" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="JUnit.NastaveniTest.ulozit">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sample.bankingapp.HelloApplication" />
       <module name="bankingApp" />
@@ -171,6 +176,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NastaveniTest.ulozit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankingApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Testovani.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Testovani" />
+      <option name="MAIN_CLASS_NAME" value="Testovani.NastaveniTest" />
+      <option name="METHOD_NAME" value="ulozit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NastaveniTest.vymazat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bankingApp" />
       <extension name="coverage">
@@ -191,11 +212,13 @@
       <item itemvalue="Application.HelloApplication" />
       <item itemvalue="JUnit.NastaveniTest" />
       <item itemvalue="JUnit.NastaveniControllerTest" />
+      <item itemvalue="JUnit.NastaveniTest.ulozit" />
       <item itemvalue="JUnit.NastaveniTest.vymazat" />
       <item itemvalue="JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NastaveniTest.ulozit" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="JUnit.NastaveniTest.vymazat" />
         <item itemvalue="JUnit.NastaveniTest.testUlozitZmenuUdajuNatvrdo" />
@@ -227,7 +250,8 @@
       <workItem from="1747669545515" duration="15143000" />
       <workItem from="1747736820505" duration="13275000" />
       <workItem from="1748448958560" duration="5732000" />
-      <workItem from="1748455536632" duration="40473000" />
+      <workItem from="1748455536632" duration="44923000" />
+      <workItem from="1748705557907" duration="1977000" />
     </task>
     <task id="LOCAL-00001" summary="vytvareni uvodniho okna v programu">
       <option name="closed" value="true" />
@@ -429,7 +453,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748639839784</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="rebuild">
+      <option name="closed" value="true" />
+      <created>1748639884561</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1748639884561</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,6 +491,7 @@
     <MESSAGE value="java docs + rozdeleni metod na mensi" />
     <MESSAGE value="java docs" />
     <MESSAGE value="drobne zmeny oprava malych chyb" />
-    <option name="LAST_COMMIT_MESSAGE" value="drobne zmeny oprava malych chyb" />
+    <MESSAGE value="rebuild" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild" />
   </component>
 </project>
